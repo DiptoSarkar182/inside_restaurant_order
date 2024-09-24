@@ -18,6 +18,42 @@
   </head>
 
   <body>
-    <%= yield %>
+
+  <div>
+    <%= link_to 'Restaurant', root_path%>
+  </div>
+  <% if user_signed_in? %>
+  <div>
+    Hello, <%= current_user.full_name %> (<%= current_user.role %>)
+  </div>
+    <div>
+      <% if current_user.avatar.attached? %>
+        <%= image_tag current_user.avatar, alt: "User Avatar", style: "width: 50px; height: 50px; border-radius: 50%;" %>
+      <% else %>
+        <p>No avatar uploaded</p>
+      <% end %>
+    </div>
+  <div>
+    <%= button_to "Log Out", destroy_user_session_url, method: "delete"%>
+  </div>
+  <% else %>
+    <%= button_to "Log In", new_user_session_url, method: "get" %>
+    <%= button_to "Sign Up", new_user_registration_url, method: "get"%>
+  <% end %>
+
+  <% if alert || notice %>
+    <div>
+      <div>
+        <% if notice %>
+          <p role="alert"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p role="alert"><%= alert %></p>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+  <%= yield %>
   </body>
 </html>
