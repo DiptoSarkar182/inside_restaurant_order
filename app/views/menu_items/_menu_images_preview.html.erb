@@ -1,0 +1,15 @@
+<div class="mb-4" data-controller="previews">
+  <%= form.label :menu_images, "Attach menu photos:" %>
+  <%= form.file_field :menu_images, accept: 'image/png,image/gif,image/jpeg,image/webp',
+                      multiple: true,
+                      direct_upload: true,
+                      data: { previews_target: "input", action: "change->previews#preview" }, class: "w-full p-2 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500" %>
+
+  <div data-previews-target="preview" class="flex flex-wrap mt-2"> <!-- Container for multiple previews -->
+    <% if menu_item.menu_images.attached? %>
+      <%= image_tag menu_item.menu_images, data: { previews_target: "preview" }, class: "image w-32 h-auto object-contain rounded mr-2" %>
+    <% else %>
+      <p>No images available</p>
+    <% end %>
+  </div>
+</div>

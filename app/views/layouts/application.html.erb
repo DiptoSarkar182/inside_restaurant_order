@@ -23,6 +23,11 @@
     <%= link_to 'Restaurant', root_path%>
   </div>
   <% if user_signed_in? %>
+   <% if current_user.is_admin? %>
+      <div>
+        <%= link_to "Admin Dashboard", admin_dashboards_path %>
+      </div>
+    <% end %>
   <div>
     Hello, <%= current_user.full_name %> (<%= current_user.role %>)
   </div>
@@ -45,14 +50,15 @@
     <div>
       <div>
         <% if notice %>
-          <p role="alert"><%= notice %></p>
+          <p role="alert" class="text-green-500"><%= notice %></p>
         <% end %>
         <% if alert %>
-          <p role="alert"><%= alert %></p>
+          <p role="alert" class="text-red-500"><%= alert %></p>
         <% end %>
       </div>
     </div>
   <% end %>
+
 
   <%= yield %>
   </body>

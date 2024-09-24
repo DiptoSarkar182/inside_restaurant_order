@@ -1,0 +1,19 @@
+<div class="mb-4" data-controller="previews">
+  <%= form.label :menu_images, "Attach menu photos:" %>
+
+  <!-- Hidden fields for existing images -->
+  <% @menu_item.menu_images.each do |image| %>
+    <%= form.hidden_field :menu_images, multiple: true, value: image.signed_id %>
+  <% end %>
+
+  <!-- File input for new images -->
+  <%= form.file_field :menu_images, accept: 'image/png,image/gif,image/jpeg,image/webp',
+                      multiple: true,
+                      direct_upload: true,
+                      data: { previews_target: "input", action: "change->previews#preview" }, class: "w-full p-2 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500" %>
+
+  <div data-previews-target="preview" class="flex flex-wrap mt-2"> <!-- Container for multiple previews -->
+    <!-- No existing images will be displayed here -->
+    <p>No images available</p>
+  </div>
+</div>

@@ -12,4 +12,12 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "home_pages#index"
+
+  resources :admin_dashboards
+
+  resources :menu_items do
+    member do
+      delete :delete_menu_item_image
+    end
+  end
 end
