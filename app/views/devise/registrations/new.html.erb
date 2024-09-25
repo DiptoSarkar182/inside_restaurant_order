@@ -4,9 +4,35 @@
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
-      <div>
-        <%= f.label :avatar, "Attach profile photo:" %>
-        <%= f.file_field :avatar, accept: 'image/png,image/gif,image/jpeg' %>
+      <div x-data="{photoName: null, photoPreview: null}" class="col-span-6 ml-2 sm:col-span-4 md:mr-3">
+        <!-- Photo File Input -->
+        <%= f.file_field :avatar, accept: 'image/png,image/gif,image/jpeg', class: 'hidden', 'x-ref': 'photo', 'x-on:change': "
+                                                                                    photoName = $refs.photo.files[0].name;
+                                                                                    const reader = new FileReader();
+                                                                                    reader.onload = (e) => {
+                                                                                      photoPreview = e.target.result;
+                                                                                    };
+                                                                                    reader.readAsDataURL($refs.photo.files[0]);
+                                                                                  " %>
+
+        <label class="block text-gray-700 text-sm font-bold mb-2 text-center" for="photo">
+          Attach profile photo:
+        </label>
+
+        <div class="text-center">
+          <!-- Current Profile Photo -->
+          <div class="mt-2" x-show="!photoPreview">
+            <%= image_tag 'customer_icon.png', class: "w-20 h-20 m-auto rounded-full shadow" %>
+          </div>
+          <!-- New Profile Photo Preview -->
+          <div class="mt-2" x-show="photoPreview" style="display: none;">
+      <span class="block w-20 h-20 rounded-full m-auto shadow" x-bind:style="'background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url(\'' + photoPreview + '\');'" style="background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url('null');">
+      </span>
+          </div>
+          <button type="button" class="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-md font-semibold text-xs text-gray-700 uppercase tracking-widest shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-400 focus:shadow-outline-blue active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150 mt-2 ml-3" x-on:click.prevent="$refs.photo.click()">
+            Select New Photo
+          </button>
+        </div>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">

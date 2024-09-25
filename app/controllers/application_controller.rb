@@ -3,4 +3,5 @@ class ApplicationController < ActionController::Base
   allow_browser versions: :modern
 
   before_action :authenticate_user!
+  skip_before_action :authenticate_user!, if: :devise_controller?
 end
