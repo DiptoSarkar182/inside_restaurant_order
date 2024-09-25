@@ -3,7 +3,15 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.53">
     <root id="1">
       <DateStyle>dmy</DateStyle>
-      <Grants>16385||-9223372036854775808|c|G
+      <Grants>1||-9223372036854775808|c|G
+1||10|c|G
+1||10|C|G
+1||10|T|G
+13462||-9223372036854775808|c|G
+13462||10|c|G
+13462||10|C|G
+13462||10|T|G
+16385||-9223372036854775808|c|G
 16385||10|c|G
 16385||16384|c|G
 16385||10|C|G
@@ -11,9 +19,9 @@
 16385||-9223372036854775808|T|G
 16385||10|T|G
 16385||16384|T|G</Grants>
-      <IntrospectionStateNumber>1501</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1628</IntrospectionStateNumber>
       <ServerVersion>12.20</ServerVersion>
-      <StartupTime>1727157513</StartupTime>
+      <StartupTime>1727244556</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -1434,7 +1442,7 @@ true posixrules
 13163||10|C|G
 13163||-9223372036854775808|U|G
 13163||10|U|G</Grants>
-      <IntrospectionStateNumber>1395</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1628</IntrospectionStateNumber>
       <ObjectId>16385</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -1449,12 +1457,12 @@ true posixrules
 13163||10|C|G
 13163||-9223372036854775808|U|G
 13163||10|U|G</Grants>
-      <IntrospectionStateNumber>1501</IntrospectionStateNumber>
-      <ObjectId>18433</ObjectId>
+      <IntrospectionStateNumber>1629</IntrospectionStateNumber>
+      <ObjectId>18648</ObjectId>
       <OwnerName>devsapace</OwnerName>
     </database>
     <database id="4" parent="1" name="inside_restaurant_order_test">
-      <ObjectId>18534</ObjectId>
+      <ObjectId>18649</ObjectId>
       <OwnerName>devsapace</OwnerName>
     </database>
     <database id="5" parent="1" name="koko_live_dev">
@@ -4711,8 +4719,8 @@ true posixrules
     <schema id="255" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>1395</IntrospectionStateNumber>
-      <LastIntrospectionLocalTimestamp>2024-09-24.07:56:09</LastIntrospectionLocalTimestamp>
+      <IntrospectionStateNumber>1628</IntrospectionStateNumber>
+      <LastIntrospectionLocalTimestamp>2024-09-25.12:31:39</LastIntrospectionLocalTimestamp>
       <ObjectId>2200</ObjectId>
       <StateNumber>275</StateNumber>
       <OwnerName>postgres</OwnerName>
@@ -7885,8 +7893,8 @@ true posixrules
     <schema id="486" parent="3" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>1501</IntrospectionStateNumber>
-      <LastIntrospectionLocalTimestamp>2024-09-24.10:55:20</LastIntrospectionLocalTimestamp>
+      <IntrospectionStateNumber>1629</IntrospectionStateNumber>
+      <LastIntrospectionLocalTimestamp>2024-09-25.12:31:41</LastIntrospectionLocalTimestamp>
       <ObjectId>2200</ObjectId>
       <StateNumber>275</StateNumber>
       <OwnerName>postgres</OwnerName>
@@ -7969,7 +7977,7 @@ true posixrules
     </table>
     <table id="498" parent="486" name="users">
       <ObjectId>18701</ObjectId>
-      <StateNumber>1437</StateNumber>
+      <StateNumber>1622</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>devsapace</OwnerName>
     </table>
@@ -8506,7 +8514,13 @@ default</CollationNames>
       <StoredType>varchar|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <index id="570" parent="498" name="users_pkey">
+    <column id="570" parent="498" name="nationality">
+      <Position>22</Position>
+      <StateNumber>1623</StateNumber>
+      <StoredType>varchar|0s</StoredType>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="571" parent="498" name="users_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>18712</ObjectId>
@@ -8515,7 +8529,7 @@ default</CollationNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="571" parent="498" name="index_users_on_email">
+    <index id="572" parent="498" name="index_users_on_email">
       <ColNames>email</ColNames>
       <ObjectId>18715</ObjectId>
       <StateNumber>1439</StateNumber>
@@ -8525,7 +8539,7 @@ default</CollationNames>
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <index id="572" parent="498" name="index_users_on_reset_password_token">
+    <index id="573" parent="498" name="index_users_on_reset_password_token">
       <ColNames>reset_password_token</ColNames>
       <ObjectId>18716</ObjectId>
       <StateNumber>1440</StateNumber>
@@ -8535,7 +8549,7 @@ default</CollationNames>
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <index id="573" parent="498" name="index_users_on_confirmation_token">
+    <index id="574" parent="498" name="index_users_on_confirmation_token">
       <ColNames>confirmation_token</ColNames>
       <ObjectId>18714</ObjectId>
       <StateNumber>1438</StateNumber>
@@ -8545,7 +8559,7 @@ default</CollationNames>
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <index id="574" parent="498" name="index_users_on_unlock_token">
+    <index id="575" parent="498" name="index_users_on_unlock_token">
       <ColNames>unlock_token</ColNames>
       <ObjectId>18717</ObjectId>
       <StateNumber>1441</StateNumber>
@@ -8555,7 +8569,7 @@ default</CollationNames>
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="575" parent="498" name="users_pkey">
+    <key id="576" parent="498" name="users_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>18713</ObjectId>
       <Primary>1</Primary>

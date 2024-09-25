@@ -11,7 +11,10 @@
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^8.0.10",
+    "@tailwindcss/forms": "^0.5.9",
+    "@tailwindcss/typography": "^0.5.15",
     "autoprefixer": "^10.4.20",
+    "intl-tel-input": "^24.5.0",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.12"
   }

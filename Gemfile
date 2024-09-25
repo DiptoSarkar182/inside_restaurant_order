@@ -63,3 +63,6 @@ gem "foreman", "~> 0.88.1"
 gem "devise", "~> 4.9"
 
 gem "letter_opener", group: :development
+
+gem 'country_select', '~> 8.0'
+gem 'phonelib'
