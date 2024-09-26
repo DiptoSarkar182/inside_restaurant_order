@@ -7,5 +7,12 @@ import { application } from "./application"
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import PhoneNumberController from "./phone_number_controller"
+application.register("phone-number", PhoneNumberController)
+
 import PreviewsController from "./previews_controller"
 application.register("previews", PreviewsController)
+
+import PasswordVisibility from '@stimulus-components/password-visibility'
+
+application.register('password-visibility', PasswordVisibility)
