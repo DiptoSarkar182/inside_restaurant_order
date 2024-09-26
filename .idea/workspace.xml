@@ -4,29 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="added image preview when users signs up, confirmation email sent notice will show.">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9a009394-5a9e-4614-a12a-65f683fc154b.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9a009394-5a9e-4614-a12a-65f683fc154b/storage_v2/_src_/database/devsapace.tvl5Eg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9a009394-5a9e-4614-a12a-65f683fc154b/storage_v2/_src_/database/devsapace.tvl5Eg/schema/public.abK9xQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9a009394-5a9e-4614-a12a-65f683fc154b/storage_v2/_src_/database/inside_restaurant_order_development.qwrfkg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9a009394-5a9e-4614-a12a-65f683fc154b/storage_v2/_src_/database/inside_restaurant_order_development.qwrfkg/schema/public.abK9xQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inside_restaurant_order.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inside_restaurant_order.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="improved styling in log in and signup page">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/javascript/controllers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/controllers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/application_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/application_helper.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/environments/development.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/environments/development.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20240924075040_drop_admins.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,10 +55,7 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="JavaScript Debug.rich.html (5)">
-    <configuration name="rich.html (1)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/inside_restaurant_order/tmp/letter_opener/1727279928_6940048_016fc61/rich.html" useBuiltInWebServerPort="true">
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="JavaScript Debug.rich.html">
     <configuration name="rich.html (2)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/inside_restaurant_order/tmp/letter_opener/1727286048_9572217_7c37ec2/rich.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -86,6 +66,9 @@
       <method v="2" />
     </configuration>
     <configuration name="rich.html (5)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/inside_restaurant_order/tmp/letter_opener/1727355339_038194_51cfc8f/rich.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="rich.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/inside_restaurant_order/tmp/letter_opener/1727366052_2274542_a9c4089/rich.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="inside_restaurant_order" type="RailsRunConfigurationType" factoryName="Rails">
@@ -153,11 +136,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.rich.html" />
         <item itemvalue="JavaScript Debug.rich.html (5)" />
         <item itemvalue="JavaScript Debug.rich.html (4)" />
         <item itemvalue="JavaScript Debug.rich.html (3)" />
         <item itemvalue="JavaScript Debug.rich.html (2)" />
-        <item itemvalue="JavaScript Debug.rich.html (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -183,7 +166,7 @@
       <workItem from="1727278289443" duration="7514000" />
       <workItem from="1727287368338" duration="210000" />
       <workItem from="1727336310855" duration="20908000" />
-      <workItem from="1727364846568" duration="252000" />
+      <workItem from="1727364846568" duration="2026000" />
     </task>
     <task id="LOCAL-00001" summary="added admin dashboards, menu items CRUD, image preview when creating and updating menu item.">
       <option name="closed" value="true" />
@@ -201,7 +184,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727287312705</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="improved styling in log in and signup page">
+      <option name="closed" value="true" />
+      <created>1727365813120</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1727365813120</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,6 +201,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added admin dashboards, menu items CRUD, image preview when creating and updating menu item." />
     <MESSAGE value="added image preview when users signs up, confirmation email sent notice will show." />
-    <option name="LAST_COMMIT_MESSAGE" value="added image preview when users signs up, confirmation email sent notice will show." />
+    <MESSAGE value="improved styling in log in and signup page" />
+    <option name="LAST_COMMIT_MESSAGE" value="improved styling in log in and signup page" />
   </component>
 </project>
