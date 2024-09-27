@@ -14,5 +14,7 @@ import PreviewsController from "./previews_controller"
 application.register("previews", PreviewsController)
 
 import PasswordVisibility from '@stimulus-components/password-visibility'
-
 application.register('password-visibility', PasswordVisibility)
+
+import Dropdown from '@stimulus-components/dropdown'
+application.register('dropdown', Dropdown)
