@@ -20,32 +20,44 @@
 
   <body>
   <% unless hide_elements_on_pages? %>
-    <div>
-      <%= link_to 'Restaurant', root_path %>
-    </div>
-    <% if user_signed_in? %>
-      <% if current_user.is_admin? %>
-        <div>
-          <%= link_to "Admin Dashboard", admin_dashboards_path %>
-        </div>
-      <% end %>
-      <div>
-        Hello, <%= current_user.full_name %> (<%= current_user.role %>)
-      </div>
-      <div>
-        <% if current_user.avatar.attached? %>
-          <%= image_tag current_user.avatar, alt: "User Avatar", style: "width: 50px; height: 50px; border-radius: 50%;" %>
-        <% else %>
-          <p>No avatar uploaded</p>
+    <nav class="bg-white dark:bg-gray-900 w-full z-20 top-0 start-0 border-b border-gray-200">
+      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <%= link_to root_path, class: "flex items-center" do %>
+          <%= image_tag "restaurant.png", class: "mr-3 h-6 sm:h-9", alt: "Restaurant Logo" %>
+          <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Restaurant</span>
         <% end %>
+        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+          <div class="flex items-center lg:order-2">
+            <% if user_signed_in? %>
+              <div data-controller="dropdown" class="relative">
+                <button type="button" data-action="dropdown#toggle click@window->dropdown#hide">
+                  <% if current_user.avatar.attached? %>
+                    <%= image_tag current_user.avatar, alt: "User Avatar", style: "width: 50px; height: 50px; border-radius: 50%;" %>
+                    <% else %>
+                    <%= image_tag 'customer_icon.png', style: "width: 50px; height: 50px; border-radius: 50%;" %>
+                  <% end %>
+                </button>
+
+                <div
+                  data-dropdown-target="menu"
+                  class="hidden bg-white dark:bg-gray-800 shadow-lg rounded-lg py-2 mt-2 w-48 transition transform origin-top-right absolute right-0"
+                  data-transition-enter-from="opacity-0 scale-95"
+                  data-transition-enter-to="opacity-100 scale-100"
+                  data-transition-leave-from="opacity-100 scale-100"
+                  data-transition-leave-to="opacity-0 scale-95"
+                >
+                  <%= button_to "Edit Account", edit_user_registration_path, method: "get",
+                                class: "block w-full text-left px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700" %>
+                  <%= button_to "Sign out", destroy_user_session_url, method: "delete",
+                                class: "block w-full text-left px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700" %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
       </div>
-      <div>
-        <%= button_to "Log Out", destroy_user_session_url, method: "delete" %>
-      </div>
-    <% else %>
-      <%= button_to "Log In", new_user_session_url, method: "get" %>
-      <%= button_to "Sign Up", new_user_registration_url, method: "get" %>
-    <% end %>
+    </nav>
+
   <% end %>
 
   <% if alert || notice %>
@@ -61,6 +73,8 @@
     </div>
   <% end %>
 
-  <%= yield %>
+  <main>
+    <%= yield %>
+  </main>
   </body>
 </html>
