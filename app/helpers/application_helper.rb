@@ -1,8 +1,8 @@
 module ApplicationHelper
   def hide_elements_on_pages?
     pages_to_hide_elements = [
-      { controller: 'devise/sessions', action: 'new' },
-      { controller: 'devise/sessions', action: 'create' },
+      { controller: 'sessions', action: 'new' },
+      { controller: 'sessions', action: 'create' },
       { controller: 'registrations', action: 'new' },
       { controller: 'registrations', action: 'create' }
     ]
