@@ -18,3 +18,6 @@ application.register('password-visibility', PasswordVisibility)
 
 import Dropdown from '@stimulus-components/dropdown'
 application.register('dropdown', Dropdown)
+
+import Notification from '@stimulus-components/notification'
+application.register('notification', Notification)

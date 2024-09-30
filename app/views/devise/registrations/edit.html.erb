@@ -41,129 +41,136 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
         <div>
-          <div class="field">
-            <%= f.label :first_name, class: "block font-medium text-sky-700" %>
-            <%= f.text_field :first_name, autofocus: true, autocomplete: "first name", class: "w-full rounded-md border-sky-300 shadow-sm focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50" %>
+          <div class="field mb-4">
+            <label
+              for="first_name"
+              class="relative block overflow-hidden border-b border-black bg-transparent pt-3 focus-within:border-sky-600"
+            >
+              <%= f.text_field :first_name, id: "first_name", placeholder: "", autofocus: true, autocomplete: "first name", class: "peer h-8 w-full border-none bg-transparent p-0 placeholder-sky-300 focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm" %>
+              <span
+                class="absolute start-0 top-2 -translate-y-1/2 text-base text-black transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-lg peer-focus:top-2 peer-focus:text-base peer-focus:text-sky-500"
+              >
+                  First Name
+                </span>
+            </label>
           </div>
 
-          <div class="field mt-4">
-            <%= f.label :last_name, class: "block font-medium text-sky-700" %>
-            <%= f.text_field :last_name, autofocus: true, autocomplete: "last name", class: "w-full rounded-md border-sky-300 shadow-sm focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50" %>
+          <div class="field mb-4">
+            <label
+              for="date_of_birth"
+              class="relative block overflow-hidden border-b border-black bg-transparent pt-3 focus-within:border-sky-600"
+            >
+              <%= f.date_field :date_of_birth, id: "date_of_birth", placeholder: "", class: "peer h-8 w-full border-none bg-transparent p-0 placeholder-sky-300 focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm" %>
+              <span
+                class="absolute start-0 top-2 -translate-y-1/2 text-base text-black transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-lg peer-focus:top-2 peer-focus:text-base peer-focus:text-sky-500"
+              >
+                Date of Birth
+              </span>
+            </label>
           </div>
 
           <div class="field mt-4" data-controller="phone-number">
-            <%= f.label :contact_number, class: "block font-medium text-sky-700" %>
+            <%= f.label :contact_number, class: "block font-medium text-black" %>
             <div class="w-full max-w-sm min-w-[200px]">
               <div class="relative mt-1">
                 <div class="absolute top-2 left-0 flex items-center pl-3">
-                  <button
-                    id="dropdownButton"
-                    class="h-full text-sm flex justify-center items-center bg-transparent text-sky-700 focus:outline-none"
-                    data-action="click->phone-number#toggleDropdown"
-                  >
-                    <span id="dropdownSpan" data-phone-number-target="dropdownSpan">+33</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      class="h-4 w-4 ml-1"
-                    >
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                    </svg>
-                  </button>
-                  <div class="h-6 border-l border-sky-200 ml-2"></div>
-                  <div
-                    id="dropdownMenu"
-                    class="min-w-[150px] absolute left-0 w-full mt-10 hidden bg-white border border-sky-200 rounded-md shadow-lg z-10"
-                    data-phone-number-target="dropdownMenu"
-                  >
-                    <ul id="dropdownOptions" data-action="click->phone-number#selectCountryCode">
-                      <li class="px-4 py-2 text-sky-600 hover:bg-sky-50 text-sm cursor-pointer" data-value="+33">
-                        France (+33)
-                      </li>
-                      <li class="px-4 py-2 text-sky-600 hover:bg-sky-50 text-sm cursor-pointer" data-value="+49">
-                        Germany (+49)
-                      </li>
-                      <li class="px-4 py-2 text-sky-600 hover:bg-sky-50 text-sm cursor-pointer" data-value="+34">
-                        Spain (+34)
-                      </li>
-                      <li class="px-4 py-2 text-sky-600 hover:bg-sky-50 text-sm cursor-pointer" data-value="+1">
-                        USA (+1)
-                      </li>
-                      <li class="px-4 py-2 text-sky-600 hover:bg-sky-50 text-sm cursor-pointer" data-value="+880">
-                        BD (+880)
-                      </li>
-                    </ul>
-                  </div>
                 </div>
-                <input
-                  type="tel"
-                  class="w-full bg-transparent placeholder:text-sky-400 text-sky-700 text-sm border border-sky-200 rounded-md pr-3 pl-20 py-2 transition duration-300 ease focus:outline-none focus:border-sky-400 hover:border-sky-300 shadow-sm focus:shadow"
-                  placeholder="324-456-2323"
-                  pattern="[0-9]*"
-                  inputmode="numeric"
-                  maxlength="12"
-                  id="phoneNumberInput"
-                  data-phone-number-target="phoneNumberInput"
-                  data-action="input->phone-number#updatePhoneNumber"
-                  value="<%= resource.contact_number %>"
-                />
-                <!-- Hidden input to store the full phone number -->
-                <%= f.hidden_field :contact_number, id: "fullPhoneNumber", value: resource.contact_number, data: { phone_number_target: "fullPhoneNumber" } %>
+                <%= f.telephone_field :contact_number, id: "phone-input", data: { phone_number_target: "phoneInput" }, value: resource.contact_number, class: "w-full bg-transparent placeholder:text-sky-400 text-sky-700 text-sm border border-black rounded-md pr-3 pl-20 py-2 transition duration-300 ease focus:outline-none focus:border-sky-400 shadow-sm focus:shadow" %>
               </div>
             </div>
           </div>
 
 
           <div class="mt-4">
-            <%= f.label :nationality, class: "block font-medium text-sky-700" %>
-            <%= f.country_select :nationality, {}, { class: "w-full rounded-md border-sky-300 shadow-sm focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50" } %>
+            <%= f.label :nationality, class: "block font-medium text-black" %>
+            <%= f.country_select :nationality, {format: :with_flag}, { class: "w-full rounded-md border-black shadow-sm focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50" } %>
           </div>
 
-          <div class="field mt-4">
-            <%= f.label :current_password, class: "block font-medium text-sky-700"   %> <i>(we need your current password to confirm your changes)</i>
-            <%= f.password_field :current_password, autocomplete: "current-password", class: "w-full rounded-md border-sky-300 shadow-sm focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50" %>
-          </div>
 
         </div>
 
         <div>
-          <div class="field">
-            <%= f.label :date_of_birth, class: "block font-medium text-sky-700" %>
-            <%= f.date_field :date_of_birth, class: "w-full rounded-md border-sky-300 shadow-sm focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50" %>
+          <div class="field mb-4">
+            <label
+              for="last_name"
+              class="relative block overflow-hidden border-b border-black bg-transparent pt-3 focus-within:border-sky-600"
+            >
+              <%= f.text_field :last_name, id: "last_name", placeholder: "", autocomplete: "last name", class: "peer h-8 w-full border-none bg-transparent p-0 placeholder-sky-300 focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm" %>
+              <span
+                class="absolute start-0 top-2 -translate-y-1/2 text-base text-black transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-lg peer-focus:top-2 peer-focus:text-base peer-focus:text-sky-500"
+              >
+                  Last Name
+                </span>
+            </label>
+          </div>
+
+          <div class="field mb-4">
+            <label
+              for="UserEmail"
+              class="relative block overflow-hidden border-b border-black bg-transparent pt-3 focus-within:border-sky-600"
+            >
+              <%= f.email_field :email, id: "UserEmail", placeholder: "", autofocus: true, autocomplete: "email", class: "peer h-8 w-full border-none bg-transparent p-0 placeholder-sky-300 focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm" %>
+              <span
+                class="absolute start-0 top-2 -translate-y-1/2 text-base text-black transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-lg peer-focus:top-2 peer-focus:text-base peer-focus:text-sky-500"
+              >
+                  Email
+                </span>
+            </label>
+          </div>
+
+          <div class="field mb-4">
+            <label
+              for="password"
+              class="relative block overflow-hidden border-b border-black bg-transparent pt-3 focus-within:border-sky-600"
+            >
+              <%= f.password_field :password, id: "password", placeholder: "", autofocus: true, autocomplete: "email", class: "peer h-8 w-full border-none bg-transparent p-0 placeholder-sky-300 focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm" %>
+              <span
+                class="absolute start-0 top-2 -translate-y-1/2 text-base text-black transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-lg peer-focus:top-2 peer-focus:text-base peer-focus:text-sky-500"
+              >
+                  Password
+                </span>
+            </label>
+          </div>
+
+          <div class="field mb-4">
+            <label
+              for="password_confirmation"
+              class="relative block overflow-hidden border-b border-black bg-transparent pt-3 focus-within:border-sky-600"
+            >
+              <%= f.password_field :password_confirmation, id: "password_confirmation", placeholder: "", autofocus: true, autocomplete: "new-password", class: "peer h-8 w-full border-none bg-transparent p-0 placeholder-sky-300 focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm" %>
+              <span
+                class="absolute start-0 top-2 -translate-y-1/2 text-base text-black transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-lg peer-focus:top-2 peer-focus:text-base peer-focus:text-sky-500"
+              >
+                  Password Confirmation
+                </span>
+            </label>
           </div>
 
           <div class="field mt-4">
-            <%= f.label :address, class: "block font-medium text-sky-700" %>
-            <%= f.text_field :address, autofocus: true, autocomplete: "address", class: "w-full rounded-md border-sky-300 shadow-sm focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50" %>
-          </div>
-
-          <div class="field mt-4">
-            <%= f.label :email, class: "block font-medium text-sky-700" %>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full rounded-md border-sky-300 shadow-sm focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50" %>
-          </div>
-
-          <div class="field mt-4">
-            <%= f.label :password, class: "block font-medium text-sky-700" %> <i>(leave blank if you don't want to change it)</i>
-            <%= f.password_field :password, autocomplete: "new-password", class: "w-full rounded-md border-sky-300 shadow-sm focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50", placeholder: "6 characters minimum" %>
-          </div>
-          <div class="field mt-4">
-            <%= f.label :password_confirmation, class: "block font-medium text-sky-700"  %>
-            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "w-full rounded-md border-sky-300 shadow-sm focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50" %>
+            <label
+              for="current_password"
+              class="relative block overflow-hidden border-b border-black bg-transparent pt-3 focus-within:border-sky-600"
+            >
+              <%= f.password_field :current_password, id: "current_password", placeholder: "", autocomplete: "currentpassword", class: "peer h-8 w-full border-none bg-transparent p-0 placeholder-sky-300 focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm" %>
+              <span
+                class="absolute start-0 top-2 -translate-y-1/2 text-base text-black transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-lg peer-focus:top-2 peer-focus:text-base peer-focus:text-sky-500"
+              >
+                Current Password
+              </span>
+            </label>
+            <i>(we need your current password to confirm your changes)</i>
           </div>
 
 
-          <div class="flex justify-between items-center mt-6 gap-x-4">
-            <%= link_to "Back", :back, class: "bg-white border border-sky-400 hover:bg-sky-100 text-sky-700 font-bold py-2 px-6 rounded cursor-pointer w-full sm:w-1/2 text-center transition duration-300" %>
-            <%= f.submit "Update", class: "bg-sky-500 hover:bg-sky-600 text-white font-bold py-2 px-6 rounded cursor-pointer w-full sm:w-1/2 transition duration-300" %>
-          </div>
         </div>
+      </div>
+      <div class="flex justify-between items-center mt-6 gap-x-4">
+        <%= link_to "Back", :back, class: "w-full px-6 py-2 text-lg text-sky-600 font-semibold rounded-full border-2 border-sky-600 hover:bg-sky-50 transition duration-300 ease-in-out cursor-pointer text-center" %>
+        <%= f.submit "Update", class: "w-full px-6 py-2 text-lg text-white font-semibold rounded-full border border-sky-600 bg-gradient-to-r from-sky-400 to-sky-600 hover:from-sky-500 hover:to-sky-700 hover:shadow-lg transition duration-300 ease-in-out cursor-pointer text-center" %>
       </div>
 
       <% end %>
-    <h3 class="text-lg font-semibold text-sky-700 mt-6">Delete my account</h3>
+    <h3 class="text-lg font-semibold text-sky-700 mt-4">Delete my account</h3>
 
     <div class="mt-4">
       <p class="text-sm text-sky-500">Unhappy? We're sad to see you go.</p>
