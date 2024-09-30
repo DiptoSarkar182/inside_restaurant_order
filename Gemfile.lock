@@ -322,6 +322,7 @@ DEPENDENCIES
   bootsnap
   brakeman
   capybara
+  countries (~> 5.7)
   country_select (~> 8.0)
   cssbundling-rails
   debug

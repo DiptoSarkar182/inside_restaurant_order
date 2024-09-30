@@ -67,3 +67,5 @@ gem "letter_opener", group: :development
 gem 'country_select', '~> 8.0'
 gem 'phonelib'
 gem "phony_rails", "~> 0.15.0"
+
+gem "countries", "~> 5.7"
