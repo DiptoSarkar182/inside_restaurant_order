@@ -4,6 +4,7 @@
     <title><%= content_for(:title) || "Inside Restaurant Order" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="turbo-cache-control" content="no-cache">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -16,7 +17,6 @@
     <link rel="apple-touch-icon" href="/icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
@@ -32,6 +32,11 @@
         <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <div class="flex items-center lg:order-2">
             <% if user_signed_in? %>
+              <% if current_user.is_admin? %>
+                <div>
+                  <%= link_to "Admin dashboard path", admin_dashboards_path, class: "bg-sky-500 hover:bg-sky-600 text-white font-bold py-2 px-4 rounded" %>
+                </div>
+              <% end %>
               <div data-controller="dropdown" class="relative">
                 <button type="button" data-action="dropdown#toggle click@window->dropdown#hide">
                   <% if current_user.avatar.attached? %>
@@ -63,18 +68,28 @@
 
   <% end %>
 
-  <% if alert || notice %>
-    <div>
-      <div>
-        <% if notice %>
-          <p role="alert" class="text-green-500"><%= notice %></p>
-        <% end %>
-        <% if alert %>
-          <p role="alert" class="text-red-500"><%= alert %></p>
-        <% end %>
+  <div
+    data-controller="notification"
+    data-notification-delay-value="2000"
+    class="fixed top-4 right-4 z-50 transition transform duration-1000 hidden"
+    data-transition-enter-from="opacity-0 translate-x-6"
+    data-transition-enter-to="opacity-100 translate-x-0"
+    data-transition-leave-from="opacity-100 translate-x-0"
+    data-transition-leave-to="opacity-0 translate-x-6"
+  >
+    <% if alert || notice %>
+      <div class="bg-white border border-gray-300 shadow-lg rounded p-4">
+        <div>
+          <% if notice %>
+            <p role="alert" class="text-green-500"><%= notice %></p>
+          <% end %>
+          <% if alert %>
+            <p role="alert" class="text-red-500"><%= alert %></p>
+          <% end %>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 
   <main>
     <%= yield %>
