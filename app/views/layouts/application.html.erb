@@ -29,43 +29,50 @@
           <%= image_tag "restaurant.png", class: "mr-3 h-6 sm:h-9", alt: "Restaurant Logo" %>
           <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Restaurant</span>
         <% end %>
-        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <div class="flex items-center lg:order-2">
-            <% if user_signed_in? %>
-              <% if current_user.is_admin? %>
-                <div>
-                  <%= link_to "Admin dashboard path", admin_dashboards_path, class: "bg-sky-500 hover:bg-sky-600 text-white font-bold py-2 px-4 rounded" %>
-                </div>
-              <% end %>
-              <div data-controller="dropdown" class="relative">
-                <button type="button" data-action="dropdown#toggle click@window->dropdown#hide">
-                  <% if current_user.avatar.attached? %>
-                    <%= image_tag current_user.avatar, alt: "User Avatar", style: "width: 50px; height: 50px; border-radius: 50%;" %>
-                    <% else %>
-                    <%= image_tag 'customer_icon.png', style: "width: 50px; height: 50px; border-radius: 50%;" %>
-                  <% end %>
-                </button>
 
-                <div
-                  data-dropdown-target="menu"
-                  class="hidden bg-white dark:bg-gray-800 shadow-lg rounded-lg py-2 mt-2 w-48 transition transform origin-top-right absolute right-0"
-                  data-transition-enter-from="opacity-0 scale-95"
-                  data-transition-enter-to="opacity-100 scale-100"
-                  data-transition-leave-from="opacity-100 scale-100"
-                  data-transition-leave-to="opacity-0 scale-95"
-                >
-                  <%= button_to "Edit Account", edit_user_registration_path, method: "get",
-                                class: "block w-full text-left px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700" %>
-                  <%= button_to "Sign out", destroy_user_session_url, method: "delete",
-                                class: "block w-full text-left px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700" %>
-                </div>
+        <div class="flex items-center md:order-2">
+          <% if user_signed_in? %>
+            <% if current_user.is_admin? %>
+              <div class="hidden md:block mr-4">
+                <%= link_to "Admin dashboard", admin_dashboards_path, class: "bg-sky-500 hover:bg-sky-600 text-white font-bold py-2 px-4 rounded" %>
               </div>
             <% end %>
-          </div>
+            <div data-controller="dropdown" class="relative">
+              <button type="button" data-action="dropdown#toggle click@window->dropdown#hide" class="flex items-center">
+                <% if current_user.avatar.attached? %>
+                  <%= image_tag current_user.avatar, alt: "User Avatar", class: "w-10 h-10 rounded-full" %>
+                <% else %>
+                  <%= image_tag 'customer_icon.png', class: "w-10 h-10 rounded-full" %>
+                <% end %>
+              </button>
+
+              <div
+                data-dropdown-target="menu"
+                class="hidden bg-white dark:bg-gray-800 shadow-lg rounded-lg py-2 mt-2 w-48 transition transform origin-top-right absolute right-0 z-50"
+                data-transition-enter-from="opacity-0 scale-95"
+                data-transition-enter-to="opacity-100 scale-100"
+                data-transition-leave-from="opacity-100 scale-100"
+                data-transition-leave-to="opacity-0 scale-95"
+              >
+
+                <% if current_user.is_admin? %>
+                  <div class="md:hidden">
+                    <%= link_to "Admin dashboard", admin_dashboards_path, class: "block w-full text-left px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700" %>
+                  </div>
+                <% end %>
+                <%= button_to "Edit Account", edit_user_registration_path, method: "get",
+                              class: "block w-full text-left px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700" %>
+                <%= button_to "Sign out", destroy_user_session_url, method: "delete",
+                              class: "block w-full text-left px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700" %>
+              </div>
+            </div>
+          <% else %>
+            <%= link_to "Sign In", new_user_session_path, class: "text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 mr-1 md:mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800" %>
+            <%= link_to "Sign Up", new_user_registration_path, class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 mr-1 md:mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" %>
+          <% end %>
         </div>
       </div>
     </nav>
-
   <% end %>
 
   <div
