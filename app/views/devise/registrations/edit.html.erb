@@ -1,5 +1,5 @@
 <div class="">
-  <div class="relative bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-sky-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg">
+  <div class="relative bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-sky-900/5 sm:mx-auto sm:max-w-3xl sm:rounded-lg">
     <h2 class="text-2xl text-center mb-4 text-sky-700">Edit User</h2>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
@@ -46,7 +46,7 @@
               for="first_name"
               class="relative block overflow-hidden border-b border-black bg-transparent pt-3 focus-within:border-sky-600"
             >
-              <%= f.text_field :first_name, id: "first_name", placeholder: "", autofocus: true, autocomplete: "first name", class: "peer h-8 w-full border-none bg-transparent p-0 placeholder-sky-300 focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm" %>
+              <%= f.text_field :first_name, id: "first_name", placeholder: "", autofocus: true, autocomplete: "first name", class: "peer h-8 w-full border-none bg-transparent p-0 placeholder-sky-300 focus:border-transparent focus:outline-none focus:ring-0 sm:text-lg" %>
               <span
                 class="absolute start-0 top-2 -translate-y-1/2 text-base text-black transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-lg peer-focus:top-2 peer-focus:text-base peer-focus:text-sky-500"
               >
@@ -60,7 +60,7 @@
               for="date_of_birth"
               class="relative block overflow-hidden border-b border-black bg-transparent pt-3 focus-within:border-sky-600"
             >
-              <%= f.date_field :date_of_birth, id: "date_of_birth", placeholder: "", class: "peer h-8 w-full border-none bg-transparent p-0 placeholder-sky-300 focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm" %>
+              <%= f.date_field :date_of_birth, id: "date_of_birth", placeholder: "", class: "peer h-8 w-full border-none bg-transparent p-0 placeholder-sky-300 focus:border-transparent focus:outline-none focus:ring-0 sm:text-lg" %>
               <span
                 class="absolute start-0 top-2 -translate-y-1/2 text-base text-black transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-lg peer-focus:top-2 peer-focus:text-base peer-focus:text-sky-500"
               >
@@ -95,7 +95,7 @@
               for="last_name"
               class="relative block overflow-hidden border-b border-black bg-transparent pt-3 focus-within:border-sky-600"
             >
-              <%= f.text_field :last_name, id: "last_name", placeholder: "", autocomplete: "last name", class: "peer h-8 w-full border-none bg-transparent p-0 placeholder-sky-300 focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm" %>
+              <%= f.text_field :last_name, id: "last_name", placeholder: "", autocomplete: "last name", class: "peer h-8 w-full border-none bg-transparent p-0 placeholder-sky-300 focus:border-transparent focus:outline-none focus:ring-0 sm:text-lg" %>
               <span
                 class="absolute start-0 top-2 -translate-y-1/2 text-base text-black transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-lg peer-focus:top-2 peer-focus:text-base peer-focus:text-sky-500"
               >
@@ -109,7 +109,7 @@
               for="UserEmail"
               class="relative block overflow-hidden border-b border-black bg-transparent pt-3 focus-within:border-sky-600"
             >
-              <%= f.email_field :email, id: "UserEmail", placeholder: "", autofocus: true, autocomplete: "email", class: "peer h-8 w-full border-none bg-transparent p-0 placeholder-sky-300 focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm" %>
+              <%= f.email_field :email, id: "UserEmail", placeholder: "", autofocus: true, autocomplete: "email", class: "peer h-8 w-full border-none bg-transparent p-0 placeholder-sky-300 focus:border-transparent focus:outline-none focus:ring-0 sm:text-lg" %>
               <span
                 class="absolute start-0 top-2 -translate-y-1/2 text-base text-black transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-lg peer-focus:top-2 peer-focus:text-base peer-focus:text-sky-500"
               >
@@ -127,7 +127,7 @@
               <span
                 class="absolute start-0 top-2 -translate-y-1/2 text-base text-black transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-lg peer-focus:top-2 peer-focus:text-base peer-focus:text-sky-500"
               >
-                  Password
+                  New Password
                 </span>
             </label>
           </div>
@@ -141,7 +141,7 @@
               <span
                 class="absolute start-0 top-2 -translate-y-1/2 text-base text-black transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-lg peer-focus:top-2 peer-focus:text-base peer-focus:text-sky-500"
               >
-                  Password Confirmation
+                  New Password Confirmation
                 </span>
             </label>
           </div>
