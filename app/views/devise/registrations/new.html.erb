@@ -112,6 +112,7 @@
                 <div class="absolute top-2 left-0 flex items-center pl-3">
                 </div>
                 <%= f.telephone_field :contact_number, id: "phone-input", data: { phone_number_target: "phoneInput" }, class: "w-full bg-transparent placeholder:text-sky-400 text-sky-700 text-sm border border-black rounded-md pr-3 pl-20 py-2 transition duration-300 ease focus:outline-none focus:border-sky-400 shadow-sm focus:shadow" %>
+                <%= f.hidden_field :country_code, id: "country-code-input", data: { phone_number_target: "countryCodeInput"} %>
               </div>
             </div>
           </div>

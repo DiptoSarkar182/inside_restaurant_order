@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  before_save :sanitize_contact_number
+
   def full_name
     "#{first_name} #{last_name}"
   end
@@ -14,9 +16,10 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
 
-  # has_many :menu_items, dependent: :destroy
-
-
-  # phony_normalize :contact_number, default_country_code: 'BD'
-  # validates :contact_number, phony_plausible: true
+  private
+  def sanitize_contact_number
+    if contact_number.present?
+      self.contact_number = contact_number.gsub(/[\s-]+/, '')
+    end
+  end
 end
