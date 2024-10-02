@@ -1,39 +1,76 @@
-<div class="text-blue-600 hover:underline">
-  <%= link_to "Add Menu Item", new_menu_item_path %>
+<div class="p-2 mt-2 mb-4">
+  <%= link_to "Add Menu Item", new_menu_item_path, class: "inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-sky-600 rounded-lg hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-blue-300" %>
 </div>
 
-<div>
-  <h2 class="text-xl">All Menu Items</h2>
+<div class="flex flex-wrap gap-4 p-2">
   <% @menu_items.each do |menu_item| %>
-    <div class="border border-gray-300 p-4 mb-4 rounded">
-      <h3 class="text-lg font-bold"><%= menu_item.title %></h3>
-      <p><strong>Category:</strong> <%= menu_item.category %></p>
-      <p><strong>Subcategory:</strong> <%= menu_item.subcategory %></p>
-      <p><strong>Description:</strong> <%= menu_item.description %></p>
-      <p><strong>Price:</strong> <%= number_to_currency(menu_item.price) %></p>
-      <p><strong>Available:</strong> <%= menu_item.availability ? 'Yes' : 'No' %></p>
-      <p><strong>Menu Created At:</strong> <%= menu_item.created_at.strftime('%B %d, %Y %I:%M %p') %> in UTC</p>
-      <p><strong>Menu Updated At:</strong> <%= menu_item.updated_at.strftime('%B %d, %Y %I:%M %p') %> in UTC</p>
-
+    <div class="max-w-sm bg-white rounded-lg shadow">
       <div class="mt-2">
-        <strong>Images:</strong>
         <% if menu_item.menu_images.attached? %>
-          <div class="flex space-x-2">
-            <% menu_item.menu_images.each do |image| %>
-              <div class="w-32 h-32 border border-gray-200 rounded">
-                <%= image_tag image, class: "object-cover w-full h-full" %>
-              </div>
-            <% end %>
+          <!-- Image Slider -->
+          <div x-data="{
+            slides: [<% menu_item.menu_images.each do |image| %>
+                        {
+                          imgSrc: '<%= url_for(image) %>',
+                        },
+                      <% end %>
+                      ],
+            currentSlideIndex: 1,
+            previous() {
+              if (this.currentSlideIndex > 1) {
+                this.currentSlideIndex = this.currentSlideIndex - 1
+              } else {
+                // If it's the first slide, go to the last slide
+                this.currentSlideIndex = this.slides.length
+              }
+            },
+            next() {
+              if (this.currentSlideIndex < this.slides.length) {
+                this.currentSlideIndex = this.currentSlideIndex + 1
+              } else {
+                // If it's the last slide, go to the first slide
+                this.currentSlideIndex = 1
+              }
+            },
+          }" class="relative aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none lg:h-80">
+            <!-- Previous button -->
+            <button type="button" class="absolute left-5 top-1/2 z-20 flex rounded-full -translate-y-1/2 items-center justify-center bg-white/40 p-2 text-neutral-600 transition hover:bg-white/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:outline-offset-0 dark:bg-neutral-950/40 dark:text-neutral-300 dark:hover:bg-neutral-950/60 dark:focus-visible:outline-white" aria-label="previous slide" x-on:click="previous()">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="3" class="size-5 md:size-6 pr-0.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+              </svg>
+            </button>
+
+            <!-- Next button -->
+            <button type="button" class="absolute right-5 top-1/2 z-20 flex rounded-full -translate-y-1/2 items-center justify-center bg-white/40 p-2 text-neutral-600 transition hover:bg-white/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:outline-offset-0 dark:bg-neutral-950/40 dark:text-neutral-300 dark:hover:bg-neutral-950/60 dark:focus-visible:outline-white" aria-label="next slide" x-on:click="next()">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="3" class="size-5 md:size-6 pl-0.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
+
+            <!-- Slides -->
+            <div class="relative min-h-[50svh] w-full">
+              <template x-for="(slide, index) in slides" :key="index">
+                <div x-show="currentSlideIndex == index + 1" class="absolute inset-0" x-transition.opacity.duration.1000ms>
+                  <img class="relative aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none lg:h-80" x-bind:src="slide.imgSrc" x-bind:alt="slide.imgAlt" />
+                </div>
+              </template>
+            </div>
           </div>
         <% else %>
           <p>No images available</p>
         <% end %>
       </div>
 
-      <div class="mt-4">
-        <%#= link_to 'Show', admin_menu_item_path(menu_item), class: "text-blue-600 hover:underline" %>
-        <%= link_to 'Edit', edit_menu_item_path(menu_item), class: "text-blue-600 hover:underline ml-2" %>
-        <%= link_to "Delete", menu_item_path(menu_item), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "text-red-500 hover:text-red-600" %>
+      <div class="bg-white p-4 sm:p-6">
+        <time class="block text-xs text-gray-500">Menu Created At: <%= menu_item.created_at.strftime('%B %d, %Y %I:%M %p') %> in UTC</time>
+        <time class="block text-xs text-gray-500">Menu Updated At: <%= menu_item.updated_at.strftime('%B %d, %Y %I:%M %p') %> in UTC</time>
+        <h3 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-900">
+          <%= menu_item.title %>
+        </h3>
+        <div class="flex mt-4 md:mt-6 gap-2">
+          <%= link_to 'Edit', edit_menu_item_path(menu_item), class: "inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-sky-600 rounded-lg hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-blue-300" %>
+          <%= link_to "Delete", menu_item_path(menu_item), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300" %>
+        </div>
       </div>
     </div>
   <% end %>
