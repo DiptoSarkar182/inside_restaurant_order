@@ -5,7 +5,6 @@ export default class extends Controller {
   static targets = ["input", "preview"];
 
   connect() {
-    console.log("Connected");
   }
 
   preview() {
