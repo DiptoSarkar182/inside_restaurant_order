@@ -13,6 +13,9 @@ application.register("phone-number", PhoneNumberController)
 import PreviewsController from "./previews_controller"
 application.register("previews", PreviewsController)
 
+import TinymceController from "./tinymce_controller"
+application.register("tinymce", TinymceController)
+
 import PasswordVisibility from '@stimulus-components/password-visibility'
 application.register('password-visibility', PasswordVisibility)
 

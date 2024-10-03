@@ -6,7 +6,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="turbo-cache-control" content="no-cache">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script src="https://cdn.tiny.cloud/1/<%= Rails.application.credentials.tiny_mce_api_key %>/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+    <meta name="tinymce-api-key" content="<%= Rails.application.credentials.dig(:tiny_mce_api_key) %>">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -98,13 +98,7 @@
       </div>
     <% end %>
   </div>
-  <script>
-      tinymce.init({
-          selector: 'textarea',
-          plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-          toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
-      });
-  </script>
+
   <main>
     <%= yield %>
   </main>
