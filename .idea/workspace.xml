@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="fixed images layout in the menu edit page, migrated from tinymce to action-text for rich text editor.">
+    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="changed the default mail address for devise mailer and user will get email if email/password is changed.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/passwords/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/passwords/edit.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/passwords/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/passwords/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/menu_items/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/menu_items/edit.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/initializers/devise.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/initializers/devise.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/home_pages_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/home_pages_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/home_pages/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home_pages/index.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +185,7 @@
       <workItem from="1727675213024" duration="29529000" />
       <workItem from="1727761897752" duration="21138000" />
       <workItem from="1727848626660" duration="29001000" />
-      <workItem from="1727941433249" duration="18239000" />
+      <workItem from="1727941433249" duration="22649000" />
     </task>
     <task id="LOCAL-00001" summary="added admin dashboards, menu items CRUD, image preview when creating and updating menu item.">
       <option name="closed" value="true" />
@@ -293,7 +291,23 @@
       <option name="project" value="LOCAL" />
       <updated>1727957576751</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="added tailwind to forgot password and password change form.">
+      <option name="closed" value="true" />
+      <created>1727959976678</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1727959976678</updated>
+    </task>
+    <task id="LOCAL-00015" summary="changed the default mail address for devise mailer and user will get email if email/password is changed.">
+      <option name="closed" value="true" />
+      <created>1727960040046</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1727960040046</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,6 +327,8 @@
     <MESSAGE value="added tinymce as rich text editor" />
     <MESSAGE value="fixed an issue where rich editor was not loading upon revisiting the same page" />
     <MESSAGE value="fixed images layout in the menu edit page, migrated from tinymce to action-text for rich text editor." />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed images layout in the menu edit page, migrated from tinymce to action-text for rich text editor." />
+    <MESSAGE value="added tailwind to forgot password and password change form." />
+    <MESSAGE value="changed the default mail address for devise mailer and user will get email if email/password is changed." />
+    <option name="LAST_COMMIT_MESSAGE" value="changed the default mail address for devise mailer and user will get email if email/password is changed." />
   </component>
 </project>
