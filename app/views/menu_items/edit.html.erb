@@ -3,22 +3,24 @@
     <h2 class="text-3xl text-center mb-6 text-sky-700 font-semibold">Edit Menu Item</h2>
     <div class="mt-2">
       <strong>Images:</strong>
-      <% if @menu_item.menu_images.attached? %>
-        <div class="flex space-x-2">
-          <% @menu_item.menu_images.each do |image| %>
-            <div class="relative w-32 h-32 border border-gray-200 rounded">
-              <%= image_tag image, class: "object-cover w-full h-full" %>
 
-              <!-- Delete Button -->
-              <%= button_to 'Delete', delete_menu_item_image_menu_item_path(@menu_item, image_id: image.id),
-                            method: :delete,
-                            class: "absolute top-0 right-0 bg-red-500 text-white px-2 py-1 rounded" %>
-            </div>
-          <% end %>
-        </div>
-      <% else %>
-        <p>No images available</p>
-      <% end %>
+      <div class="flex flex-wrap justify-center mt-4 border border-dashed border-gray-300 rounded-md p-4">
+        <% if @menu_item.menu_images.attached? %>
+          <div class="flex space-x-2">
+            <% @menu_item.menu_images.each do |image| %>
+              <div class="relative w-32 h-32 border border-gray-200 rounded">
+                <%= image_tag image, class: "object-cover w-full h-full" %>
+
+                <%= button_to 'Delete', delete_menu_item_image_menu_item_path(@menu_item, image_id: image.id),
+                              method: :delete,
+                              class: "absolute top-0 right-0 bg-red-500 text-white px-2 py-1 rounded" %>
+              </div>
+            <% end %>
+          </div>
+        <% else %>
+          <p>No images available</p>
+        <% end %>
+      </div>
     </div>
 
     <%= form_with(model: @menu_item) do |form| %>
@@ -35,8 +37,8 @@
 
       <%= render "edit_menu_images_preview", form: form, menu_item: @menu_item %>
 
-
-      <div class="flex flex-col items-center">
+      <!-- Adjusted spacing with mb-6 for better layout between fields -->
+      <div class="flex flex-col items-center mb-6">
         <%= form.label "Category:", class: "block mb-2 text-sm font-medium text-gray-900"%>
         <%= form.select :category, options_for_select([
                                                         ["Appetizers", "Appetizers"],
@@ -46,7 +48,7 @@
                                                       ].sort, selected: @menu_item.category), { include_blank: "Select Category" }, { class: "bg-gray-50 border border-sky-400 text-gray-900 text-sm rounded-lg focus:ring-sky-300 focus:border-sky-500 w-64 p-3 transition duration-150 ease-in-out" } %>
       </div>
 
-      <div class="flex flex-col items-center">
+      <div class="flex flex-col items-center mb-6">
         <%= form.label "Subcategory:", class: "block mb-2 text-sm font-medium text-gray-900" %>
         <%= form.select :subcategory, options_for_select([
                                                            ["Soft drinks", "Soft drinks"],
@@ -64,22 +66,22 @@
                                                          ].sort, selected: @menu_item.subcategory), { include_blank: "Select Subcategory" }, { class: "bg-gray-50 border border-sky-400 text-gray-900 text-sm rounded-lg focus:ring-sky-300 focus:border-sky-500 w-64 p-3 transition duration-150 ease-in-out" } %>
       </div>
 
-      <div class="flex flex-col items-center">
+      <div class="flex flex-col items-center mb-6">
         <%= form.label "Title:", class: "block font-medium text-gray-700"%>
         <%= form.text_field :title, placeholder: "", class: "w-64 rounded-md border border-sky-400 shadow-sm focus:border-sky-500 focus:ring focus:ring-sky-300 focus:ring-opacity-50 p-3 transition duration-150 ease-in-out" %>
       </div>
 
-      <div class="flex flex-col items-center">
+      <div class="flex flex-col items-center mb-6">
         <%= form.label "Description:", class: "block font-medium text-gray-700" %>
         <%= form.text_area :description, placeholder: "", class: "w-64 rounded-md border border-sky-400 shadow-sm focus:border-sky-500 focus:ring focus:ring-sky-300 focus:ring-opacity-50 p-3 transition duration-150 ease-in-out" %>
       </div>
 
-      <div class="flex flex-col items-center">
+      <div class="flex flex-col items-center mb-6">
         <%= form.label "Price:", class: "block font-medium text-gray-700" %>
         <%= form.number_field :price, step: 0.01, min: 0, placeholder: "", class: "w-64 rounded-md border border-sky-400 shadow-sm focus:border-sky-500 focus:ring focus:ring-sky-300 focus:ring-opacity-50 p-3 transition duration-150 ease-in-out" %>
       </div>
 
-      <div class="flex flex-col items-center mb-4">
+      <div class="flex flex-col items-center mb-6">
         <%= form.label :availability, "Availability:", class: "block mb-2 text-sm font-medium text-gray-900" %>
 
         <div class="flex items-center mb-2">
@@ -93,8 +95,8 @@
         </div>
       </div>
 
-      <div class="mb-4">
-        <%= form.submit "Submit", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+      <div class="mb-4 flex justify-center">
+        <%= form.submit "Update", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline cursor-pointer" %>
       </div>
 
     <% end %>
