@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="country code will be saved in the DB which can be used to edit user info.">
+    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="added tailwind in menu edit form">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/menu_items/_edit_menu_images_preview.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/menu_items/_edit_menu_images_preview.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/menu_items/_menu_images_preview.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/menu_items/_menu_images_preview.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/menu_items/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/menu_items/edit.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/menu_items/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/menu_items/new.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/credentials.yml.enc" beforeDir="false" afterPath="$PROJECT_DIR$/config/credentials.yml.enc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +187,7 @@
       <workItem from="1727675213024" duration="29529000" />
       <workItem from="1727761897752" duration="21138000" />
       <workItem from="1727848626660" duration="29001000" />
-      <workItem from="1727941433249" duration="334000" />
+      <workItem from="1727941433249" duration="5101000" />
     </task>
     <task id="LOCAL-00001" summary="added admin dashboards, menu items CRUD, image preview when creating and updating menu item.">
       <option name="closed" value="true" />
@@ -261,7 +261,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727857982297</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added tailwind in menu edit form">
+      <option name="closed" value="true" />
+      <created>1727941813330</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1727941813330</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,6 +285,7 @@
     <MESSAGE value="admin will see admin dashboard path, added toast notification, added turbo page content false." />
     <MESSAGE value="increased width for log in-sign up page, account deletion will show proper notice" />
     <MESSAGE value="country code will be saved in the DB which can be used to edit user info." />
-    <option name="LAST_COMMIT_MESSAGE" value="country code will be saved in the DB which can be used to edit user info." />
+    <MESSAGE value="added tailwind in menu edit form" />
+    <option name="LAST_COMMIT_MESSAGE" value="added tailwind in menu edit form" />
   </component>
 </project>
