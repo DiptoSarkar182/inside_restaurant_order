@@ -4,11 +4,115 @@
 @import "tailwindcss/utilities";
 @import "actiontext";
 
+/*below styling is for showing rich text*/
 ul {
     list-style-type: disc; /* or circle, square, etc. */
 }
 
+ol{
+    list-style-type: decimal;
+}
+
+a {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 1.75em;
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+h4 {
+    font-size: 1.25em;
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+h5 {
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+h6 {
+    font-size: 0.875em;
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+
+
+/*this is swiper left-right button height and width*/
 .swiper {
     width: 600px;
     height: 300px;
+}
+
+/*this is for styling progress bar (from default blue to sky blue)*/
+.turbo-progress-bar {
+    height: 5px;
+    background-color: skyblue;
+}
+
+
+/*this stimulus modal styling.*/
+body:has(dialog[data-dialog-target='dialog'][open]) {
+    overflow: hidden;
+}
+
+/* Customize the dialog backdrop */
+dialog {
+    box-shadow: 0 0 0 100vw rgb(0 0 0 / 0.5);
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Add animations */
+dialog[data-dialog-target='dialog'][open] {
+    animation: fade-in 200ms forwards;
+}
+
+dialog[data-dialog-target='dialog'][closing] {
+    animation: fade-out 200ms forwards;
 }

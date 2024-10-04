@@ -4,8 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="added swiper js on the homepage">
+    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="added tailwind in confirmation instruction page.">
+      <change beforePath="$PROJECT_DIR$/.idea/inside_restaurant_order.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inside_restaurant_order.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.tailwind.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.tailwind.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/menu_items_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/menu_items_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/javascript/controllers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/controllers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +193,7 @@
       <workItem from="1727761897752" duration="21138000" />
       <workItem from="1727848626660" duration="29001000" />
       <workItem from="1727941433249" duration="23901000" />
-      <workItem from="1728020126878" duration="19920000" />
+      <workItem from="1728020126878" duration="27573000" />
     </task>
     <task id="LOCAL-00001" summary="added admin dashboards, menu items CRUD, image preview when creating and updating menu item.">
       <option name="closed" value="true" />
@@ -338,7 +347,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728040434677</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="added tailwind in confirmation instruction page.">
+      <option name="closed" value="true" />
+      <created>1728041699389</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1728041699389</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -364,6 +381,7 @@
     <MESSAGE value="added layout in the menu item creation and edit page." />
     <MESSAGE value="added menu item show page" />
     <MESSAGE value="added swiper js on the homepage" />
-    <option name="LAST_COMMIT_MESSAGE" value="added swiper js on the homepage" />
+    <MESSAGE value="added tailwind in confirmation instruction page." />
+    <option name="LAST_COMMIT_MESSAGE" value="added tailwind in confirmation instruction page." />
   </component>
 </project>

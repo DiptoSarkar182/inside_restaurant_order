@@ -69,3 +69,6 @@ gem 'phonelib'
 gem "phony_rails", "~> 0.15.0"
 
 gem "countries", "~> 5.7"
+
+gem 'cloudinary'
+gem 'paperclip-cloudinary'

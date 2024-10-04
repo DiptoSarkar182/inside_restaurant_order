@@ -1,7 +1,7 @@
 class MenuItemsController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :check_admin
+  before_action :check_admin, except: [:show]
 
   def new
     @menu_item = MenuItem.new

@@ -34,3 +34,7 @@ application.register('dropdown', Dropdown)
 // Notification Component
 import Notification from '@stimulus-components/notification'
 application.register('notification', Notification)
+
+//Modal Component
+import Dialog from '@stimulus-components/dialog'
+application.register('dialog', Dialog)
