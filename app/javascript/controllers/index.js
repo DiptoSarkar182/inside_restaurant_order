@@ -13,14 +13,24 @@ application.register("phone-number", PhoneNumberController)
 import PreviewsController from "./previews_controller"
 application.register("previews", PreviewsController)
 
+import SwiperController from "./swiper_controller"
+application.register("swiper", SwiperController)
+
 import TinymceController from "./tinymce_controller"
 application.register("tinymce", TinymceController)
 
+// -----------------------------------------
+// Stimulus Components
+// -----------------------------------------
+
+// Password Visibility Component
 import PasswordVisibility from '@stimulus-components/password-visibility'
 application.register('password-visibility', PasswordVisibility)
 
+// Dropdown Component
 import Dropdown from '@stimulus-components/dropdown'
 application.register('dropdown', Dropdown)
 
+// Notification Component
 import Notification from '@stimulus-components/notification'
 application.register('notification', Notification)

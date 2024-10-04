@@ -3,3 +3,12 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 @import "actiontext";
+
+ul {
+    list-style-type: disc; /* or circle, square, etc. */
+}
+
+.swiper {
+    width: 600px;
+    height: 300px;
+}
