@@ -26,7 +26,9 @@
       <h2 class="text-2xl font-bold text-sky-600"><%= @menu_item.title %></h2>
       <p class="text-lg"><strong class="text-sky-600">Category:</strong> <%= @menu_item.category %></p>
       <p class="text-lg"><strong class="text-sky-600">Subcategory:</strong> <%= @menu_item.subcategory %></p>
-      <p class="text-gray-700"><strong class="text-sky-600">Description:</strong> <%= @menu_item.description %></p>
+      <div class="rich-text-editor">
+        <p class="text-gray-700"><strong>Description:</strong> <%= @menu_item.description %></p>
+      </div>
       <p class="text-xl font-semibold"><strong class="text-sky-600">Price:</strong> <%= number_to_currency(@menu_item.price, unit: "$") %></p>
       <p class="text-lg"><strong class="text-sky-600">Availability:</strong> <%= @menu_item.availability ? "Yes" : "No" %></p>
     </div>
