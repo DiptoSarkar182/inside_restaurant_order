@@ -37,50 +37,53 @@
 
       <%= render "edit_menu_images_preview", form: form, menu_item: @menu_item %>
 
-      <!-- Adjusted spacing with mb-6 for better layout between fields -->
-      <div class="flex flex-col items-center mb-6">
-        <%= form.label "Category:", class: "block mb-2 text-sm font-medium text-gray-900"%>
-        <%= form.select :category, options_for_select([
-                                                        ["Appetizers", "Appetizers"],
-                                                        ["Desserts", "Desserts"],
-                                                        ["Beverages", "Beverages"],
-                                                        ["Main Menu", "Main Menu"],
-                                                      ].sort, selected: @menu_item.category), { include_blank: "Select Category" }, { class: "bg-gray-50 border border-sky-400 text-gray-900 text-sm rounded-lg focus:ring-sky-300 focus:border-sky-500 w-64 p-3 transition duration-150 ease-in-out" } %>
+      <div class="grid grid-cols-2 gap-6 mb-6">
+        <!-- Category -->
+        <div class="flex flex-col items-center">
+          <%= form.label "Category:", class: "block mb-2 text-sm font-medium text-gray-900"%>
+          <%= form.select :category, options_for_select([
+                                                          ["Appetizers", "Appetizers"],
+                                                          ["Desserts", "Desserts"],
+                                                          ["Beverages", "Beverages"],
+                                                          ["Main Menu", "Main Menu"],
+                                                        ].sort, selected: @menu_item.category), { include_blank: "Select Category" }, { class: "bg-gray-50 border border-sky-400 text-gray-900 text-sm rounded-lg focus:ring-sky-300 focus:border-sky-500 w-64 p-3 transition duration-150 ease-in-out" } %>
+        </div>
+
+        <!-- Subcategory -->
+        <div class="flex flex-col items-center">
+          <%= form.label "Subcategory:", class: "block mb-2 text-sm font-medium text-gray-900" %>
+          <%= form.select :subcategory, options_for_select([
+                                                             ["Soft drinks", "Soft drinks"],
+                                                             ["Fruit smoothies", "Fruit smoothies"],
+                                                             ["Energy drinks", "Energy drinks"],
+                                                             ["Chicken wings", "Chicken wings"],
+                                                             ["Sliders", "Sliders"],
+                                                             ["Dumplings", "Dumplings"],
+                                                             ["Chicoo", "Chicoo"],
+                                                             ["Jell-O", "Jell-O"],
+                                                             ["YoGo", "YoGo"],
+                                                             ["Grilled Chicken Alfredo", "Grilled Chicken Alfredo"],
+                                                             ["Vegetable Stir-Fry", "Vegetable Stir-Fry"],
+                                                             ["Beef Tacos", "Beef Tacos"],
+                                                           ].sort, selected: @menu_item.subcategory), { include_blank: "Select Subcategory" }, { class: "bg-gray-50 border border-sky-400 text-gray-900 text-sm rounded-lg focus:ring-sky-300 focus:border-sky-500 w-64 p-3 transition duration-150 ease-in-out" } %>
+        </div>
       </div>
 
-      <div class="flex flex-col items-center mb-6">
-        <%= form.label "Subcategory:", class: "block mb-2 text-sm font-medium text-gray-900" %>
-        <%= form.select :subcategory, options_for_select([
-                                                           ["Soft drinks", "Soft drinks"],
-                                                           ["Fruit smoothies", "Fruit smoothies"],
-                                                           ["Energy drinks", "Energy drinks"],
-                                                           ["Chicken wings", "Chicken wings"],
-                                                           ["Sliders", "Sliders"],
-                                                           ["Dumplings", "Dumplings"],
-                                                           ["Chicoo", "Chicoo"],
-                                                           ["Jell-O", "Jell-O"],
-                                                           ["YoGo", "YoGo"],
-                                                           ["Grilled Chicken Alfredo", "Grilled Chicken Alfredo"],
-                                                           ["Vegetable Stir-Fry", "Vegetable Stir-Fry"],
-                                                           ["Beef Tacos", "Beef Tacos"],
-                                                         ].sort, selected: @menu_item.subcategory), { include_blank: "Select Subcategory" }, { class: "bg-gray-50 border border-sky-400 text-gray-900 text-sm rounded-lg focus:ring-sky-300 focus:border-sky-500 w-64 p-3 transition duration-150 ease-in-out" } %>
+      <div class="grid grid-cols-2 gap-6 mb-6">
+        <!-- Title -->
+        <div class="flex flex-col items-center">
+          <%= form.label "Title:", class: "block font-medium text-gray-700"%>
+          <%= form.text_field :title, placeholder: "", class: "w-64 rounded-md border border-sky-400 shadow-sm focus:border-sky-500 focus:ring focus:ring-sky-300 focus:ring-opacity-50 p-3 transition duration-150 ease-in-out" %>
+        </div>
+
+        <!-- Price -->
+        <div class="flex flex-col items-center">
+          <%= form.label "Price:", class: "block font-medium text-gray-700" %>
+          <%= form.number_field :price, step: 0.01, min: 0, placeholder: "", class: "w-64 rounded-md border border-sky-400 shadow-sm focus:border-sky-500 focus:ring focus:ring-sky-300 focus:ring-opacity-50 p-3 transition duration-150 ease-in-out" %>
+        </div>
       </div>
 
-      <div class="flex flex-col items-center mb-6">
-        <%= form.label "Title:", class: "block font-medium text-gray-700"%>
-        <%= form.text_field :title, placeholder: "", class: "w-64 rounded-md border border-sky-400 shadow-sm focus:border-sky-500 focus:ring focus:ring-sky-300 focus:ring-opacity-50 p-3 transition duration-150 ease-in-out" %>
-      </div>
-
-      <div class="flex flex-col items-center">
-        <%= form.label :description, "Description:", class: "block font-medium text-gray-700 mb-4" %>
-        <%= form.rich_text_area :description, class: "w-full h-80 overflow-y-auto rounded-md border border-sky-400 shadow-sm focus:border-sky-500 focus:ring focus:ring-sky-300 focus:ring-opacity-50 p-3 transition duration-150 ease-in-out" %>
-      </div>
-
-      <div class="flex flex-col items-center mt-4 mb-6">
-        <%= form.label "Price:", class: "block font-medium text-gray-700" %>
-        <%= form.number_field :price, step: 0.01, min: 0, placeholder: "", class: "w-64 rounded-md border border-sky-400 shadow-sm focus:border-sky-500 focus:ring focus:ring-sky-300 focus:ring-opacity-50 p-3 transition duration-150 ease-in-out" %>
-      </div>
-
+      <!-- Availability -->
       <div class="flex flex-col items-center mb-6">
         <%= form.label :availability, "Availability:", class: "block mb-2 text-sm font-medium text-gray-900" %>
 
@@ -95,11 +98,19 @@
         </div>
       </div>
 
+      <!-- Description (full-width row) -->
+      <div class="flex flex-col items-center mb-6">
+        <%= form.label :description, "Description:", class: "block font-medium text-gray-700 mb-4" %>
+        <%= form.rich_text_area :description, class: "w-full h-80 overflow-y-auto rounded-md border border-sky-400 shadow-sm focus:border-sky-500 focus:ring focus:ring-sky-300 focus:ring-opacity-50 p-3 transition duration-150 ease-in-out" %>
+      </div>
+
+      <!-- Submit Button (centered) -->
       <div class="mb-4 flex justify-center">
         <%= form.submit "Update", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline cursor-pointer" %>
       </div>
 
-    <% end %>
+
+  <% end %>
   </div>
 </div>
 
