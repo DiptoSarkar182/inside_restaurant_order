@@ -4,4 +4,13 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate_user!
   skip_before_action :authenticate_user!, if: :devise_controller?
+
+  protected
+  def after_sign_in_path_for(resource)
+    if resource.is_admin?
+      admin_dashboards_path
+    else
+      super
+    end
+  end
 end
