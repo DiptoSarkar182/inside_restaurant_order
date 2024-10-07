@@ -18,11 +18,7 @@
     <link rel="apple-touch-icon" href="/icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-      />
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
@@ -30,20 +26,36 @@
 
   <body>
   <% unless hide_elements_on_pages? %>
-    <nav class="bg-white dark:bg-gray-900 w-full z-20 top-0 start-0 border-b border-gray-200">
-      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <nav class="bg-gray-900 w-full z-20 top-0 start-0 border-b border-gray-200">
+      <div class="flex flex-wrap items-center justify-between mx-8 p-4">
         <%= link_to root_path, class: "flex items-center" do %>
           <%= image_tag "restaurant.png", class: "mr-3 h-6 sm:h-9", alt: "Restaurant Logo" %>
           <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Restaurant</span>
         <% end %>
 
-        <div class="flex items-center md:order-2">
+        <div class="flex custom-space-x-8 bg-sky-900 rounded-full p-1">
+          <%= link_to "Home", root_path, class: "text-white text-center w-24 p-2 hover:bg-sky-700 hover:rounded-full #{'bg-sky-500 rounded-full border border-white' if current_page?(root_path)}" %>
+          <%= link_to "Shop", edit_user_registration_path, class: "text-white text-center w-24 p-2 hover:bg-sky-700 hover:rounded-full #{'bg-sky-500 rounded-full border border-white' if current_page?(edit_user_registration_path)}" %>
+          <%= link_to "Delivery", edit_user_registration_path, class: "text-white text-center w-24 p-2 hover:bg-sky-700 hover:rounded-full #{'bg-sky-500 rounded-full' if current_page?(edit_user_registration_path)}" %>
+          <%= link_to "Boxes", edit_user_registration_path, class: "text-white text-center w-24 p-2 hover:bg-sky-700 hover:rounded-full #{'bg-sky-500 rounded-full' if current_page?(edit_user_registration_path)}" %>
+          <%= link_to "Blog", edit_user_registration_path, class: "text-white text-center w-24 p-2 hover:bg-sky-700 hover:rounded-full #{'bg-sky-500 rounded-full' if current_page?(edit_user_registration_path)}" %>
+        </div>
+
+        <div class="flex items-center gap-6">
           <% if user_signed_in? %>
             <% if current_user.is_admin? %>
               <div class="hidden md:block mr-4">
                 <%= link_to "Admin dashboard", admin_dashboards_path, class: "bg-sky-500 hover:bg-sky-600 text-white font-bold py-2 px-4 rounded" %>
               </div>
             <% end %>
+
+            <div class="relative scale-75">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-8 w-8 text-white">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+              </svg>
+              <span class="absolute -top-2 left-4 rounded-full bg-red-500 p-0.5 px-2 text-sm text-red-50">10</span>
+            </div>
+
             <div data-controller="dropdown" class="relative">
               <button type="button" data-action="dropdown#toggle click@window->dropdown#hide" class="flex items-center">
                 <% if current_user.avatar.attached? %>

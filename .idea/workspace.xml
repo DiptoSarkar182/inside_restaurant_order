@@ -7,7 +7,7 @@
     <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="added modal/dialog">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.tailwind.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.tailwind.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/menu_items/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/menu_items/show.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,6 +187,8 @@
       <workItem from="1727848626660" duration="29001000" />
       <workItem from="1727941433249" duration="23901000" />
       <workItem from="1728020126878" duration="28208000" />
+      <workItem from="1728050841227" duration="910000" />
+      <workItem from="1728280094602" duration="11573000" />
     </task>
     <task id="LOCAL-00001" summary="added admin dashboards, menu items CRUD, image preview when creating and updating menu item.">
       <option name="closed" value="true" />

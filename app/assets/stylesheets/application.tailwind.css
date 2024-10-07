@@ -85,7 +85,6 @@ body:has(dialog[data-dialog-target='dialog'][open]) {
     overflow: hidden;
 }
 
-/* Customize the dialog backdrop */
 dialog {
     box-shadow: 0 0 0 100vw rgb(0 0 0 / 0.5);
 }
@@ -108,11 +107,15 @@ dialog {
     }
 }
 
-/* Add animations */
 dialog[data-dialog-target='dialog'][open] {
     animation: fade-in 200ms forwards;
 }
 
 dialog[data-dialog-target='dialog'][closing] {
     animation: fade-out 200ms forwards;
+}
+
+/*application.html.erb*/
+.custom-space-x-8>:not([hidden])~:not([hidden]) {
+    --tw-space-x-reverse: 0;
 }
