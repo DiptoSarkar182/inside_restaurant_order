@@ -19,6 +19,9 @@ application.register("swiper", SwiperController)
 import TinymceController from "./tinymce_controller"
 application.register("tinymce", TinymceController)
 
+import DropdownHover from "./dropdown_hover_controller";
+application.register("dropdown-hover", DropdownHover);
+
 // -----------------------------------------
 // Stimulus Components
 // -----------------------------------------
