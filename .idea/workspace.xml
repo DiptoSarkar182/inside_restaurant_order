@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="progress bar color changed">
+    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="navbar is hidden from passwords new, create, edit and update page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/application_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/application_helper.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +189,7 @@
       <workItem from="1728020126878" duration="28208000" />
       <workItem from="1728050841227" duration="910000" />
       <workItem from="1728280094602" duration="25174000" />
-      <workItem from="1728363900969" duration="1811000" />
+      <workItem from="1728363900969" duration="8486000" />
     </task>
     <task id="LOCAL-00001" summary="added admin dashboards, menu items CRUD, image preview when creating and updating menu item.">
       <option name="closed" value="true" />
@@ -383,7 +383,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728311002741</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="navbar is hidden from passwords new, create, edit and update page">
+      <option name="closed" value="true" />
+      <created>1728366354715</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1728366354716</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -414,6 +422,7 @@
     <MESSAGE value="added links in the middle navbar" />
     <MESSAGE value="added different navbar/sidebar based on user role. after login, admin user will be redirected to admin dashboard." />
     <MESSAGE value="progress bar color changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="progress bar color changed" />
+    <MESSAGE value="navbar is hidden from passwords new, create, edit and update page" />
+    <option name="LAST_COMMIT_MESSAGE" value="navbar is hidden from passwords new, create, edit and update page" />
   </component>
 </project>
