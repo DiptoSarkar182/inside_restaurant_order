@@ -4,7 +4,11 @@ module ApplicationHelper
       { controller: 'sessions', action: 'new' },
       { controller: 'sessions', action: 'create' },
       { controller: 'registrations', action: 'new' },
-      { controller: 'registrations', action: 'create' }
+      { controller: 'registrations', action: 'create' },
+      { controller: 'passwords', action: 'new' },
+      { controller: 'passwords', action: 'edit' },
+      { controller: 'passwords', action: 'create' },
+      { controller: 'passwords', action: 'update' }
     ]
 
     # Debugging: Print the current controller and action

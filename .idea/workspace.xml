@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="added links in the middle navbar">
+    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="progress bar color changed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/application_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/application_helper.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,14 +56,14 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="JavaScript Debug.rich.html (2)">
+  <component name="RunManager" selected="JavaScript Debug.rich.html (3)">
     <configuration name="rich.html (1)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/inside_restaurant_order/tmp/letter_opener/1727431307_1069791_811411b/rich.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="rich.html (2)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/inside_restaurant_order/tmp/letter_opener/1727959312_246499_f6cabeb/rich.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="rich.html (4)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/inside_restaurant_order/tmp/letter_opener/1727341616_3216178_146e672/rich.html" useBuiltInWebServerPort="true">
+    <configuration name="rich.html (3)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/inside_restaurant_order/tmp/letter_opener/1728308206_6184878_309e037/rich.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="rich.html (5)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/inside_restaurant_order/tmp/letter_opener/1727355339_038194_51cfc8f/rich.html" useBuiltInWebServerPort="true">
@@ -149,11 +149,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.rich.html (3)" />
         <item itemvalue="JavaScript Debug.rich.html (2)" />
         <item itemvalue="JavaScript Debug.rich.html (1)" />
         <item itemvalue="JavaScript Debug.rich.html" />
         <item itemvalue="JavaScript Debug.rich.html (5)" />
-        <item itemvalue="JavaScript Debug.rich.html (4)" />
       </list>
     </recent_temporary>
   </component>
@@ -188,7 +188,8 @@
       <workItem from="1727941433249" duration="23901000" />
       <workItem from="1728020126878" duration="28208000" />
       <workItem from="1728050841227" duration="910000" />
-      <workItem from="1728280094602" duration="22499000" />
+      <workItem from="1728280094602" duration="25174000" />
+      <workItem from="1728363900969" duration="1811000" />
     </task>
     <task id="LOCAL-00001" summary="added admin dashboards, menu items CRUD, image preview when creating and updating menu item.">
       <option name="closed" value="true" />
@@ -366,7 +367,23 @@
       <option name="project" value="LOCAL" />
       <updated>1728292590984</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="added different navbar/sidebar based on user role. after login, admin user will be redirected to admin dashboard.">
+      <option name="closed" value="true" />
+      <created>1728308896388</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1728308896388</updated>
+    </task>
+    <task id="LOCAL-00024" summary="progress bar color changed">
+      <option name="closed" value="true" />
+      <created>1728311002741</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1728311002741</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -395,6 +412,8 @@
     <MESSAGE value="added tailwind in confirmation instruction page." />
     <MESSAGE value="added modal/dialog" />
     <MESSAGE value="added links in the middle navbar" />
-    <option name="LAST_COMMIT_MESSAGE" value="added links in the middle navbar" />
+    <MESSAGE value="added different navbar/sidebar based on user role. after login, admin user will be redirected to admin dashboard." />
+    <MESSAGE value="progress bar color changed" />
+    <option name="LAST_COMMIT_MESSAGE" value="progress bar color changed" />
   </component>
 </project>
