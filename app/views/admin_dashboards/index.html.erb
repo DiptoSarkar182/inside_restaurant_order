@@ -4,61 +4,24 @@
 
 <div class="flex flex-wrap gap-4 p-2">
   <% @menu_items.each do |menu_item| %>
-    <div class="max-w-sm bg-white rounded-lg shadow">
-      <div class="mt-2">
-        <% if menu_item.menu_images.attached? %>
-          <!-- Image Slider -->
-          <div x-data="{
-            slides: [<% menu_item.menu_images.each do |image| %>
-                        {
-                          imgSrc: '<%= url_for(image) %>',
-                        },
-                      <% end %>
-                      ],
-            currentSlideIndex: 1,
-            previous() {
-              if (this.currentSlideIndex > 1) {
-                this.currentSlideIndex = this.currentSlideIndex - 1
-              } else {
-                // If it's the first slide, go to the last slide
-                this.currentSlideIndex = this.slides.length
-              }
-            },
-            next() {
-              if (this.currentSlideIndex < this.slides.length) {
-                this.currentSlideIndex = this.currentSlideIndex + 1
-              } else {
-                // If it's the last slide, go to the first slide
-                this.currentSlideIndex = 1
-              }
-            },
-          }" class="relative aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none lg:h-80">
-            <!-- Previous button -->
-            <button type="button" class="absolute left-5 top-1/2 z-20 flex rounded-full -translate-y-1/2 items-center justify-center bg-white/40 p-2 text-neutral-600 transition hover:bg-white/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:outline-offset-0 dark:bg-neutral-950/40 dark:text-neutral-300 dark:hover:bg-neutral-950/60 dark:focus-visible:outline-white" aria-label="previous slide" x-on:click="previous()">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="3" class="size-5 md:size-6 pr-0.5" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-              </svg>
-            </button>
-
-            <!-- Next button -->
-            <button type="button" class="absolute right-5 top-1/2 z-20 flex rounded-full -translate-y-1/2 items-center justify-center bg-white/40 p-2 text-neutral-600 transition hover:bg-white/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:outline-offset-0 dark:bg-neutral-950/40 dark:text-neutral-300 dark:hover:bg-neutral-950/60 dark:focus-visible:outline-white" aria-label="next slide" x-on:click="next()">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="3" class="size-5 md:size-6 pl-0.5" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-              </svg>
-            </button>
-
-            <!-- Slides -->
-            <div class="relative min-h-[50svh] w-full">
-              <template x-for="(slide, index) in slides" :key="index">
-                <div x-show="currentSlideIndex == index + 1" class="absolute inset-0" x-transition.opacity.duration.1000ms>
-                  <img class="relative aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none lg:h-80" x-bind:src="slide.imgSrc" x-bind:alt="slide.imgAlt" />
-                </div>
-              </template>
+    <div class="max-w-sm bg-white rounded-lg shadow-lg border border-sky-200">
+      <div class="swiper" data-controller="swiper" style="width: 100%; height: 300px;">
+        <div class="swiper-wrapper">
+          <% if menu_item.menu_images.attached? %>
+            <% menu_item.menu_images.each do |image| %>
+              <div class="swiper-slide flex justify-center items-center" style="width: 100%; height: 100%;">
+                <%= image_tag image, class: "object-contain w-full h-full", style: "max-width: 100%; max-height: 100%;" %>
+              </div>
+            <% end %>
+          <% else %>
+            <div class="swiper-slide flex justify-center items-center" style="width: 100%; height: 100%;">
+              <p class="text-gray-600 text-center">No images available</p>
             </div>
-          </div>
-        <% else %>
-          <p>No images available</p>
-        <% end %>
+          <% end %>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
 
       <div class="bg-white p-4 sm:p-6">

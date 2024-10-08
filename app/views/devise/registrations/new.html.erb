@@ -37,7 +37,7 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-6">
         <div>
-          <div class="field mb-4">
+          <div class="field mb-6">
             <label
               for="first_name"
               class="relative block overflow-hidden border-b border-black bg-transparent pt-3 focus-within:border-sky-500"
@@ -51,7 +51,7 @@
             </label>
           </div>
 
-          <div class="field mb-4 group">
+          <div class="field mb-6 group">
             <label
               for="date_of_birth"
               class="relative block overflow-hidden border-b border-black bg-transparent pt-3 focus-within:border-sky-600 group-focus-within:text-sky-600"
@@ -66,12 +66,12 @@
           </div>
 
 
-          <div class="mb-4 group">
+          <div class="mb-6 group">
             <%= f.label :nationality, class: "block font-medium text-black group-focus-within:text-sky-600" %>
             <%= f.country_select :nationality, {format: :with_flag}, { class: "w-full rounded-md border-black shadow-sm focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50" } %>
           </div>
 
-          <div class="field mb-4">
+          <div class="field mb-6">
             <label
               for="password"
               class="relative block overflow-hidden border-b border-black bg-transparent pt-3 focus-within:border-sky-600"
@@ -89,7 +89,7 @@
 
         <div>
 
-          <div class="field mb-4">
+          <div class="field mb-6">
             <label
               for="last_name"
               class="relative block overflow-hidden border-b border-black bg-transparent pt-3 focus-within:border-sky-500"
@@ -105,7 +105,7 @@
 
 
 
-          <div class="field mb-4 group" data-controller="phone-number">
+          <div class="field mb-6 group" data-controller="phone-number">
             <%= f.label :contact_number, class: "block font-medium text-black group-focus-within:text-sky-600" %>
             <div class="w-full max-w-sm min-w-[200px]">
               <div class="relative mt-1">
@@ -118,7 +118,7 @@
           </div>
 
 
-          <div class="field mb-4">
+          <div class="field mb-6">
             <label
               for="UserEmail"
               class="relative block overflow-hidden border-b border-black bg-transparent pt-3 focus-within:border-sky-600"
@@ -133,7 +133,7 @@
           </div>
 
 
-          <div class="field mb-4">
+          <div class="field mb-6">
             <label
               for="password_confirmation"
               class="relative block overflow-hidden border-b border-black bg-transparent pt-3 focus-within:border-sky-600"
