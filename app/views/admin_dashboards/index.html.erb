@@ -1,5 +1,5 @@
 <div class="p-2 mt-2 mb-4">
-  <%= link_to "Add Menu Item", new_menu_item_path, class: "inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-sky-600 rounded-lg hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-blue-300" %>
+  <%= link_to "Add Menu Item", new_menu_item_path, class: "inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-sky-500 rounded-lg hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-blue-300" %>
 </div>
 
 <div class="flex flex-wrap gap-4 p-2">
@@ -31,8 +31,8 @@
           <%= menu_item.title %>
         </h3>
         <div class="flex mt-4 md:mt-6 gap-2">
-          <%= link_to 'Edit', edit_menu_item_path(menu_item), class: "inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-sky-600 rounded-lg hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-blue-300" %>
-          <%= link_to "Delete", menu_item_path(menu_item), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300" %>
+          <%= link_to 'Edit', edit_menu_item_path(menu_item), class: "inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-sky-500 rounded-lg hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-blue-300" %>
+          <%= link_to "Delete", menu_item_path(menu_item), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-blue-300" %>
         </div>
       </div>
     </div>
