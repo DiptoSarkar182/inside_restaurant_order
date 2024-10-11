@@ -1,0 +1,14 @@
+<div class="mb-4 mt-4" data-controller="previews">
+  <%= form.label :category_image, "Add new image to replace previous image:", class: "block mb-2 text-lg font-medium text-gray-900" %>
+
+
+  <!-- File input for new images -->
+  <%= form.file_field :category_image, accept: 'image/png,image/gif,image/jpeg,image/webp',
+                      direct_upload: true,
+                      data: { previews_target: "input", action: "change->previews#preview" }, class: "w-full p-2 border border-gray-300 rounded-md shadow-sm" %>
+
+  <div data-previews-target="preview" class="flex flex-wrap justify-center mt-4 border border-dashed border-gray-300 rounded-md p-4">
+
+    <p>No image attached</p>
+  </div>
+</div>

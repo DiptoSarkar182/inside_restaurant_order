@@ -3,7 +3,14 @@ class ApplicationController < ActionController::Base
   # allow_browser versions: :modern
 
   before_action :authenticate_user!
+  before_action :set_total_categories
   skip_before_action :authenticate_user!, if: :devise_controller?
+
+
+  private
+  def set_total_categories
+    @total_categories = Category.count
+  end
 
   protected
   def after_sign_in_path_for(resource)

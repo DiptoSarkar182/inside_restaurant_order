@@ -9,9 +9,9 @@
     list-style-type: disc; /* or circle, square, etc. */
 }
 
-/*ol{*/
-/*    list-style-type: decimal;*/
-/*}*/
+.rich-text-editor ol{
+    list-style-type: decimal;
+}
 
 /*a {*/
 /*    color: #1d4ed8;*/

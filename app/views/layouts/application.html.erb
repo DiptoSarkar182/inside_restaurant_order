@@ -46,11 +46,34 @@
             </li>
 
             <li>
+              <%= link_to admin_dashboards_path, class: "flex items-center rounded-lg bg-gray-100 hover:bg-gray-200 px-4 py-2 text-sm font-medium text-gray-700" do %>
+                <%= image_tag 'menu_icon.png', class: "h-5 w-5 mr-2" %>
+                Menu
+              <% end %>
+            </li>
+
+            <li>
               <a href="#" class="flex items-center rounded-lg bg-gray-100 hover:bg-gray-200 px-4 py-2 text-sm font-medium text-gray-700">
                 <%= image_tag 'orders.png', class: "h-5 w-5 mr-2" %>
                 Orders
                 <span class="ml-auto bg-red-500 text-white rounded-full px-2 text-sm">50</span>
               </a>
+            </li>
+
+            <li>
+              <a href="#" class="flex items-center rounded-lg bg-gray-100 hover:bg-gray-200 px-4 py-2 text-sm font-medium text-gray-700">
+                <%= image_tag 'reports_icon.png', class: "h-5 w-5 mr-2" %>
+                Reports
+                <span class="ml-auto bg-red-500 text-white rounded-full px-2 text-sm">50</span>
+              </a>
+            </li>
+
+            <li>
+              <%= link_to categories_path, class: "flex items-center rounded-lg bg-gray-100 hover:bg-gray-200 px-4 py-2 text-sm font-medium text-gray-700" do %>
+                <%= image_tag 'category_icon.png', class: "h-5 w-5 mr-2" %>
+                  Category
+                <span class="ml-auto bg-red-500 text-white rounded-full px-2 text-sm"><%= @total_categories %></span>
+              <% end %>
             </li>
 
             <li>

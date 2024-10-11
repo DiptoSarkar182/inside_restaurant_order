@@ -1,0 +1,77 @@
+<div class="flex justify-center items-center min-h-screen bg-gray-100">
+  <div class="w-full max-w-3xl bg-white px-8 pt-10 pb-8 shadow-xl ring-1 ring-sky-900/5 rounded-lg">
+    <h2 class="text-3xl text-center mb-6 text-sky-500 font-semibold">Edit Category</h2>
+
+    <%= form_with(model: @category, class: "space-y-6") do |form| %>
+      <% if @category.errors.any? %>
+        <div role="alert" class="mb-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
+          <h2 class="font-bold"><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+          <ul>
+            <% @category.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="mt-2">
+        <strong>Previous Image:</strong>
+
+        <div class="flex flex-wrap justify-center mt-4 border border-dashed border-gray-300 rounded-md p-4 overflow-hidden">
+          <% if @category.category_image.attached? %>
+            <div class="flex flex-wrap justify-center space-x-2">
+              <div class="relative w-32 h-32 border border-gray-200 rounded m-2">
+                <%= image_tag @category.category_image, class: "object-contain w-full h-full" %>
+              </div>
+            </div>
+          <% else %>
+            <p>No image were attached when this category was created</p>
+          <% end %>
+        </div>
+      </div>
+
+      <%= render "edit_category_image_preview", form: form, category: @category %>
+
+
+      <div class="grid grid-cols-2 gap-6 mb-6">
+
+        <div class="field mb-6">
+          <label
+            for="title"
+            class="relative block overflow-hidden border-b border-black bg-transparent pt-3 focus-within:border-sky-600"
+          >
+            <%= form.text_field :title, id: "title", placeholder: "", class: "peer h-8 w-full border-none bg-transparent p-0 placeholder-sky-300 focus:border-transparent focus:outline-none focus:ring-0 sm:text-lg mt-2" %>
+            <span
+              class="absolute start-0 top-2 -translate-y-1/2 text-base text-black transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-lg peer-focus:top-2 peer-focus:text-base peer-focus:text-sky-500"
+            >
+                  Title
+                </span>
+          </label>
+        </div>
+
+        <div class="field mb-6">
+          <label
+            for="subtitle"
+            class="relative block overflow-hidden border-b border-black bg-transparent pt-3 focus-within:border-sky-600"
+          >
+            <%= form.text_field :subtitle, id: "subtitle", placeholder: "", class: "peer h-8 w-full border-none bg-transparent p-0 placeholder-sky-300 focus:border-transparent focus:outline-none focus:ring-0 sm:text-lg mt-2" %>
+            <span
+              class="absolute start-0 top-2 -translate-y-1/2 text-base text-black transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-lg peer-focus:top-2 peer-focus:text-base peer-focus:text-sky-500"
+            >
+                  Subtitle
+                </span>
+          </label>
+        </div>
+
+      </div>
+
+
+      <div class="flex justify-center items-center mt-6 gap-x-2">
+        <%= link_to "Back", 'javascript:history.back()', class: "px-6 py-2 text-lg text-sky-600 font-semibold rounded-full border-2 border-sky-600 hover:bg-sky-50 transition duration-300 ease-in-out cursor-pointer text-center" %>
+        <%= form.submit "Update", class: "px-6 py-2 text-lg text-white font-semibold rounded-full border border-sky-600 bg-gradient-to-r from-sky-400 to-sky-600 hover:from-sky-500 hover:to-sky-700 hover:shadow-lg transition duration-300 ease-in-out cursor-pointer text-center" %>
+      </div>
+
+    <% end %>
+  </div>
+
+</div>

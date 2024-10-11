@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   root "home_pages#index"
 
   resources :admin_dashboards
+  resources :categories
 
   resources :menu_items do
     member do
