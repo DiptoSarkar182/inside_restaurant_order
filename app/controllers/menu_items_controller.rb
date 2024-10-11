@@ -5,6 +5,7 @@ class MenuItemsController < ApplicationController
 
   def new
     @menu_item = MenuItem.new
+    @categories = Category.all
   end
 
   def create
@@ -20,11 +21,12 @@ class MenuItemsController < ApplicationController
   end
 
   def show
-    @menu_item = MenuItem.find(params[:id])
+    @menu_item = MenuItem.includes(:category).find(params[:id])
   end
 
   def edit
     @menu_item = MenuItem.find(params[:id])
+    @categories = Category.all
   end
 
   def update
@@ -62,7 +64,7 @@ class MenuItemsController < ApplicationController
   private
 
   def menu_item_params
-    params.require(:menu_item).permit(:category, :subcategory, :title,
+    params.require(:menu_item).permit(:category_id, :title,
                                       :description, :price, :availability,
                                       menu_images: [])
   end
