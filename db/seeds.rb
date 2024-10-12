@@ -12,7 +12,7 @@ require 'faker'
 
 10.times do
   Category.create(
-    title: Faker::Commerce.department,
-    subtitle: Faker::Commerce.product_name,
+    title: Faker::Food.dish,
+    subtitle: Faker::Food.allergen,
   )
 end
