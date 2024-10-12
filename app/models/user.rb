@@ -1,8 +1,13 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+
+  devise_modules = [:database_authenticatable, :registerable,
+                    :recoverable, :rememberable, :validatable]
+
+  devise_modules << :confirmable if Rails.env.production?
+
+  devise *devise_modules
 
   before_save :sanitize_contact_number
 

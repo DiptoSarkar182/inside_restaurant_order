@@ -1,0 +1,41 @@
+<div class="p-2 mt-2 mb-4 flex justify-between items-center">
+  <h2 class="text-3xl text-sky-500 font-semibold">Food Menu</h2>
+  <%= link_to "Add Menu Item", new_menu_item_path, class: "inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-sky-500 rounded-lg hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-blue-300" %>
+</div>
+
+<div class="flex flex-wrap gap-4 p-2">
+  <% @menu_items.each do |menu_item| %>
+    <div class="max-w-sm bg-white rounded-lg shadow-lg border border-sky-200">
+      <div class="swiper" data-controller="swiper" style="width: 100%; height: 300px;">
+        <div class="swiper-wrapper">
+          <% if menu_item.menu_images.attached? %>
+            <% menu_item.menu_images.each do |image| %>
+              <div class="swiper-slide flex justify-center items-center" style="width: 100%; height: 100%;">
+                <%= image_tag image, class: "object-contain w-full h-full", style: "max-width: 100%; max-height: 100%;" %>
+              </div>
+            <% end %>
+          <% else %>
+            <div class="swiper-slide flex justify-center items-center" style="width: 100%; height: 100%;">
+              <p class="text-gray-600 text-center">No images available</p>
+            </div>
+          <% end %>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+
+      <div class="bg-white p-4 sm:p-6">
+        <time class="block text-xs text-gray-500">Menu Created At: <%= menu_item.created_at.strftime('%B %d, %Y %I:%M %p') %> in UTC</time>
+        <time class="block text-xs text-gray-500">Menu Updated At: <%= menu_item.updated_at.strftime('%B %d, %Y %I:%M %p') %> in UTC</time>
+        <h3 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-900">
+          <%= menu_item.title %>
+        </h3>
+        <div class="flex mt-4 md:mt-6 gap-2">
+          <%= link_to 'Edit', edit_menu_item_path(menu_item), class: "inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-sky-500 rounded-lg hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-blue-300" %>
+          <%= link_to "Delete", menu_item_path(menu_item), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-blue-300" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

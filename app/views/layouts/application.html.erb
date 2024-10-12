@@ -39,16 +39,9 @@
 
           <ul class="mt-6 space-y-1">
             <li>
-              <%= link_to admin_dashboards_path, class: "flex items-center rounded-lg bg-gray-100 hover:bg-gray-200 px-4 py-2 text-sm font-medium text-gray-700" do %>
+              <%= link_to admin_dashboards_path, class: "flex items-center rounded-lg bg-gray-100 hover:bg-gray-200 px-4 py-2 text-sm font-medium text-gray-700 #{'bg-gray-300' if current_page?(admin_dashboards_path)} hover:bg-gray-200" do %>
                 <%= image_tag 'icons8-home-50.png', class: "h-5 w-5 mr-2" %>
                 Dashboard
-              <% end %>
-            </li>
-
-            <li>
-              <%= link_to admin_dashboards_path, class: "flex items-center rounded-lg bg-gray-100 hover:bg-gray-200 px-4 py-2 text-sm font-medium text-gray-700" do %>
-                <%= image_tag 'menu_icon.png', class: "h-5 w-5 mr-2" %>
-                Menu
               <% end %>
             </li>
 
@@ -69,7 +62,15 @@
             </li>
 
             <li>
-              <%= link_to categories_path, class: "flex items-center rounded-lg bg-gray-100 hover:bg-gray-200 px-4 py-2 text-sm font-medium text-gray-700" do %>
+              <%= link_to menu_items_path, class: "flex items-center rounded-lg bg-gray-100 hover:bg-gray-200 px-4 py-2 text-sm font-medium text-gray-700 #{'bg-gray-300' if current_page?(menu_items_path)} hover:bg-gray-200" do %>
+                <%= image_tag 'menu_icon.png', class: "h-5 w-5 mr-2" %>
+                Food Menu
+                <span class="ml-auto bg-red-500 text-white rounded-full px-2 text-sm"><%= @total_menu_items %></span>
+              <% end %>
+            </li>
+
+            <li>
+              <%= link_to categories_path, class: "flex items-center rounded-lg bg-gray-100 hover:bg-gray-200 px-4 py-2 text-sm font-medium text-gray-700 #{'bg-gray-300' if current_page?(categories_path)} hover:bg-gray-200" do %>
                 <%= image_tag 'category_icon.png', class: "h-5 w-5 mr-2" %>
                   Category
                 <span class="ml-auto bg-red-500 text-white rounded-full px-2 text-sm"><%= @total_categories %></span>

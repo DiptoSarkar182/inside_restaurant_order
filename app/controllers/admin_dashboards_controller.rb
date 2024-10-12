@@ -5,7 +5,7 @@ class AdminDashboardsController < ApplicationController
 
 
   def index
-    @menu_items = MenuItem.all
+
   end
 
   private
