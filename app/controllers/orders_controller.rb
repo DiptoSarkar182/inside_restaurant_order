@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
   before_action :check_admin
 
   def index
-    @orders = Order.all.order(id: :asc)
+    @orders = Order.all.order(id: :asc).page(params[:page]).per(10)
     @total_pending_orders = Order.where(status: :pending).count
     @total_cooking_orders = Order.where(status: :cooking).count
     @total_completed_orders = Order.where(status: :completed).count

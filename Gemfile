@@ -74,3 +74,4 @@ gem "countries", "~> 5.7"
 gem 'cloudinary'
 gem 'paperclip-cloudinary'
 gem 'ransack'
+gem 'kaminari'
