@@ -10,9 +10,14 @@
 
 require 'faker'
 
-10.times do
-  Category.create(
+category_ids = Category.pluck(:id)
+
+2.times do
+  MenuItem.create(
     title: Faker::Food.dish,
-    subtitle: Faker::Food.allergen,
+    description: Faker::Food.description,
+    price: Faker::Commerce.price(range: 0..999.99),
+    availability: Faker::Boolean.boolean,
+    category_id: category_ids.sample,
   )
 end
