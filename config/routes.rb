@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   resources :admin_dashboards
   resources :categories
+  resources :orders
 
   resources :menu_items do
     member do

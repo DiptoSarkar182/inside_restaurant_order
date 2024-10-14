@@ -11,7 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.2].define(version: 2024_10_14_072006) do
-  # These are extensions that must be enabled in order to support this database
+  # These are extensions that must be enabled in orders to support this database
   enable_extension "plpgsql"
 
   create_table "action_text_rich_texts", force: :cascade do |t|
