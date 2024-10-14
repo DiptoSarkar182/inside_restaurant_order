@@ -1,4 +1,12 @@
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg p-2">
+
+  <div class="flex p-1">
+    <%= link_to "All", orders_path, class: "text-gray-500 text-center p-2 hover:text-gray-700  #{'text-gray-700 underline' if params[:status].blank?}" %>
+    <%= link_to "Pending", orders_path(status: 'pending'), class: "text-gray-500 text-center p-2 hover:text-gray-700  #{'text-gray-700 underline' if params[:status] == 'pending'}" %>
+    <%= link_to "Cooking", orders_path(status: 'cooking'), class: "text-gray-500 text-center p-2 hover:text-gray-600  #{'text-gray-700 underline' if params[:status] == 'cooking'}" %>
+    <%= link_to "Completed", orders_path(status: 'completed'), class: "text-gray-500 text-center p-2 hover:text-gray-700  #{'text-gray-700 underline' if params[:status] == 'completed'}" %>
+    <%= link_to "Cancelled", orders_path(status: 'cancelled'), class: "text-gray-500 text-center p-2 hover:text-gray-700  #{'text-gray-700 underline' if params[:status] == 'cancelled'}" %>
+  </div>
   <div class="pb-4 bg-white">
     <label for="table-search" class="sr-only">Search</label>
     <div class="relative mt-1">
@@ -44,7 +52,12 @@
             <%= order.user.full_name %>
           </td>
           <td class="px-6 py-4">
-            <%= order.status %>
+            <%= form_with(model: order, url: order_path(order), local: true, method: :patch, class: "inline", data: { controller: 'auto-submit' }) do |form| %>
+              <%= form.select :status,
+                              options_for_select([['Pending', 'pending'], ['Completed', 'completed'], ['Cancelled', 'cancelled'], ['Cooking', 'cooking']], order.status),
+                              {},
+                              { class: "border border-gray-300 rounded p-2 w-full", data: { action: 'change->auto-submit#submit' } } %>
+            <% end %>
           </td>
           <td class="px-6 py-4">
             <%= number_to_currency(order.total_price, unit: "$") %>

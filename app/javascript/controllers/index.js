@@ -41,3 +41,7 @@ application.register('notification', Notification)
 //Modal Component
 import Dialog from '@stimulus-components/dialog'
 application.register('dialog', Dialog)
+
+
+import AutoSubmit from '@stimulus-components/auto-submit'
+application.register('auto-submit', AutoSubmit)
