@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # allow_browser versions: :modern
 
   before_action :authenticate_user!
-  before_action :set_total_categories, :set_total_menu_items
+  before_action :set_total_categories, :set_total_menu_items, :set_total_orders
   skip_before_action :authenticate_user!, if: :devise_controller?
 
 
@@ -14,6 +14,10 @@ class ApplicationController < ActionController::Base
 
   def set_total_menu_items
     @total_menu_items = MenuItem.count
+  end
+
+  def set_total_orders
+    @total_orders = Order.count
   end
 
   protected

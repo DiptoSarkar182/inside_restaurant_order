@@ -10,14 +10,37 @@
 
 require 'faker'
 
-category_ids = Category.pluck(:id)
+# Sample data
+# user_ids = User.pluck(:id)
+menu_item_ids = MenuItem.pluck(:id)
 
-2.times do
-  MenuItem.create(
-    title: Faker::Food.dish,
-    description: Faker::Food.description,
-    price: Faker::Commerce.price(range: 0..999.99),
-    availability: Faker::Boolean.boolean,
-    category_id: category_ids.sample,
+
+10.times do  # Adjust the number of orders as needed
+  total_price = 0.0
+  order = Order.create(
+    user_id: 2,
+    status: ['pending', 'completed', 'cancelled'].sample,
+    payment_method: ['cash', 'credit_card', 'paypal'].sample,
+    total_price: 0.0
   )
+
+
+  rand(1..5).times do
+    menu_item_id = menu_item_ids.sample
+    quantity = rand(1..3)
+    price = MenuItem.find(menu_item_id).price
+
+
+    OrderItem.create(
+      order_id: order.id,
+      menu_item_id: menu_item_id,
+      quantity: quantity,
+      price: price
+    )
+
+    total_price += price * quantity
+  end
+
+
+  order.update(total_price: total_price)
 end
