@@ -4,11 +4,13 @@ class OrdersController < ApplicationController
 
   def index
     @orders = Order.all.order(id: :asc)
+    @total_pending_orders = Order.where(status: :pending).count
+    @total_cooking_orders = Order.where(status: :cooking).count
+    @total_completed_orders = Order.where(status: :completed).count
+    @total_cancelled_orders = Order.where(status: :cancelled).count
 
-    # Filter by status if provided
     @orders = @orders.where(status: params[:status]) if params[:status].present?
 
-    # Search by MenuItem title if provided
     if params[:search_orders].present?
       @orders = @orders.joins(order_items: :menu_item).where(
         "menu_items.title ILIKE ?", "%#{params[:search_orders]}%"

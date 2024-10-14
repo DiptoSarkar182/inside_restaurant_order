@@ -19,7 +19,7 @@ menu_item_ids = MenuItem.pluck(:id)
   total_price = 0.0
   order = Order.create(
     user_id: 2,
-    status: ['pending', 'completed', 'cancelled'].sample,
+    status: ['pending', 'completed', 'cancelled', 'cooking'].sample,
     payment_method: ['cash', 'credit_card', 'paypal'].sample,
     total_price: 0.0
   )
