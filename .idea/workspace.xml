@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="added orders table for admin">
+    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="added orders table status update with dropdown.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/orders_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/orders_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/javascript/controllers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/controllers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/menu_item.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/menu_item.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/orders/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/orders/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +195,7 @@
       <workItem from="1728363900969" duration="22695000" />
       <workItem from="1728408257549" duration="4159000" />
       <workItem from="1728452893406" duration="23925000" />
-      <workItem from="1728884626814" duration="15424000" />
+      <workItem from="1728884626814" duration="20690000" />
     </task>
     <task id="LOCAL-00001" summary="added admin dashboards, menu items CRUD, image preview when creating and updating menu item.">
       <option name="closed" value="true" />
@@ -462,14 +461,21 @@
       <option name="project" value="LOCAL" />
       <updated>1728893918676</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="added orders table status update with dropdown.">
+      <option name="closed" value="true" />
+      <created>1728905969732</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1728905969732</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="country code will be saved in the DB which can be used to edit user info." />
     <MESSAGE value="added tailwind in menu edit form" />
     <MESSAGE value="added tinymce as rich text editor" />
     <MESSAGE value="fixed an issue where rich editor was not loading upon revisiting the same page" />
@@ -494,6 +500,7 @@
     <MESSAGE value="fixed constant height and width for menu item and category in both admin and user panel" />
     <MESSAGE value="added order and order items model, association of user, order, order_items, menu_items. dynamic total order count." />
     <MESSAGE value="added orders table for admin" />
-    <option name="LAST_COMMIT_MESSAGE" value="added orders table for admin" />
+    <MESSAGE value="added orders table status update with dropdown." />
+    <option name="LAST_COMMIT_MESSAGE" value="added orders table status update with dropdown." />
   </component>
 </project>
