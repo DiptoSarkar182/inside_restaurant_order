@@ -67,12 +67,25 @@
 /*}*/
 
 
-
-/*this is swiper left-right button height and width*/
+/*swiper css*/
 .swiper {
     width: 600px;
     height: 300px;
 }
+
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-pagination {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.swiper:hover .swiper-button-prev,
+.swiper:hover .swiper-button-next,
+.swiper:hover .swiper-pagination {
+    opacity: 1;
+}
+
 
 /*this is for styling progress bar (from default blue to sky blue)*/
 .turbo-progress-bar {

@@ -6,7 +6,7 @@
 <div class="flex flex-wrap gap-4 p-2">
   <% @menu_items.each do |menu_item| %>
     <div class="w-full max-w-sm bg-white rounded-lg shadow-lg border border-sky-200">
-      <div class="swiper" data-controller="swiper" style="width: 100%; height: 300px;">
+      <div class="swiper relative" data-controller="swiper" style="width: 100%; height: 300px;">
         <div class="swiper-wrapper">
           <% if menu_item.menu_images.attached? %>
             <% menu_item.menu_images.each do |image| %>
@@ -23,8 +23,9 @@
           <% end %>
         </div>
         <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev opacity-0 transition-opacity duration-300 hover:opacity-100 absolute left-0 top-1/2 transform -translate-y-1/2"></div>
+        <div class="swiper-button-next opacity-0 transition-opacity duration-300 hover:opacity-100 absolute right-0 top-1/2 transform -translate-y-1/2"></div>
+
       </div>
 
       <div class="bg-white p-4 sm:p-6">
