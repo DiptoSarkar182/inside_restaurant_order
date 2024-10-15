@@ -21,14 +21,25 @@
       </div>
 
       <div class="bg-white p-4 sm:p-6">
-        <time class="block text-xs text-gray-500">Category Created At: <%= category.created_at.strftime('%B %d, %Y %I:%M %p') %> in UTC</time>
-        <time class="block text-xs text-gray-500">Category Updated At: <%= category.updated_at.strftime('%B %d, %Y %I:%M %p') %> in UTC</time>
         <h3 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-900">
           <%= category.title %>
         </h3>
-        <div class="flex mt-4 md:mt-6 gap-2">
-          <%= link_to 'Edit', edit_category_path(category), class: "inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-sky-500 rounded-lg hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-blue-300" %>
-          <%= link_to "Delete", category_path(category), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-blue-300" %>
+        <hr>
+        <div class="flex justify-between items-center space-x-4 mt-4">
+          <div class="text-center">
+            <div class="text-lg font-semibold">50</div>
+            <div class="text-sm text-gray-500">Total Sales</div>
+          </div>
+          <div class="border-l border-gray-300 h-6"></div>
+          <div class="text-center">
+            <div class="text-lg font-semibold">50</div>
+            <div class="text-sm text-gray-500">Total Sales</div>
+          </div>
+          <div class="border-l border-gray-300 h-6"></div>
+          <div class="text-center">
+            <div class="text-lg font-semibold">50</div>
+            <div class="text-sm text-gray-500">Total Sales</div>
+          </div>
         </div>
       </div>
     </div>
