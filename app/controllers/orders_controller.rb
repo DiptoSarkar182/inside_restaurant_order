@@ -3,9 +3,8 @@ class OrdersController < ApplicationController
   before_action :check_admin
 
   def index
-    per_page = params[:per_page] || 5
+    per_page = params[:per_page] || 10
 
-    # Fetch all orders, apply sorting, and paginate with the dynamic per_page value
     @orders = Order.all.order(id: :asc).page(params[:page]).per(per_page)
     @total_pending_orders = Order.where(status: :pending).count
     @total_cooking_orders = Order.where(status: :cooking).count
@@ -19,7 +18,12 @@ class OrdersController < ApplicationController
         "menu_items.title ILIKE ?", "%#{params[:search_orders]}%"
       )
     end
+
+    if params[:order_date].present?
+      @orders = @orders.where("DATE(created_at) = ?", params[:order_date])
+    end
   end
+
 
 
   def update

@@ -263,6 +263,11 @@
   resolved "https://registry.yarnpkg.com/@stimulus-components/password-visibility/-/password-visibility-3.0.0.tgz#314c1bae571ba13b9a4da6014f3e5c5b776fe4cc"
   integrity sha512-ikyuZ/4VX4YrCckVHDc4H6UkTr5UjtkxSH+UdlEIgP9v93W1Bbvnoao0hgQODm8cvNWigmpLpKoGUzgyjBlrdw==
 
+"@stimulus-components/popover@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@stimulus-components/popover/-/popover-7.0.0.tgz#0bd6b802536f4369ed953e8cf649495545b4b03c"
+  integrity sha512-GRO/vP5XfWs/JXFqnyW3cSNWMLGh5MTrwwoQ/uBOgzVEU6P5zoAIGhOQixJ+nZeOWW6cW6hy/zh2pwUgJ345uQ==
+
 "@tailwindcss/forms@^0.5.9":
   version "0.5.9"
   resolved "https://registry.yarnpkg.com/@tailwindcss/forms/-/forms-0.5.9.tgz#b495c12575d6eae5865b2cbd9876b26d89f16f61"

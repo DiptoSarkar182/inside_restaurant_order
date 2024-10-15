@@ -19,4 +19,19 @@ module ApplicationHelper
       params[:controller] == page[:controller] && params[:action] == page[:action]
     end
   end
+
+  def color_class_for_status(status)
+    case status
+    when 'pending'
+      'text-yellow-500'
+    when 'completed'
+      'text-green-500'
+    when 'cancelled'
+      'text-red-500'
+    when 'cooking'
+      'text-sky-500'
+    else
+      'text-gray-500'
+    end
+  end
 end

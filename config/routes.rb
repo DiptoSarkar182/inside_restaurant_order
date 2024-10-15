@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   resources :categories
   resources :orders
 
+  get :menu_item_card, to: 'menu_items#menu_item_card'
+
   resources :menu_items do
     member do
       delete :delete_menu_item_image

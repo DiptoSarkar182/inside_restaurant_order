@@ -65,6 +65,10 @@ class MenuItemsController < ApplicationController
     end
   end
 
+  def menu_item_card
+    render partial: 'menu_item_card'
+  end
+
   private
 
   def menu_item_params

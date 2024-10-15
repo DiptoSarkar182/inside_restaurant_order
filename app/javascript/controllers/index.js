@@ -42,6 +42,10 @@ application.register('notification', Notification)
 import Dialog from '@stimulus-components/dialog'
 application.register('dialog', Dialog)
 
-
+//Auto-submit component
 import AutoSubmit from '@stimulus-components/auto-submit'
 application.register('auto-submit', AutoSubmit)
+
+//Popover component
+import Popover from '@stimulus-components/popover'
+application.register('popover', Popover)
