@@ -1,4 +1,7 @@
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg p-2">
+  <div class="text-sky-500 font-extrabold text-3xl mb-4">
+    Orders
+  </div>
 
   <div class="flex flex-col bg-gray-200 p-4 rounded-lg w-full shadow-lg mb-2">
     <div class="flex flex-wrap justify-between w-full">
@@ -120,4 +123,22 @@
   </table>
 </div>
 
-<%= paginate @orders %>
+<div class="flex justify-between items-center">
+  <!-- Items per page label and dropdown -->
+  <div class="flex items-center space-x-2">
+    <label for="per_page" class="text-gray-700">Items per page:</label>
+    <%= form_with(url: orders_path, local: true, method: :get, class: "inline", data: { controller: 'auto-submit' }) do |form| %>
+      <%= hidden_field_tag :status, params[:status] %>
+      <%= form.select :per_page,
+                      options_for_select([['5', 5], ['10', 10]], params[:per_page] || 5),
+                      {},
+                      { id: "per_page", class: "border border-gray-300 rounded p-2 w-16", data: { action: 'change->auto-submit#submit' } } %>
+    <% end %>
+  </div>
+
+  <!-- Pagination -->
+  <div class="pagination-container">
+    <%= paginate @orders %>
+  </div>
+</div>
+

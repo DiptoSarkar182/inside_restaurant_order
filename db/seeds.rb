@@ -15,7 +15,7 @@ require 'faker'
 menu_item_ids = MenuItem.pluck(:id)
 
 
-10.times do  # Adjust the number of orders as needed
+50.times do  # Adjust the number of orders as needed
   total_price = 0.0
   order = Order.create(
     user_id: 2,

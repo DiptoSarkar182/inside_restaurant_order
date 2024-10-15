@@ -3,7 +3,10 @@ class OrdersController < ApplicationController
   before_action :check_admin
 
   def index
-    @orders = Order.all.order(id: :asc).page(params[:page]).per(10)
+    per_page = params[:per_page] || 5
+
+    # Fetch all orders, apply sorting, and paginate with the dynamic per_page value
+    @orders = Order.all.order(id: :asc).page(params[:page]).per(per_page)
     @total_pending_orders = Order.where(status: :pending).count
     @total_cooking_orders = Order.where(status: :cooking).count
     @total_completed_orders = Order.where(status: :completed).count
