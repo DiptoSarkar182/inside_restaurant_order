@@ -1,4 +1,5 @@
 /* app/assets/stylesheets/application.tailwind.css */
+@import "popper.css";
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";

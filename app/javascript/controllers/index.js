@@ -4,11 +4,17 @@
 
 import { application } from "./application"
 
+import DropdownHoverController from "./dropdown_hover_controller"
+application.register("dropdown-hover", DropdownHoverController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
 import PhoneNumberController from "./phone_number_controller"
 application.register("phone-number", PhoneNumberController)
+
+import PopperController from "./popper_controller"
+application.register("popper", PopperController)
 
 import PreviewsController from "./previews_controller"
 application.register("previews", PreviewsController)
@@ -19,14 +25,6 @@ application.register("swiper", SwiperController)
 import TinymceController from "./tinymce_controller"
 application.register("tinymce", TinymceController)
 
-import DropdownHover from "./dropdown_hover_controller";
-application.register("dropdown-hover", DropdownHover);
-
-// -----------------------------------------
-// Stimulus Components
-// -----------------------------------------
-
-// Password Visibility Component
 import PasswordVisibility from '@stimulus-components/password-visibility'
 application.register('password-visibility', PasswordVisibility)
 
