@@ -21,9 +21,20 @@
       </div>
 
       <div class="bg-white p-4 sm:p-6">
-        <h3 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-900">
-          <%= category.title %>
-        </h3>
+        <div class="flex justify-between items-center mb-2">
+          <h3 class="text-2xl font-bold tracking-tight text-gray-900 flex-1 mr-1">
+            <%= category.title %>
+          </h3>
+          <div class="flex-shrink-0 flex gap-4">
+            <%= link_to edit_category_path(category), class: "" do %>
+              <%= image_tag('edit_icon.png', alt: 'Edit', class: 'w-6 h-6 transition-shadow duration-200 ease-in-out hover:shadow-lg hover:scale-105') %>
+            <% end %>
+
+            <%= link_to category_path(category), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+              <%= image_tag('delete_icon.png', alt: 'Delete', class: 'w-6 h-6 transition-shadow duration-200 ease-in-out hover:shadow-lg hover:scale-105') %>
+            <% end %>
+          </div>
+        </div>
         <hr>
         <div class="flex justify-between items-center space-x-4 mt-4">
           <div class="text-center">

@@ -37,7 +37,7 @@ class MenuItemsController < ApplicationController
     @menu_item = MenuItem.find(params[:id])
     respond_to do |format|
       if @menu_item.update(menu_item_params)
-        format.html {redirect_to admin_dashboards_path, notice: "Menu item updated successfully!"}
+        format.html {redirect_to menu_items_path, notice: "Menu item updated successfully!"}
       else
         format.html {render :edit, status: :unprocessable_entity }
       end
@@ -48,7 +48,7 @@ class MenuItemsController < ApplicationController
     @menu_item = MenuItem.find(params[:id])
     @menu_item.destroy
     respond_to do |format|
-      format.html { redirect_to admin_dashboards_path, notice: 'Menu item was successfully destroyed.' }
+      format.html { redirect_to menu_items_path, notice: 'Menu item was successfully destroyed.' }
     end
   end
 
