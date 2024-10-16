@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="added dummy links on admins menu items page">
+    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="infos on admin orders page will show based on date">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/orders_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/orders_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/orders/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/orders/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +194,7 @@
       <workItem from="1728452893406" duration="23925000" />
       <workItem from="1728884626814" duration="25173000" />
       <workItem from="1728971853953" duration="27606000" />
-      <workItem from="1729057906431" duration="2371000" />
+      <workItem from="1729057906431" duration="3626000" />
     </task>
     <task id="LOCAL-00001" summary="added admin dashboards, menu items CRUD, image preview when creating and updating menu item.">
       <option name="closed" value="true" />
@@ -548,14 +548,21 @@
       <option name="project" value="LOCAL" />
       <updated>1729002367347</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="infos on admin orders page will show based on date">
+      <option name="closed" value="true" />
+      <created>1729060707670</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1729060707670</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added tailwind in confirmation instruction page." />
     <MESSAGE value="added modal/dialog" />
     <MESSAGE value="added links in the middle navbar" />
     <MESSAGE value="added different navbar/sidebar based on user role. after login, admin user will be redirected to admin dashboard." />
@@ -580,6 +587,7 @@
     <MESSAGE value="added edit delete icon. admin panel edit account and sign out hover bg changed to white." />
     <MESSAGE value="for admin panel menu item, swiper buttons will show on hover." />
     <MESSAGE value="added dummy links on admins menu items page" />
-    <option name="LAST_COMMIT_MESSAGE" value="added dummy links on admins menu items page" />
+    <MESSAGE value="infos on admin orders page will show based on date" />
+    <option name="LAST_COMMIT_MESSAGE" value="infos on admin orders page will show based on date" />
   </component>
 </project>

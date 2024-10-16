@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
 
     params[:order_date] ||= Date.today.to_s
 
-    @orders = Order.where("DATE(created_at) = ?", params[:order_date]).order(id: :asc)
+    @orders = Order.where("DATE(orders.created_at) = ?", params[:order_date]).order(id: :asc)
 
     @total_orders = @orders.count
     @total_pending_orders = @orders.where(status: :pending).count
