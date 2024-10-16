@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="added constant height for menu item container">
+    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="dropdown bg changed to white, categories index has fixed height, added total rating in menu item">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/categories/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/categories/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/menu_items/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/menu_items/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -196,15 +195,7 @@
       <workItem from="1728452893406" duration="23925000" />
       <workItem from="1728884626814" duration="25173000" />
       <workItem from="1728971853953" duration="27606000" />
-      <workItem from="1729057906431" duration="16285000" />
-    </task>
-    <task id="LOCAL-00001" summary="added admin dashboards, menu items CRUD, image preview when creating and updating menu item.">
-      <option name="closed" value="true" />
-      <created>1727186212518</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1727186212518</updated>
+      <workItem from="1729057906431" duration="19518000" />
     </task>
     <task id="LOCAL-00002" summary="added image preview when users signs up, confirmation email sent notice will show.">
       <option name="closed" value="true" />
@@ -590,14 +581,21 @@
       <option name="project" value="LOCAL" />
       <updated>1729073552670</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="dropdown bg changed to white, categories index has fixed height, added total rating in menu item">
+      <option name="closed" value="true" />
+      <created>1729076320098</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1729076320098</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="navbar is hidden from passwords new, create, edit and update page" />
     <MESSAGE value="div centered the edit form, added icons for admin panel, back button fixed" />
     <MESSAGE value="admin side bar is fixed positioned." />
     <MESSAGE value="reduced the container width of homepages menu items" />
@@ -622,6 +620,7 @@
     <MESSAGE value="added rating and avg rating for menu items" />
     <MESSAGE value="migrations for rating and avg rating for menu items" />
     <MESSAGE value="added constant height for menu item container" />
-    <option name="LAST_COMMIT_MESSAGE" value="added constant height for menu item container" />
+    <MESSAGE value="dropdown bg changed to white, categories index has fixed height, added total rating in menu item" />
+    <option name="LAST_COMMIT_MESSAGE" value="dropdown bg changed to white, categories index has fixed height, added total rating in menu item" />
   </component>
 </project>

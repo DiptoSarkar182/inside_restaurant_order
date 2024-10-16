@@ -73,31 +73,38 @@ require 'faker'
 # end
 
 # Create fake ratings
-user_ids = User.pluck(:id)
-menu_item_ids = MenuItem.pluck(:id)
-order_ids = Order.pluck(:id)
+# user_ids = User.pluck(:id)
+# menu_item_ids = MenuItem.pluck(:id)
+# order_ids = Order.pluck(:id)
+#
+# menu_item_ids.each do |menu_item_id|
+#   random_ratings = Array.new(10) { Faker::Number.between(from: 1, to: 5).round(2) }
+#
+#   random_ratings.each do |rating|
+#     MenuItemRating.create!(
+#       user_id: user_ids.sample,
+#       menu_item_id: menu_item_id,
+#       order_id: order_ids.sample,
+#       rating: rating,
+#       created_at: Time.current,
+#       updated_at: Time.current
+#     )
+#   end
+#
+#   avg_rating = MenuItemRating.where(menu_item_id: menu_item_id).average(:rating)
+#
+#   MenuItem.find(menu_item_id).update(avg_rating: avg_rating)
+# end
+#
+# # Update total rating count in menu item
+# MenuItem.find_each do |menu_item|
+#   total_count = MenuItemRating.where(menu_item_id: menu_item.id).count
+#   menu_item.update(total_rating: total_count)
+# end
 
-menu_item_ids.each do |menu_item_id|
-  random_ratings = Array.new(10) { Faker::Number.between(from: 1, to: 5).round(2) }
-
-  random_ratings.each do |rating|
-    MenuItemRating.create!(
-      user_id: user_ids.sample,
-      menu_item_id: menu_item_id,
-      order_id: order_ids.sample,
-      rating: rating,
-      created_at: Time.current,
-      updated_at: Time.current
-    )
-  end
-
-  avg_rating = MenuItemRating.where(menu_item_id: menu_item_id).average(:rating)
-
-  MenuItem.find(menu_item_id).update(avg_rating: avg_rating)
-end
-
-# Update total rating count in menu item
-MenuItem.find_each do |menu_item|
-  total_count = MenuItemRating.where(menu_item_id: menu_item.id).count
-  menu_item.update(total_rating: total_count)
-end
+# Update average rating of each category
+# Category.find_each do |category|
+#   avg_rating = MenuItem.where(category_id: category.id).average(:avg_rating)
+#   avg_rating = avg_rating || 0.0
+#   category.update(avg_rating: avg_rating)
+# end
