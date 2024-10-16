@@ -108,6 +108,7 @@
           <td class="px-6 py-4">
             <%= form_with(model: order, url: order_path(order), local: true, method: :patch, class: "inline", data: { controller: 'auto-submit' }) do |form| %>
               <%= hidden_field_tag :status, params[:status] %>
+              <%= hidden_field_tag :order_date, params[:order_date] %>
               <%= form.select :status,
                               options_for_select([['Pending', 'pending'], ['Completed', 'completed'], ['Cancelled', 'cancelled'], ['Cooking', 'cooking']], order.status),
                               {},
@@ -137,6 +138,7 @@
     <label for="per_page" class="text-gray-700">Items per page:</label>
     <%= form_with(url: orders_path, local: true, method: :get, class: "inline", data: { controller: 'auto-submit' }) do |form| %>
       <%= hidden_field_tag :status, params[:status] %>
+      <%= hidden_field_tag :order_date, params[:order_date] %>
       <%= form.select :per_page,
                       options_for_select([['5', 5], ['10', 10]], params[:per_page] || 10),
                       {},

@@ -5,11 +5,15 @@ class OrdersController < ApplicationController
   def index
     per_page = params[:per_page] || 10
 
-    @orders = Order.all.order(id: :asc).page(params[:page]).per(per_page)
-    @total_pending_orders = Order.where(status: :pending).count
-    @total_cooking_orders = Order.where(status: :cooking).count
-    @total_completed_orders = Order.where(status: :completed).count
-    @total_cancelled_orders = Order.where(status: :cancelled).count
+    params[:order_date] ||= Date.today.to_s
+
+    @orders = Order.where("DATE(created_at) = ?", params[:order_date]).order(id: :asc)
+
+    @total_orders = @orders.count
+    @total_pending_orders = @orders.where(status: :pending).count
+    @total_cooking_orders = @orders.where(status: :cooking).count
+    @total_completed_orders = @orders.where(status: :completed).count
+    @total_cancelled_orders = @orders.where(status: :cancelled).count
 
     @orders = @orders.where(status: params[:status]) if params[:status].present?
 
@@ -19,28 +23,26 @@ class OrdersController < ApplicationController
       )
     end
 
-    if params[:order_date].present?
-      @orders = @orders.where("DATE(created_at) = ?", params[:order_date])
-    end
+    @orders = @orders.page(params[:page]).per(per_page)
   end
-
 
 
   def update
     @order = Order.find(params[:id])
     current_status = params[:status]
+    order_date = params[:order_date]
 
     if @order.update(order_params)
       if current_status.present?
-        redirect_to orders_path(status: current_status), notice: 'Order status updated successfully.'
+        redirect_to orders_path(status: current_status, order_date: order_date), notice: 'Order status updated successfully.'
       else
-        redirect_to orders_path, notice: 'Order status updated successfully.'
+        redirect_to orders_path(order_date: order_date), notice: 'Order status updated successfully.'
       end
     else
       if current_status.present?
-        redirect_to orders_path(status: current_status), alert: 'Failed to update order status.'
+        redirect_to orders_path(status: current_status, order_date: order_date), alert: 'Failed to update order status.'
       else
-        redirect_to orders_path, alert: 'Failed to update order status.'
+        redirect_to orders_path(order_date: order_date), alert: 'Failed to update order status.'
       end
     end
   end
