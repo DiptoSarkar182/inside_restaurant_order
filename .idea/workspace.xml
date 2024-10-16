@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="fixed an issue where search were not working in admin orders page because of PG::AmbiguousColumn">
+    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="migrations for rating and avg rating for menu items">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/menu_item.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/menu_item.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/order.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/order.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/menu_items/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/menu_items/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/orders/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/orders/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +193,7 @@
       <workItem from="1728452893406" duration="23925000" />
       <workItem from="1728884626814" duration="25173000" />
       <workItem from="1728971853953" duration="27606000" />
-      <workItem from="1729057906431" duration="12808000" />
+      <workItem from="1729057906431" duration="13730000" />
     </task>
     <task id="LOCAL-00001" summary="added admin dashboards, menu items CRUD, image preview when creating and updating menu item.">
       <option name="closed" value="true" />
@@ -571,15 +563,29 @@
       <option name="project" value="LOCAL" />
       <updated>1729061688982</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="added rating and avg rating for menu items">
+      <option name="closed" value="true" />
+      <created>1729072423624</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1729072423624</updated>
+    </task>
+    <task id="LOCAL-00048" summary="migrations for rating and avg rating for menu items">
+      <option name="closed" value="true" />
+      <created>1729072452901</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1729072452901</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added links in the middle navbar" />
-    <MESSAGE value="added different navbar/sidebar based on user role. after login, admin user will be redirected to admin dashboard." />
     <MESSAGE value="progress bar color changed" />
     <MESSAGE value="navbar is hidden from passwords new, create, edit and update page" />
     <MESSAGE value="div centered the edit form, added icons for admin panel, back button fixed" />
@@ -603,6 +609,8 @@
     <MESSAGE value="added dummy links on admins menu items page" />
     <MESSAGE value="infos on admin orders page will show based on date" />
     <MESSAGE value="fixed an issue where search were not working in admin orders page because of PG::AmbiguousColumn" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed an issue where search were not working in admin orders page because of PG::AmbiguousColumn" />
+    <MESSAGE value="added rating and avg rating for menu items" />
+    <MESSAGE value="migrations for rating and avg rating for menu items" />
+    <option name="LAST_COMMIT_MESSAGE" value="migrations for rating and avg rating for menu items" />
   </component>
 </project>
