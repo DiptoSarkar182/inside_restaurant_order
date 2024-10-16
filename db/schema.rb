@@ -10,8 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_14_072006) do
-  # These are extensions that must be enabled in orders to support this database
+ActiveRecord::Schema[7.2].define(version: 2024_10_16_094027) do
+  # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "action_text_rich_texts", force: :cascade do |t|
@@ -59,6 +59,18 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_14_072006) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "menu_item_ratings", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "menu_item_id", null: false
+    t.bigint "order_id", null: false
+    t.decimal "rating", precision: 10, scale: 1, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["menu_item_id"], name: "index_menu_item_ratings_on_menu_item_id"
+    t.index ["order_id"], name: "index_menu_item_ratings_on_order_id"
+    t.index ["user_id"], name: "index_menu_item_ratings_on_user_id"
+  end
+
   create_table "menu_items", force: :cascade do |t|
     t.string "title", null: false
     t.text "description"
@@ -67,6 +79,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_14_072006) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "category_id", null: false
+    t.decimal "avg_rating", precision: 10, scale: 1, default: "0.0"
+    t.integer "total_rating"
     t.index ["category_id"], name: "index_menu_items_on_category_id"
   end
 
@@ -121,6 +135,9 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_14_072006) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "menu_item_ratings", "menu_items"
+  add_foreign_key "menu_item_ratings", "orders"
+  add_foreign_key "menu_item_ratings", "users"
   add_foreign_key "menu_items", "categories"
   add_foreign_key "order_items", "menu_items"
   add_foreign_key "order_items", "orders"

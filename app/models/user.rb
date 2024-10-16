@@ -22,6 +22,7 @@ class User < ApplicationRecord
   has_one_attached :avatar
 
   has_many :orders, dependent: :destroy
+  has_many :menu_item_ratings, dependent: :destroy
 
   private
   def sanitize_contact_number

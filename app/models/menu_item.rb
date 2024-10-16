@@ -8,6 +8,7 @@ class MenuItem < ApplicationRecord
 
   has_many_attached :menu_images
   has_many :order_items, dependent: :destroy
+  has_many :menu_item_ratings, dependent: :destroy
 
   has_rich_text :description
 end

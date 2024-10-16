@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="turbo-cache-control" content="no-cache">
+    <meta name="turbo-prefetch" content="false">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 <!--    <meta name="tinymce-api-key" content="<%#= Rails.application.credentials.dig(:tiny_mce_api_key) %>">-->
     <%= csrf_meta_tags %>
@@ -49,7 +50,7 @@
               <%= link_to orders_path, class: "flex items-center rounded-lg bg-gray-100 hover:bg-gray-200 px-4 py-2 text-sm font-medium text-gray-700 #{'bg-gray-300' if current_page?(orders_path)} hover:bg-gray-200" do %>
                 <%= image_tag 'orders.png', class: "h-5 w-5 mr-2" %>
                 Orders
-                <span class="ml-auto bg-red-500 text-white rounded-full px-2 text-sm"><%= @total_orders %></span>
+                <span class="ml-auto bg-red-500 text-white rounded-full px-2 text-sm"><%= @total_orders_of_all_time %></span>
               <% end %>
             </li>
 

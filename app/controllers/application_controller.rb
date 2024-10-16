@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_total_orders
-    @total_orders = Order.count
+    @total_orders_of_all_time = Order.count
   end
 
   protected
