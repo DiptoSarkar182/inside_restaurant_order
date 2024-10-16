@@ -1,35 +1,78 @@
-<div class="flex flex-wrap gap-4 p-2 justify-center items-center min-h-screen">
-  <% @menu_items.each do |menu_item| %>
-    <div class="w-full max-w-sm bg-white rounded-lg shadow-lg border border-sky-200">
-      <div class="swiper" data-controller="swiper" style="width: 100%; height: 300px;">
-        <div class="swiper-wrapper">
-          <% if menu_item.menu_images.attached? %>
-            <% menu_item.menu_images.each do |image| %>
-              <div class="swiper-slide flex justify-center items-center">
-                <%= image_tag image, class: "object-contain w-full h-full max-w-full max-h-full" %>
-              </div>
-            <% end %>
-          <% else %>
-            <div class="swiper-slide flex justify-center items-center">
-              <p class="text-gray-600 text-center w-full h-full flex items-center justify-center">
-                No images available
-              </p>
-            </div>
-          <% end %>
+<div class="relative">
+  <%= image_tag 'landing_page_restaurant.jpg', class: "absolute inset-0 object-cover w-full h-full" %>
+  <div class="relative bg-gray-900 bg-opacity-75" style="height: 700px;">
+    <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+      <div class="flex flex-col items-center justify-between xl:flex-row">
+        <div class="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
+          <div class="max-w-lg mb-6 font-sans text-7xl font-bold tracking-tight text-white">
+            Fresh Food <br class="hidden md:block" />
+            with Great Taste.
+          </div>
+          <p class="max-w-xl mb-4 text-base text-gray-200 md:text-lg">
+            Our food is made from the freshest ingredients, crafted to perfection, and served with love for an unforgettable dining experience.
+          </p>
+          <%= link_to "Browse Menus", root_path, class: "px-6 py-2 text-lg text-white font-semibold rounded-full border border-sky-600 bg-gradient-to-r from-sky-400 to-sky-600 hover:from-sky-500 hover:to-sky-700 hover:shadow-lg transition duration-300 ease-in-out cursor-pointer text-center" %>
         </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-      </div>
-
-      <div class="bg-white p-4 sm:p-6">
-        <h3 class="mb-2 text-2xl font-bold tracking-tight">
-          <%= link_to menu_item.title, menu_item_path(menu_item), class: "text-sky-500 hover:underline" %>
-        </h3>
-        <p class="text-lg font-semibold text-gray-700">
-          <%= number_to_currency(menu_item.price, unit: "$") %>
-        </p>
       </div>
     </div>
-  <% end %>
+  </div>
 </div>
+
+<section class="bg-gray-200 text-gray-600">
+  <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+    <div class="mx-auto max-w-lg text-left">
+      <blockquote class="text-xl italic font-semibold text-gray-900">
+        <svg class="w-8 h-8 text-gray-600 mb-4 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
+          <path d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"/>
+        </svg>
+        <h2 class="text-3xl font-bold mb-6">
+          We try to keep as <span class="text-sky-600">Fresh</span> and <span class="text-sky-600">Healthy</span> as possible by using <span class="text-sky-600">Local Seasoning Ingredients</span>.
+          At the same time, we avoid using Artificial Ingredients and Food Additives during the cooking process.
+        </h2>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="text-center text-3xl">
+    Our most popular menu item
+  </div>
+  <div class="flex flex-wrap gap-4 p-2">
+    <% @menu_items.each do |menu_item| %>
+      <div class="w-64 max-w-sm bg-white rounded-lg shadow-lg border border-sky-200">
+        <div class="swiper relative" data-controller="swiper" style="width: 100%; height: 300px;">
+          <div class="swiper-wrapper">
+            <% if menu_item.menu_images.attached? %>
+              <% menu_item.menu_images.each do |image| %>
+                <div class="swiper-slide flex justify-center items-center">
+                  <%= image_tag image, class: "object-contain w-full h-full max-w-full max-h-full" %>
+                </div>
+              <% end %>
+            <% else %>
+              <div class="swiper-slide flex justify-center items-center">
+                <p class="text-gray-600 text-center w-full h-full flex items-center justify-center">
+                  No images available
+                </p>
+              </div>
+            <% end %>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+
+        <div class="bg-white p-4 sm:p-6">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-2xl font-bold tracking-tight text-gray-900 flex-1 mr-1 min-h-[3em]">
+              <%= menu_item.title %>
+            </h3>
+          </div>
+
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>
+
+

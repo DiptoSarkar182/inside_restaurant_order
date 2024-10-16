@@ -45,10 +45,10 @@
   <div class="flex flex-col p-1 text-lg">
     <div class="flex">
       <%= link_to "All", orders_path, class: "text-gray-500 text-center p-2 hover:text-gray-700 #{'text-gray-700 underline' if params[:status].blank?}" %>
-      <%= link_to "Pending", orders_path(status: 'pending'), class: "text-gray-500 text-center p-2 hover:text-gray-700 #{'text-gray-700 underline' if params[:status] == 'pending'}" %>
-      <%= link_to "Cooking", orders_path(status: 'cooking'), class: "text-gray-500 text-center p-2 hover:text-gray-700 #{'text-gray-700 underline' if params[:status] == 'cooking'}" %>
-      <%= link_to "Completed", orders_path(status: 'completed'), class: "text-gray-500 text-center p-2 hover:text-gray-700 #{'text-gray-700 underline' if params[:status] == 'completed'}" %>
-      <%= link_to "Cancelled", orders_path(status: 'cancelled'), class: "text-gray-500 text-center p-2 hover:text-gray-700 #{'text-gray-700 underline' if params[:status] == 'cancelled'}" %>
+      <%= link_to "Pending", orders_path(status: 'pending'), class: "text-gray-500 text-center p-2 hover:text-gray-700 #{'text-gray-700' if params[:status] == 'pending'}" %>
+      <%= link_to "Cooking", orders_path(status: 'cooking'), class: "text-gray-500 text-center p-2 hover:text-gray-700 #{'text-gray-700' if params[:status] == 'cooking'}" %>
+      <%= link_to "Completed", orders_path(status: 'completed'), class: "text-gray-500 text-center p-2 hover:text-gray-700 #{'text-gray-700' if params[:status] == 'completed'}" %>
+      <%= link_to "Cancelled", orders_path(status: 'cancelled'), class: "text-gray-500 text-center p-2 hover:text-gray-700 #{'text-gray-700' if params[:status] == 'cancelled'}" %>
     </div>
 
     <hr class="my-2 border-gray-300" />
