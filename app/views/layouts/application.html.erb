@@ -187,7 +187,7 @@
               <div
                 data-dropdown-hover-target="menu"
                 data-action="mouseenter->dropdown-hover#show mouseleave->dropdown-hover#hide"
-                class="hidden bg-white dark:bg-gray-800 shadow-lg rounded-lg py-2 mt-2 w-48 transition transform origin-top-right absolute right-0 z-50"
+                class="hidden bg-white shadow-lg rounded-lg py-2 mt-2 w-48 transition transform origin-top-right absolute right-0 z-50"
                 data-transition-enter-from="opacity-0 scale-95"
                 data-transition-enter-to="opacity-100 scale-100"
                 data-transition-leave-from="opacity-100 scale-100"
@@ -195,13 +195,13 @@
               >
                 <% if current_user.is_admin? %>
                   <div class="md:hidden">
-                    <%= link_to "Admin dashboard", admin_dashboards_path, class: "block w-full text-left px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700" %>
+                    <%= link_to "Admin dashboard", admin_dashboards_path, class: "block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100" %>
                   </div>
                 <% end %>
                 <%= button_to "Edit Account", edit_user_registration_path, method: "get",
-                              class: "block w-full text-left px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700" %>
+                              class: "block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100" %>
                 <%= button_to "Sign out", destroy_user_session_url, method: "delete",
-                              class: "block w-full text-left px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700" %>
+                              class: "block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100" %>
               </div>
             </div>
 

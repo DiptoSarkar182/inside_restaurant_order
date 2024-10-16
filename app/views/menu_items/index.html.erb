@@ -68,7 +68,10 @@
           <div class="border-l border-gray-300 h-6"></div>
           <div class="text-center">
             <div class="text-sm text-gray-500">Avg Rating</div>
-            <div class="text-lg font-semibold"><%= menu_item.avg_rating %><span class="text-sm text-gray-500"> (300)</span></div>
+            <div class="text-lg font-semibold flex items-center">
+              <%= menu_item.avg_rating %>
+              <span class="text-base text-gray-500 ml-1">(<%= menu_item.total_rating %>)</span>
+            </div>
           </div>
         </div>
       </div>

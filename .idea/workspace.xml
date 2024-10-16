@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="migrations for rating and avg rating for menu items">
+    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="added constant height for menu item container">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/categories/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/categories/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/menu_items/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/menu_items/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +196,7 @@
       <workItem from="1728452893406" duration="23925000" />
       <workItem from="1728884626814" duration="25173000" />
       <workItem from="1728971853953" duration="27606000" />
-      <workItem from="1729057906431" duration="13730000" />
+      <workItem from="1729057906431" duration="16285000" />
     </task>
     <task id="LOCAL-00001" summary="added admin dashboards, menu items CRUD, image preview when creating and updating menu item.">
       <option name="closed" value="true" />
@@ -579,14 +582,21 @@
       <option name="project" value="LOCAL" />
       <updated>1729072452901</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="added constant height for menu item container">
+      <option name="closed" value="true" />
+      <created>1729073552670</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1729073552670</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="progress bar color changed" />
     <MESSAGE value="navbar is hidden from passwords new, create, edit and update page" />
     <MESSAGE value="div centered the edit form, added icons for admin panel, back button fixed" />
     <MESSAGE value="admin side bar is fixed positioned." />
@@ -611,6 +621,7 @@
     <MESSAGE value="fixed an issue where search were not working in admin orders page because of PG::AmbiguousColumn" />
     <MESSAGE value="added rating and avg rating for menu items" />
     <MESSAGE value="migrations for rating and avg rating for menu items" />
-    <option name="LAST_COMMIT_MESSAGE" value="migrations for rating and avg rating for menu items" />
+    <MESSAGE value="added constant height for menu item container" />
+    <option name="LAST_COMMIT_MESSAGE" value="added constant height for menu item container" />
   </component>
 </project>

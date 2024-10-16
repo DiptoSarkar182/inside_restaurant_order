@@ -77,12 +77,9 @@ user_ids = User.pluck(:id)
 menu_item_ids = MenuItem.pluck(:id)
 order_ids = Order.pluck(:id)
 
-# Create ratings and update avg_rating for each menu item
 menu_item_ids.each do |menu_item_id|
-  # Generate random ratings for this menu item
   random_ratings = Array.new(10) { Faker::Number.between(from: 1, to: 5).round(2) }
 
-  # Create menu item ratings
   random_ratings.each do |rating|
     MenuItemRating.create!(
       user_id: user_ids.sample,
@@ -94,10 +91,13 @@ menu_item_ids.each do |menu_item_id|
     )
   end
 
-  # Calculate the average rating for the menu item
   avg_rating = MenuItemRating.where(menu_item_id: menu_item_id).average(:rating)
 
-  # Update the avg_rating in the menu_items table
   MenuItem.find(menu_item_id).update(avg_rating: avg_rating)
 end
 
+# Update total rating count in menu item
+MenuItem.find_each do |menu_item|
+  total_count = MenuItemRating.where(menu_item_id: menu_item.id).count
+  menu_item.update(total_rating: total_count)
+end
