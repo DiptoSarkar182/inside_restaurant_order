@@ -18,7 +18,7 @@ require 'faker'
 # 30.times do  # Adjust the number of orders as needed
 #   total_price = 0.0
 #   order = Order.create(
-#     user_id: 2,
+#     user_id: user_ids.sample,
 #     status: ['pending', 'completed', 'cancelled', 'cooking'].sample,
 #     payment_method: ['cash', 'credit_card', 'paypal'].sample,
 #     total_price: 0.0
@@ -95,22 +95,27 @@ require 'faker'
 #
 #   MenuItem.find(menu_item_id).update(avg_rating: avg_rating)
 # end
-#
-# # Update total rating count in menu item
+# #
+# # # Update total rating count in menu item
 # MenuItem.find_each do |menu_item|
 #   total_count = MenuItemRating.where(menu_item_id: menu_item.id).count
 #   menu_item.update(total_rating: total_count)
 # end
-
-# Update average rating of each category
+#
+# # Update average rating of each category
 # Category.find_each do |category|
 #   avg_rating = MenuItem.where(category_id: category.id).average(:avg_rating)
 #   avg_rating = avg_rating || 0.0
 #   category.update(avg_rating: avg_rating)
 # end
+#
+# # Update total rating count in category
+# Category.find_each do |category|
+#   total_count = MenuItem.where(category_id: category.id).sum(:total_rating)
+#   category.update(total_rating: total_count)
+# end
 
-# Update total rating count in category
 Category.find_each do |category|
-  total_count = MenuItem.where(category_id: category.id).sum(:total_rating)
-  category.update(total_rating: total_count)
+  total_revenue = category.menu_items.sum(:revenue) || 0.0
+  category.update(revenue: total_revenue)
 end

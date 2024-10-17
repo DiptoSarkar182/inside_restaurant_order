@@ -17,7 +17,6 @@ class MenuItem < ApplicationRecord
 
   validates :title, presence: true
   validates :price, presence: true
-  validates :availability, presence: true
   validates :description, presence: true
 
 end

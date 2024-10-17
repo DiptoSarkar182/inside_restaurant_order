@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="increased width of create, update, back button">
+    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="added total rating count in category">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/javascript/controllers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/controllers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/menu_item.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/menu_item.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/order.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/order.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/order_item.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/order_item.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/categories/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/categories/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/menu_items/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/menu_items/index.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
     </list>
@@ -196,15 +201,7 @@
       <workItem from="1728884626814" duration="25173000" />
       <workItem from="1728971853953" duration="27606000" />
       <workItem from="1729057906431" duration="29021000" />
-      <workItem from="1729144642250" duration="13203000" />
-    </task>
-    <task id="LOCAL-00008" summary="increased width for log in-sign up page, account deletion will show proper notice">
-      <option name="closed" value="true" />
-      <created>1727775469872</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1727775469872</updated>
+      <workItem from="1729144642250" duration="21003000" />
     </task>
     <task id="LOCAL-00009" summary="country code will be saved in the DB which can be used to edit user info.">
       <option name="closed" value="true" />
@@ -590,14 +587,21 @@
       <option name="project" value="LOCAL" />
       <updated>1729156927020</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="added total rating count in category">
+      <option name="closed" value="true" />
+      <created>1729157990459</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1729157990459</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added order and order items model, association of user, order, order_items, menu_items. dynamic total order count." />
     <MESSAGE value="added orders table for admin" />
     <MESSAGE value="added orders table status update with dropdown." />
     <MESSAGE value="added order search for admin" />
@@ -622,6 +626,7 @@
     <MESSAGE value="added category search, model validation." />
     <MESSAGE value="highlighted menuitem create-update validation alert. added menu item search. fixed a issue where validation were not hitting and showing category id not found." />
     <MESSAGE value="increased width of create, update, back button" />
-    <option name="LAST_COMMIT_MESSAGE" value="increased width of create, update, back button" />
+    <MESSAGE value="added total rating count in category" />
+    <option name="LAST_COMMIT_MESSAGE" value="added total rating count in category" />
   </component>
 </project>
