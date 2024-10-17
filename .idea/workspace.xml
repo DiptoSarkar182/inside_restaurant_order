@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="unfinished landing page">
+    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="added same padding on each image, removed repetitive &quot;order&quot; text from admins order page.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/categories_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/categories_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/menu_items_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/menu_items_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/category.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/category.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/menu_item.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/menu_item.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/categories/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/categories/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/menu_items/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/menu_items/edit.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/menu_items/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/menu_items/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/orders/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/orders/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/menu_items/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/menu_items/new.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,15 +201,7 @@
       <workItem from="1728884626814" duration="25173000" />
       <workItem from="1728971853953" duration="27606000" />
       <workItem from="1729057906431" duration="29021000" />
-      <workItem from="1729144642250" duration="2784000" />
-    </task>
-    <task id="LOCAL-00004" summary="added country flag and code for contact number">
-      <option name="closed" value="true" />
-      <created>1727680135584</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1727680135584</updated>
+      <workItem from="1729144642250" duration="10925000" />
     </task>
     <task id="LOCAL-00005" summary="added country flag for nationality selection">
       <option name="closed" value="true" />
@@ -590,14 +587,21 @@
       <option name="project" value="LOCAL" />
       <updated>1729088463767</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="added same padding on each image, removed repetitive &quot;order&quot; text from admins order page.">
+      <option name="closed" value="true" />
+      <created>1729148380592</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1729148380593</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="reduced the container width of homepages menu items" />
     <MESSAGE value="increased font size" />
     <MESSAGE value="added same input field style as user sign in/up." />
     <MESSAGE value="fixed constant height and width for menu item and category in both admin and user panel" />
@@ -622,6 +626,7 @@
     <MESSAGE value="dropdown bg changed to white, categories index has fixed height, added total rating in menu item" />
     <MESSAGE value="added avg rating for each category." />
     <MESSAGE value="unfinished landing page" />
-    <option name="LAST_COMMIT_MESSAGE" value="unfinished landing page" />
+    <MESSAGE value="added same padding on each image, removed repetitive &quot;order&quot; text from admins order page." />
+    <option name="LAST_COMMIT_MESSAGE" value="added same padding on each image, removed repetitive &quot;order&quot; text from admins order page." />
   </component>
 </project>

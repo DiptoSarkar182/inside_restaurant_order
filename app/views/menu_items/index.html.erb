@@ -5,12 +5,28 @@
 
 <div class="flex flex-col p-1 text-lg">
   <div class="flex">
-    <%= link_to "All", orders_path, class: "text-gray-500 text-center p-2 hover:text-gray-700 #{'text-gray-700 underline' if params[:status].blank?}" %>
-    <%= link_to "Trending", orders_path(status: 'pending'), class: "text-gray-500 text-center p-2 hover:text-gray-700 #{'text-gray-700 underline' if params[:status] == 'pending'}" %>
-    <%= link_to "Chef's Special", orders_path(status: 'cooking'), class: "text-gray-500 text-center p-2 hover:text-gray-700 #{'text-gray-700 underline' if params[:status] == 'cooking'}" %>
-    <%= link_to "Outdated", orders_path(status: 'completed'), class: "text-gray-500 text-center p-2 hover:text-gray-700 #{'text-gray-700 underline' if params[:status] == 'completed'}" %>
+    <%= link_to "All", menu_items_path, class: "text-gray-500 text-center p-2 hover:text-sky-500 #{'text-sky-500' if current_page?(menu_items_path)}" %>
+    <%= link_to "Trending", orders_path(status: 'pending'), class: "text-gray-500 text-center p-2 hover:text-sky-500 #{'text-sky-500' if params[:status] == 'pending'}" %>
+    <%= link_to "Chef's Special", orders_path(status: 'cooking'), class: "text-gray-500 text-center p-2 hover:text-sky-500 #{'text-sky-500' if params[:status] == 'cooking'}" %>
+    <%= link_to "Outdated", orders_path(status: 'completed'), class: "text-gray-500 text-center p-2 hover:text-sky-500 #{'text-sky-500' if params[:status] == 'completed'}" %>
   </div>
   <hr class="my-2 border-gray-300" />
+  <div class="pb-4 bg-white">
+    <div class="relative mt-1">
+      <div class="absolute inset-y-0 rtl:inset-r-0 start-0 flex items-center ps-3 pointer-events-none">
+        <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+        </svg>
+      </div>
+      <%= form_with(url: menu_items_path, local: true, method: :get) do |form| %>
+        <%= form.text_field :search_menu_items,
+                            value: params[:search_menu_items],
+                            placeholder: "Search Menu Item...",
+                            autocomplete: 'off',
+                            class: "block pt-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-72 bg-gray-50 focus:ring-blue-500 focus:border-blue-500"%>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 <div class="flex flex-wrap gap-4 p-2">
@@ -22,7 +38,7 @@
             <% menu_item.menu_images.each do |image| %>
               <div class="swiper-slide flex justify-center items-center">
                 <div class="p-2 w-full h-full">
-                  <%= image_tag image, class: "object-cover w-full h-full" %>
+                  <%= image_tag image, class: "object-cover w-full h-full rounded-md" %>
                 </div>
               </div>
             <% end %>

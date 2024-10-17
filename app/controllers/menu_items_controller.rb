@@ -4,7 +4,8 @@ class MenuItemsController < ApplicationController
   before_action :check_admin, except: [:show]
 
   def index
-    @menu_items = MenuItem.all
+    @q = MenuItem.ransack(title_cont: params[:search_menu_items])
+    @menu_items = @q.result(distinct: true)
   end
 
   def new
@@ -14,6 +15,7 @@ class MenuItemsController < ApplicationController
 
   def create
     @menu_item = MenuItem.new(menu_item_params)
+    @categories = Category.all
 
     respond_to do |format|
       if @menu_item.save
@@ -35,6 +37,8 @@ class MenuItemsController < ApplicationController
 
   def update
     @menu_item = MenuItem.find(params[:id])
+    @categories = Category.all
+
     respond_to do |format|
       if @menu_item.update(menu_item_params)
         format.html {redirect_to menu_items_path, notice: "Menu item updated successfully!"}

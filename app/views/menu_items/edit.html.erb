@@ -25,8 +25,8 @@
 
     <%= form_with(model: @menu_item) do |form| %>
       <% if @menu_item.errors.any? %>
-        <div role="alert" >
-          <h2 class="font-bold"><%= pluralize(@menu_item.errors.count, "error") %> prohibited this product from being saved:</h2>
+        <div role="alert" class="mb-4 mt-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
+          <h2 class="font-bold"><%= pluralize(@menu_item.errors.count, "error") %> prohibited this menu item from being saved:</h2>
           <ul>
             <% @menu_item.errors.each do |error| %>
               <li><%= error.full_message %></li>
