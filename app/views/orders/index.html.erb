@@ -14,27 +14,27 @@
       </div>
       <div class="border-l border-gray-400 h-18 mx-2"></div>
       <div class="flex flex-col items-center mx-2">
-        <span>Total Orders:</span>
+        <span>Total:</span>
         <span class="font-bold"><%= @total_orders %></span>
       </div>
       <div class="border-l border-gray-400 h-18 mx-2"></div>
       <div class="flex flex-col items-center mx-2">
-        <span>Pending Orders:</span>
+        <span>Pending:</span>
         <span class="font-bold"><%= @total_pending_orders %></span>
       </div>
       <div class="border-l border-gray-400 h-18 mx-2"></div>
       <div class="flex flex-col items-center mx-2">
-        <span>Cooking Orders:</span>
+        <span>Cooking:</span>
         <span class="font-bold"><%= @total_cooking_orders %></span>
       </div>
       <div class="border-l border-gray-400 h-18 mx-2"></div>
       <div class="flex flex-col items-center mx-2">
-        <span>Completed Orders:</span>
+        <span>Completed:</span>
         <span class="font-bold"><%= @total_completed_orders %></span>
       </div>
       <div class="border-l border-gray-400 h-18 mx-2"></div>
       <div class="flex flex-col items-center mx-2">
-        <span>Cancelled Orders:</span>
+        <span>Cancelled:</span>
         <span class="font-bold"><%= @total_cancelled_orders %></span>
       </div>
     </div>
@@ -44,11 +44,11 @@
 
   <div class="flex flex-col p-1 text-lg">
     <div class="flex">
-      <%= link_to "All", orders_path, class: "text-gray-500 text-center p-2 hover:text-gray-700 #{'text-gray-700 underline' if params[:status].blank?}" %>
-      <%= link_to "Pending", orders_path(status: 'pending'), class: "text-gray-500 text-center p-2 hover:text-gray-700 #{'text-gray-700' if params[:status] == 'pending'}" %>
-      <%= link_to "Cooking", orders_path(status: 'cooking'), class: "text-gray-500 text-center p-2 hover:text-gray-700 #{'text-gray-700' if params[:status] == 'cooking'}" %>
-      <%= link_to "Completed", orders_path(status: 'completed'), class: "text-gray-500 text-center p-2 hover:text-gray-700 #{'text-gray-700' if params[:status] == 'completed'}" %>
-      <%= link_to "Cancelled", orders_path(status: 'cancelled'), class: "text-gray-500 text-center p-2 hover:text-gray-700 #{'text-gray-700' if params[:status] == 'cancelled'}" %>
+      <%= link_to "All", orders_path, class: "text-gray-500 text-center p-2 hover:text-sky-500 #{'text-sky-500' if params[:status].blank?}" %>
+      <%= link_to "Pending", orders_path(status: 'pending'), class: "text-gray-500 text-center p-2 hover:text-sky-500 #{'text-sky-500' if params[:status] == 'pending'}" %>
+      <%= link_to "Cooking", orders_path(status: 'cooking'), class: "text-gray-500 text-center p-2 hover:text-sky-500 #{'text-sky-500' if params[:status] == 'cooking'}" %>
+      <%= link_to "Completed", orders_path(status: 'completed'), class: "text-gray-500 text-center p-2 hover:text-sky-500 #{'text-sky-500' if params[:status] == 'completed'}" %>
+      <%= link_to "Cancelled", orders_path(status: 'cancelled'), class: "text-gray-500 text-center p-2 hover:text-sky-500 #{'text-sky-500' if params[:status] == 'cancelled'}" %>
     </div>
 
     <hr class="my-2 border-gray-300" />
@@ -66,7 +66,7 @@
         <%= form.text_field :search_orders,
                             value: params[:search_orders],
                             placeholder: "Search Order by Menu Item...",
-                            class: "block pt-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500"%>
+                            class: "block pt-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-72 bg-gray-50 focus:ring-blue-500 focus:border-blue-500"%>
 
         <%= hidden_field_tag :status, params[:status] %>
         <%= hidden_field_tag :order_date, params[:order_date] %>

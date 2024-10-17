@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="added avg rating for each category.">
+    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="unfinished landing page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/home_pages/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home_pages/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/categories/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/categories/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/menu_items/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/menu_items/index.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/orders/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/orders/index.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -194,15 +195,8 @@
       <workItem from="1728452893406" duration="23925000" />
       <workItem from="1728884626814" duration="25173000" />
       <workItem from="1728971853953" duration="27606000" />
-      <workItem from="1729057906431" duration="28367000" />
-    </task>
-    <task id="LOCAL-00003" summary="improved styling in log in and signup page">
-      <option name="closed" value="true" />
-      <created>1727365813120</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1727365813120</updated>
+      <workItem from="1729057906431" duration="29021000" />
+      <workItem from="1729144642250" duration="2784000" />
     </task>
     <task id="LOCAL-00004" summary="added country flag and code for contact number">
       <option name="closed" value="true" />
@@ -588,14 +582,21 @@
       <option name="project" value="LOCAL" />
       <updated>1729079453401</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="unfinished landing page">
+      <option name="closed" value="true" />
+      <created>1729088463767</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1729088463767</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="admin side bar is fixed positioned." />
     <MESSAGE value="reduced the container width of homepages menu items" />
     <MESSAGE value="increased font size" />
     <MESSAGE value="added same input field style as user sign in/up." />
@@ -620,6 +621,7 @@
     <MESSAGE value="added constant height for menu item container" />
     <MESSAGE value="dropdown bg changed to white, categories index has fixed height, added total rating in menu item" />
     <MESSAGE value="added avg rating for each category." />
-    <option name="LAST_COMMIT_MESSAGE" value="added avg rating for each category." />
+    <MESSAGE value="unfinished landing page" />
+    <option name="LAST_COMMIT_MESSAGE" value="unfinished landing page" />
   </component>
 </project>

@@ -10,7 +10,9 @@
         <div class="swiper-wrapper">
           <% if category.category_image.attached? %>
             <div class="swiper-slide flex justify-center items-center">
-              <%= image_tag category.category_image, class: "object-contain w-full h-full max-w-full max-h-full" %>
+              <div class="p-2 w-full h-full">
+                <%= image_tag category.category_image, class: "object-cover w-full h-full" %>
+              </div>
             </div>
           <% else %>
             <div class="swiper-slide flex justify-center items-center">
