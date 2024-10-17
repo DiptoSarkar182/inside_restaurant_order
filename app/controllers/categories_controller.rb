@@ -3,7 +3,8 @@ class CategoriesController < ApplicationController
   before_action :check_admin
 
   def index
-    @categories = Category.all
+    @q = Category.ransack(title_cont: params[:search_categories])
+    @categories = @q.result(distinct: true)
   end
 
   def new
