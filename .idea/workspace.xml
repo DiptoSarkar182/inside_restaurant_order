@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="added revenue in menu item and category">
+    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="added trending menu items based on order count">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/menu_items_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/menu_items_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/home_pages_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/home_pages_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/home_pages/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home_pages/index.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/menu_items/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/menu_items/index.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,15 +197,7 @@
       <workItem from="1728884626814" duration="25173000" />
       <workItem from="1728971853953" duration="27606000" />
       <workItem from="1729057906431" duration="29021000" />
-      <workItem from="1729144642250" duration="25421000" />
-    </task>
-    <task id="LOCAL-00010" summary="added tailwind in menu edit form">
-      <option name="closed" value="true" />
-      <created>1727941813330</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1727941813330</updated>
+      <workItem from="1729144642250" duration="29535000" />
     </task>
     <task id="LOCAL-00011" summary="added tinymce as rich text editor">
       <option name="closed" value="true" />
@@ -590,14 +583,21 @@
       <option name="project" value="LOCAL" />
       <updated>1729166100492</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="added trending menu items based on order count">
+      <option name="closed" value="true" />
+      <created>1729171128405</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1729171128405</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added orders table status update with dropdown." />
     <MESSAGE value="added order search for admin" />
     <MESSAGE value="total order status added in admins orders page." />
     <MESSAGE value="added pagination without styling" />
@@ -622,6 +622,7 @@
     <MESSAGE value="increased width of create, update, back button" />
     <MESSAGE value="added total rating count in category" />
     <MESSAGE value="added revenue in menu item and category" />
-    <option name="LAST_COMMIT_MESSAGE" value="added revenue in menu item and category" />
+    <MESSAGE value="added trending menu items based on order count" />
+    <option name="LAST_COMMIT_MESSAGE" value="added trending menu items based on order count" />
   </component>
 </project>
