@@ -4,9 +4,17 @@ class MenuItemsController < ApplicationController
   before_action :check_admin, except: [:show]
 
   def index
-    @q = MenuItem.ransack(title_cont: params[:search_menu_items])
-    @menu_items = @q.result(distinct: true)
+    if params[:trending]
+      @menu_items = MenuItem.joins(:order_items)
+                            .where(order_items: { created_at: 1.week.ago..Time.now })
+                            .group(:id)
+                            .order('COUNT(order_items.id) DESC')
+    else
+      @q = MenuItem.ransack(title_cont: params[:search_menu_items])
+      @menu_items = @q.result(distinct: true)
+    end
   end
+
 
   def new
     @menu_item = MenuItem.new
