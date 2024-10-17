@@ -108,3 +108,9 @@ require 'faker'
 #   avg_rating = avg_rating || 0.0
 #   category.update(avg_rating: avg_rating)
 # end
+
+# Update total rating count in category
+Category.find_each do |category|
+  total_count = MenuItem.where(category_id: category.id).sum(:total_rating)
+  category.update(total_rating: total_count)
+end
