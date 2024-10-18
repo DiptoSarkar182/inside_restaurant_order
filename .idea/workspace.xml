@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="added basic popular menu item in landing page">
+    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="added charts in admin dashboard">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/admin_dashboards_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/admin_dashboards_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/javascript/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/application.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/admin_dashboards/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/admin_dashboards/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.tailwind.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.tailwind.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/menu_items/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/menu_items/index.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,15 +197,7 @@
       <workItem from="1728971853953" duration="27606000" />
       <workItem from="1729057906431" duration="29021000" />
       <workItem from="1729144642250" duration="29827000" />
-      <workItem from="1729230146558" duration="24002000" />
-    </task>
-    <task id="LOCAL-00012" summary="fixed an issue where rich editor was not loading upon revisiting the same page">
-      <option name="closed" value="true" />
-      <created>1727947925005</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1727947925005</updated>
+      <workItem from="1729230146558" duration="29468000" />
     </task>
     <task id="LOCAL-00013" summary="fixed images layout in the menu edit page, migrated from tinymce to action-text for rich text editor.">
       <option name="closed" value="true" />
@@ -597,14 +583,21 @@
       <option name="project" value="LOCAL" />
       <updated>1729174765651</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="added charts in admin dashboard">
+      <option name="closed" value="true" />
+      <created>1729255054607</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1729255054607</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="total order status added in admins orders page." />
     <MESSAGE value="added pagination without styling" />
     <MESSAGE value="added styling in pagination and items per page" />
     <MESSAGE value="added datepicker for admins order page, a demo popover" />
@@ -629,6 +622,7 @@
     <MESSAGE value="added revenue in menu item and category" />
     <MESSAGE value="added trending menu items based on order count" />
     <MESSAGE value="added basic popular menu item in landing page" />
-    <option name="LAST_COMMIT_MESSAGE" value="added basic popular menu item in landing page" />
+    <MESSAGE value="added charts in admin dashboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="added charts in admin dashboard" />
   </component>
 </project>
