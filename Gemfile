@@ -75,3 +75,5 @@ gem 'cloudinary'
 gem 'paperclip-cloudinary'
 gem 'ransack'
 gem 'kaminari'
+gem "groupdate"
+gem "chartkick", "~> 5.1"

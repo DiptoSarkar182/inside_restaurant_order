@@ -11,42 +11,40 @@
 require 'faker'
 
 # Create fake orders
-# user_ids = User.pluck(:id)
-# menu_item_ids = MenuItem.pluck(:id)
-#
-#
-# 30.times do  # Adjust the number of orders as needed
-#   total_price = 0.0
-#   order = Order.create(
-#     user_id: user_ids.sample,
-#     status: ['pending', 'completed', 'cancelled', 'cooking'].sample,
-#     payment_method: ['cash', 'credit_card', 'paypal'].sample,
-#     total_price: 0.0
-#   )
-#
-#
-#   rand(1..5).times do
-#     menu_item_id = menu_item_ids.sample
-#     quantity = rand(1..3)
-#     price = MenuItem.find(menu_item_id).price
-#
-#
-#     OrderItem.create(
-#       order_id: order.id,
-#       menu_item_id: menu_item_id,
-#       quantity: quantity,
-#       price: price
-#     )
-#
-#     total_price += price * quantity
-#   end
-#
-#
-#   order.update(total_price: total_price)
-# end
+user_ids = User.pluck(:id)
+menu_item_ids = MenuItem.pluck(:id)
+
+30.times do  # Adjust the number of orders as needed
+  total_price = 0.0
+  order = Order.create(
+    user_id: user_ids.sample,
+    status: ['pending', 'completed', 'cancelled', 'cooking'].sample,
+    payment_method: ['cash', 'credit_card', 'paypal'].sample,
+    total_price: 0.0,
+    created_at: rand(7.days.ago.to_date..1.day.ago.to_date).to_time  # Random date within the last 7 days excluding today
+  )
+
+  rand(1..5).times do
+    menu_item_id = menu_item_ids.sample
+    quantity = rand(1..3)
+    price = MenuItem.find(menu_item_id).price
+
+    OrderItem.create(
+      order_id: order.id,
+      menu_item_id: menu_item_id,
+      quantity: quantity,
+      price: price
+    )
+
+    total_price += price * quantity
+  end
+
+  order.update(total_price: total_price)
+end
+
 
 # Create fake users
-# 30.times do
+# 10.times do
 #   User.create!(
 #     email: Faker::Internet.unique.email,
 #     password: 'password',
@@ -115,7 +113,8 @@ require 'faker'
 #   category.update(total_rating: total_count)
 # end
 
-Category.find_each do |category|
-  total_revenue = category.menu_items.sum(:revenue) || 0.0
-  category.update(revenue: total_revenue)
-end
+# create category revenue
+# Category.find_each do |category|
+#   total_revenue = category.menu_items.sum(:revenue) || 0.0
+#   category.update(revenue: total_revenue)
+# end

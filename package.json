@@ -22,6 +22,8 @@
     "@tailwindcss/forms": "^0.5.9",
     "@tailwindcss/typography": "^0.5.15",
     "autoprefixer": "^10.4.20",
+    "chart.js": "^4.4.5",
+    "chartkick": "^5.0.1",
     "intl-tel-input": "^24.5.0",
     "postcss": "^8.4.47",
     "swiper": "^11.1.14",

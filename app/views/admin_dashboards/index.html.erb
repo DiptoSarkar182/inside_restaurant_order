@@ -1,2 +1,55 @@
-Hello from admin dashboard
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg p-2">
+  <div class="text-sky-500 font-extrabold text-3xl mb-4">
+    Dashboard
+  </div>
+
+  <div class="flex items-center gap-4">
+    <% 4.times do %>
+      <div class="w-fit bg-white rounded-lg shadow-lg border border-sky-200 mb-4 flex items-center p-2">
+        <div class="text-center mr-8">
+          <div class="text-sm text-gray-500">New users on last 3 days</div>
+          <div class="text-lg font-semibold"><%= @count_of_new_users_on_last_3_day %></div>
+        </div>
+
+        <div>
+          <%= line_chart @new_users_on_last_3_day_chart,
+                         library: {
+                           animation: { duration: 1000 },
+                           scales: {
+                             x: { display: false },
+                             y: { display: false }
+                           }, }, colors: ["#87CEEB", "#87CEEB"], dataset: { borderWidth: 5 }, width: "150px", height: "100px" %>
+        </div>
+
+      </div>
+    <% end %>
+  </div>
+
+  <hr class="m-8">
+
+  <div class="flex flex-wrap gap-6">
+    <div class="w-2/4 bg-white rounded-lg shadow-lg border border-sky-200 p-2">
+      <div class="text-gray-500 text-center text-lg font-bold mb-2">
+        Total Orders of Last 7 Days
+      </div>
+      <%= column_chart @total_orders_of_last_7_days_chart, xtitle: "Day", ytitle: "Orders Count", library: { animation: { duration: 1000 } }, colors: ["#87CEEB", "#87CEEB"] %>
+    </div>
+
+    <div class="flex-grow bg-white rounded-lg shadow-lg border border-sky-200 p-2">
+      <div class="text-gray-500 text-center text-lg font-bold mb-2">
+        Total Menu Items Per Category
+      </div>
+      <%= pie_chart @total_menu_items_per_category_chart, xtitle: "Category", ytitle: "Menu Items", library: { animation: { duration: 1000 } }, donut: true %>
+    </div>
+
+    <div class="w-full bg-white rounded-lg shadow-lg border border-sky-200 p-2">
+      <div class="text-gray-500 text-center text-lg font-bold mb-2">
+        Most Selling Menu Items
+      </div>
+      <%= area_chart @most_selling_menu_items_chart, xtitle: "Menu Item", ytitle: "Sales Count", library: { animation: { duration: 1000 } }, colors: ["#87CEEB", "#87CEEB"] %>
+    </div>
+  </div>
+
+
+</div>
 
