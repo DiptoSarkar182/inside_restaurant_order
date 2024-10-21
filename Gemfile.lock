@@ -200,6 +200,10 @@ GEM
       racc (~> 1.4)
     nokogiri (1.16.7-x86_64-linux)
       racc (~> 1.4)
+    open-uri (0.4.1)
+      stringio
+      time
+      uri
     orm_adapter (0.5.0)
     paperclip-cloudinary (1.3.2)
       cloudinary (~> 1.1)
@@ -328,6 +332,8 @@ GEM
       railties (>= 6.0.0)
     stringio (3.1.1)
     thor (1.3.2)
+    time (0.4.0)
+      date
     timeout (0.4.1)
     turbo-rails (2.0.10)
       actionpack (>= 6.0.0)
@@ -338,6 +344,7 @@ GEM
       tzinfo (>= 1.0.0)
     unaccent (0.4.0)
     unicode-display_width (2.6.0)
+    uri (0.13.1)
     useragent (0.16.10)
     warden (1.2.9)
       rack (>= 2.0.9)
@@ -378,6 +385,7 @@ DEPENDENCIES
   jsbundling-rails
   kaminari
   letter_opener
+  open-uri (~> 0.4.1)
   paperclip-cloudinary
   pg (~> 1.1)
   phonelib

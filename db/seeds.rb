@@ -9,6 +9,7 @@
 #   end
 
 require 'faker'
+require 'open-uri'
 
 # # Create fake orders
 # user_ids = User.pluck(:id)
@@ -44,34 +45,35 @@ require 'faker'
 # end
 
 
-# Create fake users
-10.times do
-  User.create!(
-    email: Faker::Internet.unique.email,
-    password: 'password',
-    password_confirmation: 'password',
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 65),
-    contact_number: Faker::PhoneNumber.cell_phone,
-    nationality: Faker::Nation.nationality,
-    country_code: Faker::PhoneNumber.country_code,
-    is_admin: false, # Randomly assign admin status
-    # The following fields are optional and can be left nil
-    reset_password_token: nil,
-    reset_password_sent_at: nil,
-    remember_created_at: nil,
-    confirmation_token: nil,
-    confirmed_at: nil,
-    confirmation_sent_at: nil,
-    unconfirmed_email: nil,
-    failed_attempts: 0,
-    unlock_token: nil,
-    locked_at: nil,
-    created_at: Time.now - rand(0..3).days,
-    updated_at: Time.now - rand(0..3).days
-  )
-end
+# # Create fake users
+# 10.times do
+#   User.create!(
+#     email: Faker::Internet.unique.email,
+#     password: 'password',
+#     password_confirmation: 'password',
+#     first_name: Faker::Name.first_name,
+#     last_name: Faker::Name.last_name,
+#     date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 65),
+#     contact_number: Faker::PhoneNumber.cell_phone,
+#     nationality: Faker::Nation.nationality,
+#     country_code: Faker::PhoneNumber.country_code,
+#     is_admin: false, # Randomly assign admin status
+#     # The following fields are optional and can be left nil
+#     reset_password_token: nil,
+#     reset_password_sent_at: nil,
+#     remember_created_at: nil,
+#     confirmation_token: nil,
+#     confirmed_at: nil,
+#     confirmation_sent_at: nil,
+#     unconfirmed_email: nil,
+#     failed_attempts: 0,
+#     unlock_token: nil,
+#     locked_at: nil,
+#     created_at: Time.now - rand(0..3).days,
+#     updated_at: Time.now - rand(0..3).days
+#
+#   )
+# end
 
 # Create fake ratings
 # user_ids = User.pluck(:id)
@@ -150,3 +152,33 @@ end
 # end
 #
 # puts "Fake data for the last 3 days created!"
+
+# db/seeds.rb
+
+# Assuming you already have some MenuItemRating records created
+# MenuItemRating.find_each do |rating|
+#   # Generate a review based on the rating
+#   case rating.rating
+#   when 1.0..2.0
+#     rating.update(review: Faker::Restaurant.review) # Negative review
+#   when 2.1..3.0
+#     rating.update(review: Faker::Restaurant.review) # Average review
+#   when 3.1..4.0
+#     rating.update(review: Faker::Restaurant.review) # Good review
+#   when 4.1..5.0
+#     rating.update(review: Faker::Restaurant.review) # Excellent review
+#   end
+# end
+#
+# puts "Reviews populated for menu item ratings."
+
+# Update avatar of currently registered users
+users_to_update = User.where.not(email: ['dipto@gmail.com', 'bean@gmail.com'])
+
+users_to_update.each do |user|
+  # Attach a random avatar directly
+  avatar_url = "https://picsum.photos/200/200?random=#{rand(1..1000)}" # Random image URL
+  user.avatar.attach(io: URI.open(avatar_url), filename: "avatar_#{user.id}.jpg", content_type: 'image/jpg')
+end
+
+puts "#{users_to_update.count} users' avatars updated with random images."

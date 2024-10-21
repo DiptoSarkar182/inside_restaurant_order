@@ -77,3 +77,5 @@ gem 'ransack'
 gem 'kaminari'
 gem "groupdate"
 gem "chartkick", "~> 5.1"
+
+gem "open-uri", "~> 0.4.1"
