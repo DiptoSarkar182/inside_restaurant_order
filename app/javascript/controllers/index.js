@@ -19,9 +19,6 @@ application.register("popper", PopperController)
 import PreviewsController from "./previews_controller"
 application.register("previews", PreviewsController)
 
-import StatusColorController from "./status_color_controller"
-application.register("status-color", StatusColorController)
-
 import SwiperController from "./swiper_controller"
 application.register("swiper", SwiperController)
 

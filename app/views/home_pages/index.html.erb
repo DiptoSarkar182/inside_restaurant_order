@@ -1,6 +1,7 @@
+<!--Header-->
 <div class="relative">
   <%= image_tag 'landing_page_restaurant.jpg', class: "absolute inset-0 object-cover w-full h-full" %>
-  <div class="relative bg-gray-900 bg-opacity-75" style="height: 700px;">
+  <div class="relative bg-gray-900 bg-opacity-75" style="height: 800px;">
     <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
       <div class="flex flex-col items-center justify-between xl:flex-row">
         <div class="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
@@ -18,7 +19,8 @@
   </div>
 </div>
 
-<section class="bg-gray-200 text-gray-600">
+<!--Header 2-->
+<section class="bg-gray-100 text-gray-600">
   <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
     <div class="mx-auto max-w-lg text-left">
       <blockquote class="text-xl italic font-semibold text-gray-900">
@@ -34,12 +36,13 @@
   </div>
 </section>
 
+<!--Recommended Dishes-->
 <section>
   <h2 class="text-center text-4xl font-bold tracking-tight text-sky-500 sm:text-5xl px-4 py-8">
     Recommended Dishes
   </h2>
   <div class="flex flex-wrap gap-4 p-2 ml-10">
-    <% @menu_items.each do |menu_item| %>
+    <% @home_page_menu_items.each do |menu_item| %>
       <div class="w-72 max-w-sm bg-white rounded-lg shadow-lg border border-sky-200">
         <div class="swiper relative" data-controller="swiper" style="width: 100%; height: 300px;">
           <div class="swiper-wrapper">
@@ -65,8 +68,8 @@
 
         <div class="bg-white p-4 sm:p-6">
           <div class="flex justify-between items-start mb-2">
-            <h3 class="text-2xl font-bold tracking-tight text-gray-900 flex-1 mr-1 min-h-[3em]">
-              <%= menu_item.title %>
+            <h3 class="text-2xl font-bold tracking-tight text-sky-500 flex-1 mr-1 min-h-[3em] hover:underline">
+              <%= link_to menu_item.title, menu_item_path(menu_item) %>
             </h3>
           </div>
 
@@ -93,12 +96,14 @@
 
 </section>
 
+
+<!--Popular Dishes-->
 <section>
   <h2 class="text-center text-4xl font-bold tracking-tight text-sky-500 sm:text-5xl px-4 py-8">
     Our Most Popular Dishes
   </h2>
   <div class="flex flex-wrap gap-4 p-2 ml-10">
-    <% @menu_items.each do |menu_item| %>
+    <% @home_page_menu_items.each do |menu_item| %>
       <div class="w-72 max-w-sm bg-white rounded-lg shadow-lg border border-sky-200">
         <div class="swiper relative" data-controller="swiper" style="width: 100%; height: 300px;">
           <div class="swiper-wrapper">
@@ -124,8 +129,8 @@
 
         <div class="bg-white p-4 sm:p-6">
           <div class="flex justify-between items-start mb-2">
-            <h3 class="text-2xl font-bold tracking-tight text-gray-900 flex-1 mr-1 min-h-[3em]">
-              <%= menu_item.title %>
+            <h3 class="text-2xl font-bold tracking-tight text-sky-500 flex-1 mr-1 min-h-[3em] hover:underline">
+              <%= link_to menu_item.title, menu_item_path(menu_item) %>
             </h3>
           </div>
 
@@ -152,11 +157,86 @@
 
 </section>
 
+<!--Categorized View-->
+<section>
+  <h2 class="text-center text-4xl font-bold tracking-tight text-sky-500 sm:text-5xl px-4 py-8">
+    Popular Categories
+  </h2>
+
+  <turbo-frame id="popular_categories">
+    <div class="flex flex-col p-1 text-xl items-center">
+      <div class="flex">
+        <% @home_page_categories.each do |home_page_category| %>
+          <%= link_to home_page_category.title,
+                      root_path(category_id: home_page_category.id),
+                      class: "text-center p-2 hover:text-sky-500 #{'text-sky-500 underline underline-offset-8' if @selected_category_id == home_page_category.id}",
+                      data: { turbo_frame: "popular_categories" } %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap gap-4 p-2 ml-10">
+      <% @home_page_category_based_menu_items.each do |menu_item| %>
+        <div class="w-72 max-w-sm bg-white rounded-lg shadow-lg border border-sky-200">
+          <div class="swiper relative" data-controller="swiper" style="width: 100%; height: 300px;">
+            <div class="swiper-wrapper">
+              <% if menu_item.menu_images.attached? %>
+                <% menu_item.menu_images.each do |image| %>
+                  <div class="swiper-slide flex justify-center items-center">
+                    <div class="p-2 w-full h-full">
+                      <%= image_tag image, class: "object-cover w-full h-full rounded-md" %>
+                    </div>
+                  </div>
+                <% end %>
+              <% else %>
+                <div class="swiper-slide flex justify-center items-center">
+                  <p class="text-gray-600 text-center w-full h-full flex items-center justify-center">
+                    No images available
+                  </p>
+                </div>
+              <% end %>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+
+          <div class="bg-white p-4 sm:p-6">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-2xl font-bold tracking-tight text-sky-500 flex-1 mr-1 min-h-[3em] hover:underline">
+                <%= link_to menu_item.title, menu_item_path(menu_item), data: { turbo_frame: "_top" } %>
+              </h3>
+            </div>
+
+            <hr>
+            <div class="flex justify-between items-center space-x-4 mt-4">
+              <div class="text-center">
+                <div class="text-sm text-gray-500">Price</div>
+                <div class="text-lg font-semibold">$<%= menu_item.price %></div>
+              </div>
+              <div class="border-l border-gray-400 h-6"></div>
+              <div class="text-center">
+                <div class="text-sm text-gray-500">Rating</div>
+                <div class="text-lg font-semibold flex items-center">
+                  <%= menu_item.avg_rating %>
+                  <span class="text-base text-gray-500 ml-1">(<%= menu_item.total_rating %>)</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </turbo-frame>
+
+</section>
+
+
 <!--Testimonials-->
 <section class="bg-white">
   <div class="mx-auto max-w-screen-xl px-4 py-12">
     <h2 class="text-center text-4xl font-bold tracking-tight text-sky-500 sm:text-5xl px-4 py-8">
-      Read Trusted Reviews From Our Customers
+      Read Trusted Reviews<br> From Our Customers
     </h2>
 
     <div class="mt-8">

@@ -75,12 +75,13 @@ require 'open-uri'
 #   )
 # end
 
-# Create fake ratings
+# # Create fake menu item ratings
 # user_ids = User.pluck(:id)
 # menu_item_ids = MenuItem.pluck(:id)
 # order_ids = Order.pluck(:id)
 #
 # menu_item_ids.each do |menu_item_id|
+#   # Generate 10 random ratings between 1 and 5
 #   random_ratings = Array.new(10) { Faker::Number.between(from: 1, to: 5).round(2) }
 #
 #   random_ratings.each do |rating|
@@ -94,11 +95,21 @@ require 'open-uri'
 #     )
 #   end
 #
-#   avg_rating = MenuItemRating.where(menu_item_id: menu_item_id).average(:rating)
-#
+#   # Calculate the average rating and update the avg_rating field
+#   avg_rating = MenuItemRating.where(menu_item_id: menu_item_id).average(:rating).to_f.round(1)
 #   MenuItem.find(menu_item_id).update(avg_rating: avg_rating)
 # end
-# #
+#
+# # Reset avg_rating for all menu items
+# MenuItem.all.each do |menu_item|
+#   # Calculate the new average rating
+#   avg_rating = MenuItemRating.where(menu_item_id: menu_item.id).average(:rating).to_f.round(1)
+#
+#   # Update the avg_rating field
+#   menu_item.update(avg_rating: avg_rating)
+# end
+
+
 # # # Update total rating count in menu item
 # MenuItem.find_each do |menu_item|
 #   total_count = MenuItemRating.where(menu_item_id: menu_item.id).count
@@ -155,30 +166,45 @@ require 'open-uri'
 
 # db/seeds.rb
 
-# Assuming you already have some MenuItemRating records created
-# MenuItemRating.find_each do |rating|
-#   # Generate a review based on the rating
-#   case rating.rating
-#   when 1.0..2.0
-#     rating.update(review: Faker::Restaurant.review) # Negative review
-#   when 2.1..3.0
-#     rating.update(review: Faker::Restaurant.review) # Average review
-#   when 3.1..4.0
-#     rating.update(review: Faker::Restaurant.review) # Good review
-#   when 4.1..5.0
-#     rating.update(review: Faker::Restaurant.review) # Excellent review
-#   end
-# end
-#
-# puts "Reviews populated for menu item ratings."
-
-# Update avatar of currently registered users
-users_to_update = User.where.not(email: ['dipto@gmail.com', 'bean@gmail.com'])
-
-users_to_update.each do |user|
-  # Attach a random avatar directly
-  avatar_url = "https://picsum.photos/200/200?random=#{rand(1..1000)}" # Random image URL
-  user.avatar.attach(io: URI.open(avatar_url), filename: "avatar_#{user.id}.jpg", content_type: 'image/jpg')
+# Generating Fake Reviews
+MenuItemRating.find_each do |rating|
+  case rating.rating
+  when 1.0..2.0
+    rating.update(review: Faker::Restaurant.review)
+  when 2.1..3.0
+    rating.update(review: Faker::Restaurant.review)
+  when 3.1..4.0
+    rating.update(review: Faker::Restaurant.review)
+  when 4.1..5.0
+    rating.update(review: Faker::Restaurant.review)
+  end
 end
 
-puts "#{users_to_update.count} users' avatars updated with random images."
+puts "Reviews populated for menu item ratings."
+
+# # Update avatar of currently registered users
+# users_to_update = User.where.not(email: ['dipto@gmail.com', 'bean@gmail.com'])
+#
+# users_to_update.each do |user|
+#   # Attach a random avatar directly
+#   avatar_url = "https://picsum.photos/200/200?random=#{rand(1..1000)}" # Random image URL
+#   user.avatar.attach(io: URI.open(avatar_url), filename: "avatar_#{user.id}.jpg", content_type: 'image/jpg')
+# end
+#
+# puts "#{users_to_update.count} users' avatars updated with random images."
+
+# Create 5 menu item for each category
+# Category.find_each do |category|
+#   5.times do
+#     MenuItem.create!(
+#       title: Faker::Food.dish, # Generate a random dish name
+#       description: Faker::Food.description, # Generate a random food description
+#       price: Faker::Commerce.price(range: 5.0..50.0, as_string: false), # Generate a random price
+#       availability: [true, false].sample, # Randomly assign availability as true or false
+#       category_id: category.id, # Associate the menu item with the current category
+#       avg_rating: Faker::Number.decimal(l_digits: 1, r_digits: 1), # Generate a random average rating
+#       total_rating: Faker::Number.between(from: 1, to: 100), # Random number of total ratings
+#       revenue: Faker::Commerce.price(range: 100.0..1000.0, as_string: false) # Random revenue value
+#     )
+#   end
+# end
