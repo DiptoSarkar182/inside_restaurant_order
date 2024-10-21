@@ -10,7 +10,7 @@
 
 require 'faker'
 
-# Create fake orders
+# # Create fake orders
 # user_ids = User.pluck(:id)
 # menu_item_ids = MenuItem.pluck(:id)
 #
@@ -21,7 +21,8 @@ require 'faker'
 #     status: ['pending', 'completed', 'cancelled', 'cooking'].sample,
 #     payment_method: ['cash', 'credit_card', 'paypal'].sample,
 #     total_price: 0.0,
-#     created_at: rand(7.days.ago.to_date..1.day.ago.to_date).to_time  # Random date within the last 7 days excluding today
+#     # created_at: rand(7.days.ago.to_date..1.day.ago.to_date).to_time
+#     created_at: Time.now
 #   )
 #
 #   rand(1..5).times do
@@ -44,31 +45,33 @@ require 'faker'
 
 
 # Create fake users
-# 10.times do
-#   User.create!(
-#     email: Faker::Internet.unique.email,
-#     password: 'password',
-#     password_confirmation: 'password',
-#     first_name: Faker::Name.first_name,
-#     last_name: Faker::Name.last_name,
-#     date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 65),
-#     contact_number: Faker::PhoneNumber.cell_phone,
-#     nationality: Faker::Nation.nationality,
-#     country_code: Faker::PhoneNumber.country_code,
-#     is_admin: false, # Randomly assign admin status
-#     # The following fields are optional and can be left nil
-#     reset_password_token: nil,
-#     reset_password_sent_at: nil,
-#     remember_created_at: nil,
-#     confirmation_token: nil,
-#     confirmed_at: nil,
-#     confirmation_sent_at: nil,
-#     unconfirmed_email: nil,
-#     failed_attempts: 0,
-#     unlock_token: nil,
-#     locked_at: nil
-#   )
-# end
+10.times do
+  User.create!(
+    email: Faker::Internet.unique.email,
+    password: 'password',
+    password_confirmation: 'password',
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 65),
+    contact_number: Faker::PhoneNumber.cell_phone,
+    nationality: Faker::Nation.nationality,
+    country_code: Faker::PhoneNumber.country_code,
+    is_admin: false, # Randomly assign admin status
+    # The following fields are optional and can be left nil
+    reset_password_token: nil,
+    reset_password_sent_at: nil,
+    remember_created_at: nil,
+    confirmation_token: nil,
+    confirmed_at: nil,
+    confirmation_sent_at: nil,
+    unconfirmed_email: nil,
+    failed_attempts: 0,
+    unlock_token: nil,
+    locked_at: nil,
+    created_at: Time.now - rand(0..3).days,
+    updated_at: Time.now - rand(0..3).days
+  )
+end
 
 # Create fake ratings
 # user_ids = User.pluck(:id)
@@ -119,32 +122,31 @@ require 'faker'
 #   category.update(revenue: total_revenue)
 # end
 
-# Assuming you already have some menu items and users in your database
-user_ids = User.pluck(:id)
-menu_item_ids = MenuItem.pluck(:id)
-
-# Create random orders and ratings for the past 3 days
-3.times do |i| # Loop over the last 3 days
-  (1..10).each do # Create 10 ratings per day
-    order = Order.create(
-      user_id: user_ids.sample,
-      status: ['pending', 'completed', 'cancelled', 'cooking'].sample,
-      payment_method: ['cash', 'credit_card', 'paypal'].sample,
-      total_price: 0.0, # For simplicity, price is not important in this case
-      created_at: i.days.ago
-    )
-
-    menu_item_id = menu_item_ids.sample
-
-    # Create a rating for a menu item on this day
-    MenuItemRating.create(
-      user_id: user_ids.sample,
-      menu_item_id: menu_item_id,
-      order_id: order.id,
-      rating: rand(1.0..5.0).round(1), # Generate a random rating between 1.0 and 5.0
-      created_at: i.days.ago
-    )
-  end
-end
-
-puts "Fake data for the last 3 days created!"
+# # Create random orders and ratings for the past 3 days
+# user_ids = User.pluck(:id)
+# menu_item_ids = MenuItem.pluck(:id)
+#
+# 3.times do |i| # Loop over the last 3 days
+#   (1..10).each do # Create 10 ratings per day
+#     order = Order.create(
+#       user_id: user_ids.sample,
+#       status: ['pending', 'completed', 'cancelled', 'cooking'].sample,
+#       payment_method: ['cash', 'credit_card', 'paypal'].sample,
+#       total_price: 0.0, # For simplicity, price is not important in this case
+#       created_at: i.days.ago
+#     )
+#
+#     menu_item_id = menu_item_ids.sample
+#
+#     # Create a rating for a menu item on this day
+#     MenuItemRating.create(
+#       user_id: user_ids.sample,
+#       menu_item_id: menu_item_id,
+#       order_id: order.id,
+#       rating: rand(1.0..5.0).round(1), # Generate a random rating between 1.0 and 5.0
+#       created_at: i.days.ago
+#     )
+#   end
+# end
+#
+# puts "Fake data for the last 3 days created!"

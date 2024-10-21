@@ -29,7 +29,7 @@ class OrdersController < ApplicationController
 
   def update
     @order = Order.find(params[:id])
-    current_status = params[:status]
+    current_status = params[:status] || order_params[:status]  # Make sure status is captured
     order_date = params[:order_date]
 
     if @order.update(order_params)

@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="added charts in admin dashboard">
+    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="added simple blur to highlight the swiper arrow, removed swiper pagination, tabs in admin orders page will change color.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.tailwind.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.tailwind.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/menu_items/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/menu_items/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/orders_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/orders_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/javascript/controllers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/controllers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/orders/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/orders/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/credentials.yml.enc" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -197,15 +199,8 @@
       <workItem from="1728971853953" duration="27606000" />
       <workItem from="1729057906431" duration="29021000" />
       <workItem from="1729144642250" duration="29827000" />
-      <workItem from="1729230146558" duration="29468000" />
-    </task>
-    <task id="LOCAL-00013" summary="fixed images layout in the menu edit page, migrated from tinymce to action-text for rich text editor.">
-      <option name="closed" value="true" />
-      <created>1727957576751</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1727957576751</updated>
+      <workItem from="1729230146558" duration="30368000" />
+      <workItem from="1729489789282" duration="6439000" />
     </task>
     <task id="LOCAL-00014" summary="added tailwind to forgot password and password change form.">
       <option name="closed" value="true" />
@@ -591,14 +586,21 @@
       <option name="project" value="LOCAL" />
       <updated>1729255054607</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="added simple blur to highlight the swiper arrow, removed swiper pagination, tabs in admin orders page will change color.">
+      <option name="closed" value="true" />
+      <created>1729260560078</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1729260560078</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added pagination without styling" />
     <MESSAGE value="added styling in pagination and items per page" />
     <MESSAGE value="added datepicker for admins order page, a demo popover" />
     <MESSAGE value="initiated popper js" />
@@ -623,6 +625,7 @@
     <MESSAGE value="added trending menu items based on order count" />
     <MESSAGE value="added basic popular menu item in landing page" />
     <MESSAGE value="added charts in admin dashboard" />
-    <option name="LAST_COMMIT_MESSAGE" value="added charts in admin dashboard" />
+    <MESSAGE value="added simple blur to highlight the swiper arrow, removed swiper pagination, tabs in admin orders page will change color." />
+    <option name="LAST_COMMIT_MESSAGE" value="added simple blur to highlight the swiper arrow, removed swiper pagination, tabs in admin orders page will change color." />
   </component>
 </project>

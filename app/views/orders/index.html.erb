@@ -44,9 +44,9 @@
 
   <div class="flex flex-col p-1 text-lg">
     <div class="flex">
-      <%= link_to "All", orders_path, class: "text-gray-500 text-center p-2 hover:text-sky-500 #{'text-sky-500' if params[:status].blank?}" %>
+      <%= link_to "All", orders_path, class: "text-gray-500 text-center p-2 hover:text-blue-400 #{'text-blue-400' if params[:status].blank?}" %>
       <%= link_to "Pending", orders_path(status: 'pending'), class: "text-gray-500 text-center p-2 hover:text-yellow-500 #{'text-yellow-500' if params[:status] == 'pending'}" %>
-      <%= link_to "Cooking", orders_path(status: 'cooking'), class: "text-gray-500 text-center p-2 hover:text-blue-500 #{'text-blue-500' if params[:status] == 'cooking'}" %>
+      <%= link_to "Cooking", orders_path(status: 'cooking'), class: "text-gray-500 text-center p-2 hover:text-sky-500 #{'text-sky-500' if params[:status] == 'cooking'}" %>
       <%= link_to "Completed", orders_path(status: 'completed'), class: "text-gray-500 text-center p-2 hover:text-green-500 #{'text-green-500' if params[:status] == 'completed'}" %>
       <%= link_to "Cancelled", orders_path(status: 'cancelled'), class: "text-gray-500 text-center p-2 hover:text-red-500 #{'text-red-500' if params[:status] == 'cancelled'}" %>
     </div>
@@ -113,9 +113,21 @@
               <%= form.select :status,
                               options_for_select([['Pending', 'pending'], ['Completed', 'completed'], ['Cancelled', 'cancelled'], ['Cooking', 'cooking']], order.status),
                               {},
-                              { class: "border border-gray-300 rounded p-2 w-full ", data: { action: 'change->auto-submit#submit' } } %>
+                              {
+                                class: "border-2 rounded-md
+                               #{case order.status
+                                 when 'pending' then 'border-yellow-500'
+                                 when 'completed' then 'border-green-500'
+                                 when 'cancelled' then 'border-red-500'
+                                 when 'cooking' then 'border-sky-500'
+                                 else 'border-gray-300'
+                                 end}
+                               rounded p-1.5 w-full",
+                                data: { action: 'change->auto-submit#submit' }
+                              } %>
             <% end %>
           </td>
+
           <td class="px-6 py-4">
             <%= number_to_currency(order.total_price, unit: "$") %>
           </td>
