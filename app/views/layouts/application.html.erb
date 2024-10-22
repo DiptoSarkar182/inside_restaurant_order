@@ -151,7 +151,7 @@
     <% if current_page?(root_path) %>
       <%= image_tag 'landing_page_restaurant.jpg', class: "absolute inset-0 object-cover w-full h-full" %>
     <% end %>
-    <nav class="bg-gray-400 shadow-md bg-opacity-25 backdrop-blur-md w-full z-20 top-0 start-0 border-b border-gray-200 sticky">
+    <nav data-controller="navbar" data-navbar-target="navbar" class="w-full z-20 top-0 start-0 sticky">
       <div class="flex flex-wrap items-center justify-between mx-8 p-4">
         <%= link_to root_path, class: "flex items-center" do %>
           <%= image_tag "restaurant.png", class: "mr-3 h-6 sm:h-9", alt: "Restaurant Logo" %>

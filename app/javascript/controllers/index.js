@@ -10,6 +10,9 @@ application.register("dropdown-hover", DropdownHoverController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import NavbarController from "./navbar_controller"
+application.register("navbar", NavbarController)
+
 import PhoneNumberController from "./phone_number_controller"
 application.register("phone-number", PhoneNumberController)
 
@@ -24,6 +27,7 @@ application.register("swiper", SwiperController)
 
 import TinymceController from "./tinymce_controller"
 application.register("tinymce", TinymceController)
+
 
 //// STIMULUS Components
 //Password visibility component
