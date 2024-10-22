@@ -160,7 +160,7 @@
 
         <div class="flex custom-space-x-8 bg-gray-400 rounded-full p-1 bg-opacity-50 backdrop-blur-md">
           <%= link_to "Home", root_path, class: "text-white text-center w-24 p-2 hover:bg-gray-500 hover:rounded-full #{'bg-gray-500 rounded-full' if current_page?(root_path)}" %>
-          <%= link_to "Menu", menu_item_for_normal_users_path, class: "text-white text-center w-24 p-2 hover:bg-gray-500 hover:rounded-full #{'bg-gray-500 rounded-full' if current_page?(edit_user_registration_path)}" %>
+          <%= link_to "Menu", menu_item_for_normal_users_path, class: "text-white text-center w-24 p-2 hover:bg-gray-500 hover:rounded-full #{'bg-gray-500 rounded-full' if current_page?(menu_item_for_normal_users_path)}" %>
         </div>
 
         <div class="flex items-center gap-6">
