@@ -18,6 +18,13 @@ class HomePagesController < ApplicationController
     @home_page_menu_items = MenuItem.first(6)
 
     @menu_items_ratings_with_reviews = MenuItemRating.where(rating: 4..Float::INFINITY).limit(5)
+
+    @home_page_menus_that_our_customer_loved_most = MenuItem.limit(3).order(id: :asc)
+    @selected_menu_item = if params[:id]
+                            MenuItem.find(params[:id])
+                          else
+                            @home_page_menus_that_our_customer_loved_most.first
+                          end
   end
 
 end

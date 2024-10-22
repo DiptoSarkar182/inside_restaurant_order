@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="added bg image on navbar bg">
+    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="added blur navbar on scroll down">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/javascript/controllers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/controllers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.tailwind.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.tailwind.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/home_pages_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/home_pages_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/home_pages/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home_pages/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +17,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/app/views/home_pages/index.html.erb" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -199,15 +202,7 @@
       <workItem from="1729144642250" duration="29827000" />
       <workItem from="1729230146558" duration="30368000" />
       <workItem from="1729489789282" duration="30301000" />
-      <workItem from="1729576082571" duration="8253000" />
-    </task>
-    <task id="LOCAL-00019" summary="added swiper js on the homepage">
-      <option name="closed" value="true" />
-      <created>1728040434677</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1728040434677</updated>
+      <workItem from="1729576082571" duration="21498000" />
     </task>
     <task id="LOCAL-00020" summary="added tailwind in confirmation instruction page.">
       <option name="closed" value="true" />
@@ -593,7 +588,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729581500695</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="added blur navbar on scroll down">
+      <option name="closed" value="true" />
+      <created>1729587172677</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1729587172677</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -622,7 +625,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added edit delete icon. admin panel edit account and sign out hover bg changed to white." />
     <MESSAGE value="for admin panel menu item, swiper buttons will show on hover." />
     <MESSAGE value="added dummy links on admins menu items page" />
     <MESSAGE value="infos on admin orders page will show based on date" />
@@ -647,6 +649,7 @@
     <MESSAGE value="added recommended, popular, testimonials in landing page." />
     <MESSAGE value="added best categories with turbo frame." />
     <MESSAGE value="added bg image on navbar bg" />
-    <option name="LAST_COMMIT_MESSAGE" value="added bg image on navbar bg" />
+    <MESSAGE value="added blur navbar on scroll down" />
+    <option name="LAST_COMMIT_MESSAGE" value="added blur navbar on scroll down" />
   </component>
 </project>

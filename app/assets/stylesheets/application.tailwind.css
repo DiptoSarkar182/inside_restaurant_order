@@ -102,6 +102,13 @@
     --tw-space-x-reverse: 0;
 }
 
+.curved-edge{
+    --c: 70px;
+    height: 1000px;
+    aspect-ratio: 3/2;
+    mask: radial-gradient(60% var(--c) at bottom,#0000 calc(100% - 2px),#000);
+}
+
 /* Pagination styling */
 .pagination-container {
     margin: 2rem 0;
