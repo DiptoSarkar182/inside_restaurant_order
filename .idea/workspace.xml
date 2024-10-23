@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="added selected style for &quot;menu item loved by customer&quot; section">
+    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="added description with truncate for &quot;menu item loved by customer&quot; section">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/home_pages/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home_pages/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,15 +201,7 @@
       <workItem from="1729230146558" duration="30368000" />
       <workItem from="1729489789282" duration="30301000" />
       <workItem from="1729576082571" duration="26918000" />
-      <workItem from="1729667003074" duration="9114000" />
-    </task>
-    <task id="LOCAL-00023" summary="added different navbar/sidebar based on user role. after login, admin user will be redirected to admin dashboard.">
-      <option name="closed" value="true" />
-      <created>1728308896388</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1728308896388</updated>
+      <workItem from="1729667003074" duration="9899000" />
     </task>
     <task id="LOCAL-00024" summary="progress bar color changed">
       <option name="closed" value="true" />
@@ -596,7 +587,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729605681023</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="added description with truncate for &quot;menu item loved by customer&quot; section">
+      <option name="closed" value="true" />
+      <created>1729677691669</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1729677691670</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -625,7 +624,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed an issue where search were not working in admin orders page because of PG::AmbiguousColumn" />
     <MESSAGE value="added rating and avg rating for menu items" />
     <MESSAGE value="migrations for rating and avg rating for menu items" />
     <MESSAGE value="added constant height for menu item container" />
@@ -650,6 +648,7 @@
     <MESSAGE value="added basic design in &quot;menu item loved by customer&quot; section" />
     <MESSAGE value="added description below title" />
     <MESSAGE value="added selected style for &quot;menu item loved by customer&quot; section" />
-    <option name="LAST_COMMIT_MESSAGE" value="added selected style for &quot;menu item loved by customer&quot; section" />
+    <MESSAGE value="added description with truncate for &quot;menu item loved by customer&quot; section" />
+    <option name="LAST_COMMIT_MESSAGE" value="added description with truncate for &quot;menu item loved by customer&quot; section" />
   </component>
 </project>
