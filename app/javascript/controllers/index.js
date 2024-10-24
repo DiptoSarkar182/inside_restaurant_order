@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import CartBackgroundController from "./cart_background_controller"
+application.register("cart-background", CartBackgroundController)
+
 import DropdownHoverController from "./dropdown_hover_controller"
 application.register("dropdown-hover", DropdownHoverController)
 
@@ -27,7 +30,6 @@ application.register("swiper", SwiperController)
 
 import TinymceController from "./tinymce_controller"
 application.register("tinymce", TinymceController)
-
 
 //// STIMULUS Components
 //Password visibility component

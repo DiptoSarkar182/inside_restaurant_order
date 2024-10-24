@@ -10,12 +10,12 @@ class HomePagesController < ApplicationController
                             end
 
     if @selected_category_id
-      @home_page_category_based_menu_items = MenuItem.where(category_id: @selected_category_id).limit(6)
+      @home_page_category_based_menu_items = MenuItem.where(category_id: @selected_category_id).limit(5)
     else
       @home_page_category_based_menu_items = MenuItem.first(6)
     end
 
-    @home_page_menu_items = MenuItem.first(6)
+    @home_page_menu_items = MenuItem.first(5)
 
     @menu_items_ratings_with_reviews = MenuItemRating.where(rating: 4..Float::INFINITY).limit(5)
 

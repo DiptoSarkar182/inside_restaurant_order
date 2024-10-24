@@ -4,7 +4,7 @@
   </div>
 
   <div class="flex items-center gap-4">
-    <% 4.times do %>
+    <% @x.each do |item| %>
       <div class="w-fit bg-white rounded-lg shadow-lg border border-sky-200 mb-4 flex items-center p-2">
         <div class="text-center mr-8">
           <div class="text-sm text-gray-500">New users on last 3 days</div>
@@ -12,13 +12,13 @@
         </div>
 
         <div>
-          <%= line_chart @new_users_on_last_3_day_chart,
+          <%= line_chart item[:a],
                          library: {
                            animation: { duration: 1000 },
                            scales: {
                              x: { display: false },
                              y: { display: false }
-                           }, }, colors: ["#87CEEB", "#87CEEB"], dataset: { borderWidth: 5 }, width: "150px", height: "100px" %>
+                           }, }, colors: [item[:color]], dataset: { borderWidth: 5 }, width: "150px", height: "100px" %>
         </div>
 
       </div>

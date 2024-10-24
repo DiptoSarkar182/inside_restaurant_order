@@ -46,34 +46,34 @@ require 'open-uri'
 
 
 # # Create fake users
-# 10.times do
-#   User.create!(
-#     email: Faker::Internet.unique.email,
-#     password: 'password',
-#     password_confirmation: 'password',
-#     first_name: Faker::Name.first_name,
-#     last_name: Faker::Name.last_name,
-#     date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 65),
-#     contact_number: Faker::PhoneNumber.cell_phone,
-#     nationality: Faker::Nation.nationality,
-#     country_code: Faker::PhoneNumber.country_code,
-#     is_admin: false, # Randomly assign admin status
-#     # The following fields are optional and can be left nil
-#     reset_password_token: nil,
-#     reset_password_sent_at: nil,
-#     remember_created_at: nil,
-#     confirmation_token: nil,
-#     confirmed_at: nil,
-#     confirmation_sent_at: nil,
-#     unconfirmed_email: nil,
-#     failed_attempts: 0,
-#     unlock_token: nil,
-#     locked_at: nil,
-#     created_at: Time.now - rand(0..3).days,
-#     updated_at: Time.now - rand(0..3).days
-#
-#   )
-# end
+10.times do
+  User.create!(
+    email: Faker::Internet.unique.email,
+    password: 'password',
+    password_confirmation: 'password',
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 65),
+    contact_number: Faker::PhoneNumber.cell_phone,
+    nationality: Faker::Nation.nationality,
+    country_code: Faker::PhoneNumber.country_code,
+    is_admin: false, # Randomly assign admin status
+    # The following fields are optional and can be left nil
+    reset_password_token: nil,
+    reset_password_sent_at: nil,
+    remember_created_at: nil,
+    confirmation_token: nil,
+    confirmed_at: nil,
+    confirmation_sent_at: nil,
+    unconfirmed_email: nil,
+    failed_attempts: 0,
+    unlock_token: nil,
+    locked_at: nil,
+    created_at: Time.now - rand(0..4).days,
+    updated_at: Time.now - rand(0..3).days
+
+  )
+end
 
 # # Create fake menu item ratings
 # user_ids = User.pluck(:id)
@@ -209,15 +209,15 @@ require 'open-uri'
 #   end
 # end
 
-5.times do
-  MenuItem.create!(
-    title: Faker::Food.dish,
-    description: Faker::Food.description,
-    price: Faker::Commerce.price(range: 5.0..50.0, as_string: false),
-    availability: [true, false].sample,
-    category_id: 21,
-    avg_rating: Faker::Number.between(from: 1.0, to: 5.0).round(1),
-    total_rating: Faker::Number.between(from: 1, to: 100),
-    revenue: Faker::Commerce.price(range: 100.0..1000.0, as_string: false)
-  )
-end
+# 5.times do
+#   MenuItem.create!(
+#     title: Faker::Food.dish,
+#     description: Faker::Food.description,
+#     price: Faker::Commerce.price(range: 5.0..50.0, as_string: false),
+#     availability: [true, false].sample,
+#     category_id: 21,
+#     avg_rating: Faker::Number.between(from: 1.0, to: 5.0).round(1),
+#     total_rating: Faker::Number.between(from: 1, to: 100),
+#     revenue: Faker::Commerce.price(range: 100.0..1000.0, as_string: false)
+#   )
+# end

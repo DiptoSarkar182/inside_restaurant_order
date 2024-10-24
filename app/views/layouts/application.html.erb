@@ -150,7 +150,13 @@
   <% elsif !hide_elements_on_pages? %>
     <% if current_page?(root_path) %>
       <%= image_tag 'landing_page_restaurant.jpg', class: "absolute inset-0 object-cover w-full h-full" %>
+
+
+      <div class="absolute bottom-0 w-full">
+        <svg id="wave" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 150" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(243, 244, 246, 1)" offset="0%"></stop><stop stop-color="rgba(243, 244, 246, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,135L60,135C120,135,240,135,360,122.5C480,110,600,85,720,70C840,55,960,50,1080,55C1200,60,1320,75,1440,85C1560,95,1680,100,1800,92.5C1920,85,2040,65,2160,65C2280,65,2400,85,2520,95C2640,105,2760,105,2880,90C3000,75,3120,45,3240,32.5C3360,20,3480,25,3600,27.5C3720,30,3840,30,3960,47.5C4080,65,4200,100,4320,95C4440,90,4560,45,4680,27.5C4800,10,4920,20,5040,42.5C5160,65,5280,100,5400,112.5C5520,125,5640,115,5760,95C5880,75,6000,45,6120,50C6240,55,6360,95,6480,115C6600,135,6720,135,6840,125C6960,115,7080,95,7200,92.5C7320,90,7440,105,7560,100C7680,95,7800,70,7920,60C8040,50,8160,55,8280,70C8400,85,8520,110,8580,122.5L8640,135L8640,150L8580,150C8520,150,8400,150,8280,150C8160,150,8040,150,7920,150C7800,150,7680,150,7560,150C7440,150,7320,150,7200,150C7080,150,6960,150,6840,150C6720,150,6600,150,6480,150C6360,150,6240,150,6120,150C6000,150,5880,150,5760,150C5640,150,5520,150,5400,150C5280,150,5160,150,5040,150C4920,150,4800,150,4680,150C4560,150,4440,150,4320,150C4200,150,4080,150,3960,150C3840,150,3720,150,3600,150C3480,150,3360,150,3240,150C3120,150,3000,150,2880,150C2760,150,2640,150,2520,150C2400,150,2280,150,2160,150C2040,150,1920,150,1800,150C1680,150,1560,150,1440,150C1320,150,1200,150,1080,150C960,150,840,150,720,150C600,150,480,150,360,150C240,150,120,150,60,150L0,150Z"></path></svg>
+      </div>
     <% end %>
+
     <nav data-controller="navbar" data-navbar-target="navbar" class="w-full z-20 top-0 start-0 sticky">
       <div class="flex flex-wrap items-center justify-between mx-8 p-4">
         <%= link_to root_path, class: "flex items-center" do %>
@@ -167,7 +173,7 @@
           <% if user_signed_in? %>
 
             <!--non-functional cart-->
-            <div class="relative scale-75 bg-gray-200 rounded-full p-1 bg-opacity-50 backdrop-blur-sm">
+            <div class="relative scale-75 bg-gray-100 rounded-full p-1 bg-opacity-50 backdrop-blur-sm">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-8 w-8 text-gray-700">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
               </svg>
