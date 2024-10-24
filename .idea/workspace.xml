@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="reworked footer with color">
+    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="added chef's special category for food item, fixed height-width in menu item show page.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/menu_items_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/menu_items_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/menu_items/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/menu_items/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/menu_items/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/menu_items/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,15 +202,7 @@
       <workItem from="1729489789282" duration="30301000" />
       <workItem from="1729576082571" duration="26918000" />
       <workItem from="1729667003074" duration="18923000" />
-      <workItem from="1729749101235" duration="4787000" />
-    </task>
-    <task id="LOCAL-00027" summary="admin side bar is fixed positioned.">
-      <option name="closed" value="true" />
-      <created>1728376887986</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1728376887986</updated>
+      <workItem from="1729749101235" duration="8640000" />
     </task>
     <task id="LOCAL-00028" summary="reduced the container width of homepages menu items">
       <option name="closed" value="true" />
@@ -599,7 +588,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729693730974</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="added chef's special category for food item, fixed height-width in menu item show page.">
+      <option name="closed" value="true" />
+      <created>1729755687010</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1729755687011</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -628,7 +625,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="dropdown bg changed to white, categories index has fixed height, added total rating in menu item" />
     <MESSAGE value="added avg rating for each category." />
     <MESSAGE value="unfinished landing page" />
     <MESSAGE value="added same padding on each image, removed repetitive &quot;order&quot; text from admins order page." />
@@ -653,6 +649,7 @@
     <MESSAGE value="added decorated underline" />
     <MESSAGE value="reworked footer" />
     <MESSAGE value="reworked footer with color" />
-    <option name="LAST_COMMIT_MESSAGE" value="reworked footer with color" />
+    <MESSAGE value="added chef's special category for food item, fixed height-width in menu item show page." />
+    <option name="LAST_COMMIT_MESSAGE" value="added chef's special category for food item, fixed height-width in menu item show page." />
   </component>
 </project>
