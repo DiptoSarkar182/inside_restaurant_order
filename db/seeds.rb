@@ -167,20 +167,20 @@ require 'open-uri'
 # db/seeds.rb
 
 # Generating Fake Reviews
-MenuItemRating.find_each do |rating|
-  case rating.rating
-  when 1.0..2.0
-    rating.update(review: Faker::Restaurant.review)
-  when 2.1..3.0
-    rating.update(review: Faker::Restaurant.review)
-  when 3.1..4.0
-    rating.update(review: Faker::Restaurant.review)
-  when 4.1..5.0
-    rating.update(review: Faker::Restaurant.review)
-  end
-end
-
-puts "Reviews populated for menu item ratings."
+# MenuItemRating.find_each do |rating|
+#   case rating.rating
+#   when 1.0..2.0
+#     rating.update(review: Faker::Restaurant.review)
+#   when 2.1..3.0
+#     rating.update(review: Faker::Restaurant.review)
+#   when 3.1..4.0
+#     rating.update(review: Faker::Restaurant.review)
+#   when 4.1..5.0
+#     rating.update(review: Faker::Restaurant.review)
+#   end
+# end
+#
+# puts "Reviews populated for menu item ratings."
 
 # # Update avatar of currently registered users
 # users_to_update = User.where.not(email: ['dipto@gmail.com', 'bean@gmail.com'])
@@ -208,3 +208,16 @@ puts "Reviews populated for menu item ratings."
 #     )
 #   end
 # end
+
+5.times do
+  MenuItem.create!(
+    title: Faker::Food.dish,
+    description: Faker::Food.description,
+    price: Faker::Commerce.price(range: 5.0..50.0, as_string: false),
+    availability: [true, false].sample,
+    category_id: 21,
+    avg_rating: Faker::Number.between(from: 1.0, to: 5.0).round(1),
+    total_rating: Faker::Number.between(from: 1, to: 100),
+    revenue: Faker::Commerce.price(range: 100.0..1000.0, as_string: false)
+  )
+end

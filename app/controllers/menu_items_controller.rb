@@ -9,12 +9,15 @@ class MenuItemsController < ApplicationController
                             .where(order_items: { created_at: 1.week.ago..Time.now })
                             .group(:id)
                             .order('COUNT(order_items.id) DESC')
+    elsif params[:chefs_special]
+      # Fetch the Chef's Special category and menu items
+      category = Category.find_by(title: "Chef's Special")
+      @menu_items = MenuItem.where(category_id: category.id)
     else
       @q = MenuItem.ransack(title_cont: params[:search_menu_items])
       @menu_items = @q.result(distinct: true)
     end
   end
-
 
   def new
     @menu_item = MenuItem.new

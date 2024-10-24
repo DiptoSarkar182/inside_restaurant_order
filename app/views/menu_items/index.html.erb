@@ -7,7 +7,7 @@
   <div class="flex">
     <%= link_to "All", menu_items_path, class: "text-gray-500 text-center p-2 hover:text-sky-500 #{'text-sky-500' if current_page?(menu_items_path) && !params[:trending]}" %>
     <%= link_to "Trending", menu_items_path(trending: true), class: "text-gray-500 text-center p-2 hover:text-sky-500 #{'text-sky-500' if params[:trending]}" %>
-    <%= link_to "Chef's Special", orders_path(status: 'cooking'), class: "text-gray-500 text-center p-2 hover:text-sky-500 #{'text-sky-500' if params[:status] == 'cooking'}" %>
+    <%= link_to "Chef's Special", menu_items_path(chefs_special: true), class: "text-gray-500 text-center p-2 hover:text-sky-500 #{'text-sky-500' if params[:chefs_special]}" %>
     <%= link_to "Outdated", orders_path(status: 'completed'), class: "text-gray-500 text-center p-2 hover:text-sky-500 #{'text-sky-500' if params[:status] == 'completed'}" %>
   </div>
   <hr class="my-2 border-gray-300" />

@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="reworked footer">
+    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="reworked footer with color">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/menu_items_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/menu_items_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/menu_items/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/menu_items/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/menu_items/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/menu_items/show.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,15 +204,8 @@
       <workItem from="1729230146558" duration="30368000" />
       <workItem from="1729489789282" duration="30301000" />
       <workItem from="1729576082571" duration="26918000" />
-      <workItem from="1729667003074" duration="18240000" />
-    </task>
-    <task id="LOCAL-00026" summary="div centered the edit form, added icons for admin panel, back button fixed">
-      <option name="closed" value="true" />
-      <created>1728374161200</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1728374161200</updated>
+      <workItem from="1729667003074" duration="18923000" />
+      <workItem from="1729749101235" duration="4787000" />
     </task>
     <task id="LOCAL-00027" summary="admin side bar is fixed positioned.">
       <option name="closed" value="true" />
@@ -595,7 +591,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729687193419</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="reworked footer with color">
+      <option name="closed" value="true" />
+      <created>1729693730974</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1729693730974</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -624,7 +628,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added constant height for menu item container" />
     <MESSAGE value="dropdown bg changed to white, categories index has fixed height, added total rating in menu item" />
     <MESSAGE value="added avg rating for each category." />
     <MESSAGE value="unfinished landing page" />
@@ -649,6 +652,7 @@
     <MESSAGE value="added description with truncate for &quot;menu item loved by customer&quot; section" />
     <MESSAGE value="added decorated underline" />
     <MESSAGE value="reworked footer" />
-    <option name="LAST_COMMIT_MESSAGE" value="reworked footer" />
+    <MESSAGE value="reworked footer with color" />
+    <option name="LAST_COMMIT_MESSAGE" value="reworked footer with color" />
   </component>
 </project>
