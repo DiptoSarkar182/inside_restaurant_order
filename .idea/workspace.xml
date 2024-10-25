@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="fixed width and gap issue in landing page">
+    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="fixed width issue in admin orders page.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/orders/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/orders/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/javascript/controllers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/controllers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,15 +205,7 @@
       <workItem from="1729576082571" duration="26918000" />
       <workItem from="1729667003074" duration="18923000" />
       <workItem from="1729749101235" duration="20365000" />
-      <workItem from="1729835400099" duration="13020000" />
-    </task>
-    <task id="LOCAL-00033" summary="added orders table for admin">
-      <option name="closed" value="true" />
-      <created>1728893918676</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1728893918676</updated>
+      <workItem from="1729835400099" duration="16804000" />
     </task>
     <task id="LOCAL-00034" summary="added orders table status update with dropdown.">
       <option name="closed" value="true" />
@@ -597,7 +591,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729851221351</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="fixed width issue in admin orders page.">
+      <option name="closed" value="true" />
+      <created>1729857931029</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1729857931029</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -626,7 +628,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="increased width of create, update, back button" />
     <MESSAGE value="added total rating count in category" />
     <MESSAGE value="added revenue in menu item and category" />
     <MESSAGE value="added trending menu items based on order count" />
@@ -651,6 +652,7 @@
     <MESSAGE value="fixed bg color overlapping issue." />
     <MESSAGE value="added hover effect in landing page." />
     <MESSAGE value="fixed width and gap issue in landing page" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed width and gap issue in landing page" />
+    <MESSAGE value="fixed width issue in admin orders page." />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed width issue in admin orders page." />
   </component>
 </project>

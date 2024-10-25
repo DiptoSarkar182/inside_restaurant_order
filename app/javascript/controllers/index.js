@@ -55,3 +55,7 @@ application.register('auto-submit', AutoSubmit)
 //Popover component
 import Popover from '@stimulus-components/popover'
 application.register('popover', Popover)
+
+// Select all component
+import CheckboxSelectAll from '@stimulus-components/checkbox-select-all'
+application.register('checkbox-select-all', CheckboxSelectAll)
