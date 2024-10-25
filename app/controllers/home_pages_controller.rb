@@ -15,7 +15,7 @@ class HomePagesController < ApplicationController
       @home_page_category_based_menu_items = MenuItem.first(6)
     end
 
-    @home_page_menu_items = MenuItem.first(5)
+    @home_page_menu_items = MenuItem.limit(5).order(id: :asc)
 
     @menu_items_ratings_with_reviews = MenuItemRating.where(rating: 4..Float::INFINITY).limit(5)
 

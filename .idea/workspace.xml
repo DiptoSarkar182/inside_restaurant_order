@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="fixed bg color overlapping issue.">
+    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="added hover effect in landing page.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/home_pages_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/home_pages_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/home_pages/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home_pages/index.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -203,15 +204,7 @@
       <workItem from="1729576082571" duration="26918000" />
       <workItem from="1729667003074" duration="18923000" />
       <workItem from="1729749101235" duration="20365000" />
-      <workItem from="1729835400099" duration="3448000" />
-    </task>
-    <task id="LOCAL-00031" summary="fixed constant height and width for menu item and category in both admin and user panel">
-      <option name="closed" value="true" />
-      <created>1728889726071</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1728889726071</updated>
+      <workItem from="1729835400099" duration="8873000" />
     </task>
     <task id="LOCAL-00032" summary="added order and order items model, association of user, order, order_items, menu_items. dynamic total order count.">
       <option name="closed" value="true" />
@@ -597,7 +590,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729776302277</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="added hover effect in landing page.">
+      <option name="closed" value="true" />
+      <created>1729842055221</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1729842055222</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -626,7 +627,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added category search, model validation." />
     <MESSAGE value="highlighted menuitem create-update validation alert. added menu item search. fixed a issue where validation were not hitting and showing category id not found." />
     <MESSAGE value="increased width of create, update, back button" />
     <MESSAGE value="added total rating count in category" />
@@ -651,6 +651,7 @@
     <MESSAGE value="fixed text highlight issue in admin menu items" />
     <MESSAGE value="added 3 dummy graph on dashboard, added curve on landing page image, fixed some coloring and margin issue." />
     <MESSAGE value="fixed bg color overlapping issue." />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed bg color overlapping issue." />
+    <MESSAGE value="added hover effect in landing page." />
+    <option name="LAST_COMMIT_MESSAGE" value="added hover effect in landing page." />
   </component>
 </project>

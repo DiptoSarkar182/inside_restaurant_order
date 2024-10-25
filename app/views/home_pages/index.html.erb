@@ -39,9 +39,9 @@
   <h2 class="text-center text-5xl font-bold tracking-tight text-sky-400 px-4 py-8">
     Recommended Dishes
   </h2>
-  <div class="flex flex-wrap gap-4 p-2 ml-10 justify-center">
+  <div class="flex flex-wrap gap-2 p-2 ml-10 justify-center">
     <% @home_page_menu_items.each do |menu_item| %>
-      <div class="w-72 max-w-sm bg-gray-100 rounded-lg shadow-md transition-shadow duration-300 hover:shadow-lg hover:shadow-gray-400 border border-sky-200">
+      <div class="w-80 max-w-sm bg-gray-100 rounded-lg shadow-md transition-shadow duration-300 hover:shadow-lg hover:shadow-gray-400 border border-sky-200">
         <div class="swiper relative" data-controller="swiper" style="width: 100%; height: 300px;">
           <div class="swiper-wrapper">
             <% if menu_item.menu_images.attached? %>
@@ -66,8 +66,8 @@
 
         <div class="p-4 sm:p-6">
           <div class="flex justify-between items-start mb-2">
-            <h3 class="text-2xl font-bold tracking-tight text-sky-500 flex-1 mr-1 min-h-[3em]">
-              <%= link_to menu_item.title, menu_item_path(menu_item), class: "hover:underline" %>
+            <h3 title="<%= menu_item.title %>" class="text-2xl font-bold tracking-tight text-sky-500 flex-1 mr-1 min-h-[3em]">
+              <%= link_to truncate(menu_item.title, length: 30), menu_item_path(menu_item), class: "hover:underline" %>
             </h3>
           </div>
 
@@ -108,9 +108,9 @@
     </span>
     Dishes
   </h2>
-  <div class="flex flex-wrap gap-4 p-2 ml-10 justify-center">
+  <div class="flex flex-wrap gap-2 p-2 ml-10 justify-center">
     <% @home_page_menu_items.each do |menu_item| %>
-      <div class="w-72 max-w-sm bg-gray-100 rounded-lg shadow-md transition-shadow duration-300 hover:shadow-lg hover:shadow-gray-400 border border-sky-200">
+      <div class="w-80 max-w-sm bg-gray-100 rounded-lg shadow-md transition-shadow duration-300 hover:shadow-lg hover:shadow-gray-400 border border-sky-200">
         <div class="swiper relative" data-controller="swiper" style="width: 100%; height: 300px;">
           <div class="swiper-wrapper">
             <% if menu_item.menu_images.attached? %>
@@ -135,8 +135,8 @@
 
         <div class="p-4 sm:p-6">
           <div class="flex justify-between items-start mb-2">
-            <h3 class="text-2xl font-bold tracking-tight text-sky-500 flex-1 mr-1 min-h-[3em]">
-              <%= link_to menu_item.title, menu_item_path(menu_item), class: "hover:underline" %>
+            <h3 title="<%= menu_item.title %>" class="text-2xl font-bold tracking-tight text-sky-500 flex-1 mr-1 min-h-[3em]">
+              <%= link_to truncate(menu_item.title, length: 30), menu_item_path(menu_item), class: "hover:underline" %>
             </h3>
           </div>
 
@@ -181,9 +181,9 @@
       </div>
     </div>
 
-    <div class="flex flex-wrap gap-4 p-2 ml-10 justify-center">
+    <div class="flex flex-wrap gap-2 p-2 ml-10 justify-center">
       <% @home_page_category_based_menu_items.each do |menu_item| %>
-        <div class="w-72 max-w-sm bg-gray-100 rounded-lg shadow-md transition-shadow duration-300 hover:shadow-lg hover:shadow-gray-400 border border-sky-200">
+        <div class="w-80 max-w-sm bg-gray-100 rounded-lg shadow-md transition-shadow duration-300 hover:shadow-lg hover:shadow-gray-400 border border-sky-200">
           <div class="swiper relative" data-controller="swiper" style="width: 100%; height: 300px;">
             <div class="swiper-wrapper">
               <% if menu_item.menu_images.attached? %>
@@ -208,8 +208,8 @@
 
           <div class="p-4 sm:p-6">
             <div class="flex justify-between items-start mb-2">
-              <h3 class="text-2xl font-bold tracking-tight text-sky-500 flex-1 mr-1 min-h-[3em]">
-                <%= link_to menu_item.title, menu_item_path(menu_item), class: "hover:underline", data: { turbo_frame: "_top" } %>
+              <h3 title="<%= menu_item.title %>" class="text-2xl font-bold tracking-tight text-sky-500 flex-1 mr-1 min-h-[3em]">
+                <%= link_to truncate(menu_item.title, length: 30), menu_item_path(menu_item), class: "hover:underline", data: { turbo_frame: "_top" } %>
               </h3>
             </div>
 
@@ -281,8 +281,8 @@
 
             <div class="bg-white p-4 sm:p-6">
               <div class="flex flex-col justify-center items-center mb-2">
-                <h3 class="text-2xl font-bold tracking-tight text-sky-500 flex-1 mr-1 min-h-[3em] hover:underline">
-                  <%= link_to @selected_menu_item.title, menu_item_path(@selected_menu_item), data: { turbo_frame: "_top" } %>
+                <h3 title="<%= @selected_menu_item.title %>" class="text-2xl font-bold tracking-tight text-sky-500 text-center flex-1 mr-1 min-h-[3em] hover:underline">
+                  <%= link_to truncate(@selected_menu_item.title, length: 30), menu_item_path(@selected_menu_item), data: { turbo_frame: "_top" } %>
                 </h3>
               </div>
 
@@ -319,7 +319,7 @@
               <% end %>
               <div class="ml-4 flex flex-col">
                 <span class="text-xl font-semibold whitespace-nowrap">
-                  <%= menu_item.title %>
+                  <%= truncate(menu_item.title, length:30) %>
                 </span>
                 <p class="mt-1 text-gray-500 text-sm <%= 'text-gray-200' if @selected_menu_item&.id == menu_item.id %>">
                   <%= truncate(menu_item.description.to_plain_text, length: 60) %>
