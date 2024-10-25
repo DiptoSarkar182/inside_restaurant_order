@@ -101,7 +101,17 @@
             </div>
           </td>
           <th scope="row" class="px-6 py-4 font-medium text-gray-900 max-w-xs break-words whitespace-normal">
-            <%= order.order_items.map { |item| item.menu_item.title }.join(", ") %>
+            <% order.order_items.each do |item| %>
+            <span
+              data-tippy-content="<%= item.menu_item.category.title %>"
+              class="menu-item-tooltip"
+            >
+              <%= item.menu_item.title %>
+            </span>
+              <% if item != order.order_items.last %>
+                ,
+              <% end %>
+            <% end %>
           </th>
           <td class="px-6 py-4">
             <%= order.user.full_name %>
@@ -167,3 +177,8 @@
   </div>
 </div>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        tippy('.menu-item-tooltip');
+    });
+</script>
