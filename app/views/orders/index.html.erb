@@ -100,13 +100,13 @@
               <label for="checkbox-table-search-<%= order.id %>" class="sr-only">checkbox</label>
             </div>
           </td>
-          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+          <th scope="row" class="px-6 py-4 font-medium text-gray-900 max-w-xs break-words whitespace-normal">
             <%= order.order_items.map { |item| item.menu_item.title }.join(", ") %>
           </th>
           <td class="px-6 py-4">
             <%= order.user.full_name %>
           </td>
-          <td class="px-6 py-4">
+          <td class="px-4 py-4">
             <%= form_with(model: order, url: order_path(order), local: true, method: :patch, class: "inline", data: { controller: 'auto-submit' }) do |form| %>
               <%= hidden_field_tag :status, params[:status] %>
               <%= hidden_field_tag :order_date, params[:order_date] %>
@@ -122,9 +122,9 @@
                                  when 'cooking' then 'border-sky-500'
                                  else 'border-gray-300'
                                  end}
-                               rounded p-1.5 w-full",
+                               rounded p-1.5 w-40",
                                 data: { action: 'change->auto-submit#submit' },
-                  style: "background-color: #{order.status == 'pending' ? '#FFF8E1' : order.status == 'completed' ? '#E8F5E9' : order.status == 'cancelled' ? '#FFEBEE' : order.status == 'cooking' ? '#E1F5FE' : 'white'};" # Change color based on status
+                  style: "background-color: #{order.status == 'pending' ? '#FFF8E1' : order.status == 'completed' ? '#E8F5E9' : order.status == 'cancelled' ? '#FFEBEE' : order.status == 'cooking' ? '#E1F5FE' : 'white'};"
 
                   } %>
             <% end %>
