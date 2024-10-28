@@ -1,5 +1,7 @@
 class HomePagesController < ApplicationController
 
+  before_action :redirect_admin_user, only: :index
+
   def index
     @home_page_categories = Category.where('avg_rating > ?', 2).limit(5)
 
@@ -25,6 +27,14 @@ class HomePagesController < ApplicationController
                           else
                             @home_page_menus_that_our_customer_loved_most.first
                           end
+  end
+
+  private
+
+  def redirect_admin_user
+    if user_signed_in? && current_user.is_admin?
+      redirect_to admin_dashboards_path
+    end
   end
 
 end

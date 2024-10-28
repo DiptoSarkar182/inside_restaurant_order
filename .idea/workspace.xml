@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="tippyjs will follow cursor">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="fixed comma gap issue in admin orders page.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -206,14 +205,7 @@
       <workItem from="1729835400099" duration="19214000" />
       <workItem from="1730094623420" duration="8964000" />
       <workItem from="1730107113310" duration="2840000" />
-    </task>
-    <task id="LOCAL-00037" summary="added pagination without styling">
-      <option name="closed" value="true" />
-      <created>1728915919259</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1728915919259</updated>
+      <workItem from="1730115101782" duration="2096000" />
     </task>
     <task id="LOCAL-00038" summary="added styling in pagination and items per page">
       <option name="closed" value="true" />
@@ -599,7 +591,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730104534203</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="fixed comma gap issue in admin orders page.">
+      <option name="closed" value="true" />
+      <created>1730115429545</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1730115429545</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -628,7 +628,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added basic popular menu item in landing page" />
     <MESSAGE value="added charts in admin dashboard" />
     <MESSAGE value="added simple blur to highlight the swiper arrow, removed swiper pagination, tabs in admin orders page will change color." />
     <MESSAGE value="added border color change based on order status." />
@@ -653,6 +652,7 @@
     <MESSAGE value="added select all for admin orders panel." />
     <MESSAGE value="moved tippy js from inline script to stimulus tooltip_controller." />
     <MESSAGE value="tippyjs will follow cursor" />
-    <option name="LAST_COMMIT_MESSAGE" value="tippyjs will follow cursor" />
+    <MESSAGE value="fixed comma gap issue in admin orders page." />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed comma gap issue in admin orders page." />
   </component>
 </project>
