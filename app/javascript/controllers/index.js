@@ -31,6 +31,9 @@ application.register("swiper", SwiperController)
 import TinymceController from "./tinymce_controller"
 application.register("tinymce", TinymceController)
 
+import TooltipController from "./tooltip_controller";
+application.register("tooltip", TooltipController);
+
 //// STIMULUS Components
 //Password visibility component
 import PasswordVisibility from '@stimulus-components/password-visibility'

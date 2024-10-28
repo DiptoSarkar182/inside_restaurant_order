@@ -66,6 +66,7 @@
         <%= form.text_field :search_orders,
                             value: params[:search_orders],
                             placeholder: "Search Order by Menu Item...",
+                            autocomplete: "off",
                             class: "block pt-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-72 bg-gray-50 focus:ring-blue-500 focus:border-blue-500"%>
 
         <%= hidden_field_tag :status, params[:status] %>
@@ -100,14 +101,15 @@
               <label for="checkbox-table-search-<%= order.id %>" class="sr-only">checkbox</label>
             </div>
           </td>
-          <th scope="row" class="px-6 py-4 font-medium text-gray-900 max-w-xs break-words whitespace-normal">
+          <th scope="row" class="px-6 py-4 font-medium text-gray-900 max-w-xs break-words whitespace-normal" data-controller="tooltip">
             <% order.order_items.each do |item| %>
-            <span
-              data-tippy-content="<%= item.menu_item.category.title %>"
-              class="menu-item-tooltip"
-            >
-              <%= item.menu_item.title %>
-            </span>
+              <span
+                data-tooltip-target="tooltip"
+                data-tippy-content="<%= item.menu_item.category.title %>"
+                class="menu-item-tooltip"
+              >
+                <%= item.menu_item.title %>
+              </span>
               <% if item != order.order_items.last %>
                 ,
               <% end %>
@@ -176,9 +178,3 @@
     <%= paginate @orders %>
   </div>
 </div>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        tippy('.menu-item-tooltip');
-    });
-</script>
