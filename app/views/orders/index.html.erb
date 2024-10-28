@@ -103,16 +103,11 @@
           </td>
           <th scope="row" class="px-6 py-4 font-medium text-gray-900 max-w-xs break-words whitespace-normal" data-controller="tooltip">
             <% order.order_items.each do |item| %>
-              <span
-                data-tooltip-target="tooltip"
-                data-tippy-content="<%= raw("<div style='display: flex; align-items: center;'><img src='#{url_for(item.menu_item.category.category_image)}' alt='#{item.menu_item.category.title}' style='width: 50px; height: 50px; border-radius: 50%; margin-right: 8px;' /> #{item.menu_item.category.title}</div>") %>"
-                class="menu-item-tooltip"
-              >
-                <%= item.menu_item.title %>
-              </span>
-              <% if item != order.order_items.last %>
-                ,
-              <% end %>
+            <span
+              data-tooltip-target="tooltip"
+              data-tippy-content="<%= raw("<div style='display: flex; align-items: center;'><img src='#{url_for(item.menu_item.category.category_image)}' alt='#{item.menu_item.category.title}' style='width: 50px; height: 50px; border-radius: 50%; margin-right: 8px;' /> #{item.menu_item.category.title}</div>") %>"
+              class="menu-item-tooltip"
+            ><%= item.menu_item.title %></span><% if item != order.order_items.last %>,<% end %>
             <% end %>
           </th>
           <td class="px-6 py-4">
