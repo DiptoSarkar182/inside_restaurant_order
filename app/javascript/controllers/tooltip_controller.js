@@ -14,6 +14,8 @@ export default class extends Controller {
             tippy(this.tooltipTargets, {
                 content: (reference) => reference.getAttribute("data-tippy-content"),
                 placement: "top",
+                followCursor: 'horizontal',
+                allowHTML: true,
             });
         } else {
             console.warn("Tippy.js is not loaded.");
