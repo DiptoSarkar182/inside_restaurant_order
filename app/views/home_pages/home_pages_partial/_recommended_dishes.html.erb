@@ -1,0 +1,58 @@
+<!--Recommended Dishes-->
+<section class="mt-8">
+  <h2 class="text-center text-5xl font-bold tracking-tight text-sky-400 px-4 py-8">
+    Recommended Dishes
+  </h2>
+  <div class="flex flex-wrap gap-2 p-2 ml-10 justify-center">
+    <% @home_page_menu_items.each do |menu_item| %>
+      <div class="w-80 max-w-sm bg-gray-100 rounded-lg shadow-md transition-shadow duration-300 hover:shadow-lg hover:shadow-gray-400 border border-sky-200">
+        <div class="swiper relative" data-controller="swiper" style="width: 100%; height: 300px;">
+          <div class="swiper-wrapper">
+            <% if menu_item.menu_images.attached? %>
+              <% menu_item.menu_images.each do |image| %>
+                <div class="swiper-slide flex justify-center items-center">
+                  <div class="p-2 w-full h-full">
+                    <%= image_tag image, class: "object-cover w-full h-full rounded-md" %>
+                  </div>
+                </div>
+              <% end %>
+            <% else %>
+              <div class="swiper-slide flex justify-center items-center">
+                <p class="text-gray-600 text-center w-full h-full flex items-center justify-center">
+                  No images available
+                </p>
+              </div>
+            <% end %>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+
+        <div class="p-4 sm:p-6">
+          <div class="flex justify-between items-start mb-2">
+            <h3 title="<%= menu_item.title %>" class="text-2xl font-bold tracking-tight text-sky-500 flex-1 mr-1 min-h-[3em]">
+              <%= link_to truncate(menu_item.title, length: 30), menu_item_path(menu_item), class: "hover:underline" %>
+            </h3>
+          </div>
+
+          <hr>
+          <div class="flex justify-between items-center space-x-4 mt-4">
+            <div class="text-center">
+              <div class="text-sm text-gray-500">Price</div>
+              <div class="text-lg font-semibold">$<%= menu_item.price %></div>
+            </div>
+            <div class="border-l border-gray-400 h-6"></div>
+            <div class="text-center">
+              <div class="text-sm text-gray-500">Rating</div>
+              <div class="text-lg font-semibold flex items-center">
+                <%= menu_item.avg_rating %>
+                <span class="text-base text-gray-500 ml-1">(<%= menu_item.total_rating %>)</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>

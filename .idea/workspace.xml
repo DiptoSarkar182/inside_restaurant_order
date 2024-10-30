@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="fixed comma gap issue in admin orders page.">
+    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="updated readme">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/home_pages/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home_pages/index.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +58,11 @@
     ]
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/views/home_pages/home_pages_partial" />
+    </key>
+  </component>
   <component name="RunManager" selected="JavaScript Debug.rich.html (3)">
     <configuration name="rich.html (1)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/inside_restaurant_order/tmp/letter_opener/1727431307_1069791_811411b/rich.html" useBuiltInWebServerPort="true">
       <method v="2" />
@@ -205,31 +211,11 @@
       <workItem from="1729835400099" duration="19214000" />
       <workItem from="1730094623420" duration="8964000" />
       <workItem from="1730107113310" duration="2840000" />
-      <workItem from="1730115101782" duration="2096000" />
-    </task>
-    <task id="LOCAL-00038" summary="added styling in pagination and items per page">
-      <option name="closed" value="true" />
-      <created>1728977970335</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1728977970335</updated>
-    </task>
-    <task id="LOCAL-00039" summary="added datepicker for admins order page, a demo popover">
-      <option name="closed" value="true" />
-      <created>1728987106911</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1728987106911</updated>
-    </task>
-    <task id="LOCAL-00040" summary="initiated popper js">
-      <option name="closed" value="true" />
-      <created>1728990227239</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1728990227239</updated>
+      <workItem from="1730115101782" duration="3595000" />
+      <workItem from="1730267697729" duration="1126000" />
+      <workItem from="1730279917498" duration="2931000" />
+      <workItem from="1730287286562" duration="870000" />
+      <workItem from="1730290431511" duration="4521000" />
     </task>
     <task id="LOCAL-00041" summary="added dummy stats for each category and menu item.">
       <option name="closed" value="true" />
@@ -599,7 +585,31 @@
       <option name="project" value="LOCAL" />
       <updated>1730115429545</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="admin will not be able to visit the root path.">
+      <option name="closed" value="true" />
+      <created>1730117815711</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1730117815711</updated>
+    </task>
+    <task id="LOCAL-00088" summary="fixed bg color mismatch issue in the homepage index.">
+      <option name="closed" value="true" />
+      <created>1730295305472</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1730295305473</updated>
+    </task>
+    <task id="LOCAL-00089" summary="updated readme">
+      <option name="closed" value="true" />
+      <created>1730296316113</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1730296316113</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -628,9 +638,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added charts in admin dashboard" />
-    <MESSAGE value="added simple blur to highlight the swiper arrow, removed swiper pagination, tabs in admin orders page will change color." />
-    <MESSAGE value="added border color change based on order status." />
     <MESSAGE value="added recommended, popular, testimonials in landing page." />
     <MESSAGE value="added best categories with turbo frame." />
     <MESSAGE value="added bg image on navbar bg" />
@@ -653,6 +660,9 @@
     <MESSAGE value="moved tippy js from inline script to stimulus tooltip_controller." />
     <MESSAGE value="tippyjs will follow cursor" />
     <MESSAGE value="fixed comma gap issue in admin orders page." />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed comma gap issue in admin orders page." />
+    <MESSAGE value="admin will not be able to visit the root path." />
+    <MESSAGE value="fixed bg color mismatch issue in the homepage index." />
+    <MESSAGE value="updated readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated readme" />
   </component>
 </project>
