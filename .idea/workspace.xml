@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="added partials for different sections in homepage.">
+    <list default="true" id="a7aa884f-7709-45f3-9977-47f4896df02f" name="Changes" comment="added image size validation(&lt;5mb) for avatar, category image and menu item image. fixed issue where model validation were not showing when uploading large image.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/category.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/category.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/menu_item.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/menu_item.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/menu_items/_edit_menu_images_preview.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/menu_items/_edit_menu_images_preview.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/menu_items/_menu_images_preview.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/menu_items/_menu_images_preview.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/menu_items/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/menu_items/edit.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,15 +215,7 @@
       <workItem from="1730279917498" duration="2931000" />
       <workItem from="1730287286562" duration="870000" />
       <workItem from="1730290431511" duration="6749000" />
-      <workItem from="1730354290895" duration="4929000" />
-    </task>
-    <task id="LOCAL-00042" summary="added edit delete icon. admin panel edit account and sign out hover bg changed to white.">
-      <option name="closed" value="true" />
-      <created>1728998954044</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1728998954044</updated>
+      <workItem from="1730354290895" duration="5477000" />
     </task>
     <task id="LOCAL-00043" summary="for admin panel menu item, swiper buttons will show on hover.">
       <option name="closed" value="true" />
@@ -615,7 +601,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730296396761</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="added image size validation(&lt;5mb) for avatar, category image and menu item image. fixed issue where model validation were not showing when uploading large image.">
+      <option name="closed" value="true" />
+      <created>1730362621507</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1730362621507</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -644,7 +638,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added best categories with turbo frame." />
     <MESSAGE value="added bg image on navbar bg" />
     <MESSAGE value="added blur navbar on scroll down" />
     <MESSAGE value="added basic design in &quot;menu item loved by customer&quot; section" />
@@ -669,6 +662,7 @@
     <MESSAGE value="fixed bg color mismatch issue in the homepage index." />
     <MESSAGE value="updated readme" />
     <MESSAGE value="added partials for different sections in homepage." />
-    <option name="LAST_COMMIT_MESSAGE" value="added partials for different sections in homepage." />
+    <MESSAGE value="added image size validation(&lt;5mb) for avatar, category image and menu item image. fixed issue where model validation were not showing when uploading large image." />
+    <option name="LAST_COMMIT_MESSAGE" value="added image size validation(&lt;5mb) for avatar, category image and menu item image. fixed issue where model validation were not showing when uploading large image." />
   </component>
 </project>

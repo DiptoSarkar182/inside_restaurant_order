@@ -43,8 +43,8 @@
 
       <div class="bg-white p-4 sm:p-6">
         <div class="flex justify-between items-start mb-2">
-          <h3 class="text-2xl font-bold tracking-tight text-gray-900 flex-1 mr-1 min-h-[3em]">
-            <%= category.title %>
+          <h3 title="<%= category.title %>" class="text-2xl font-bold tracking-tight text-gray-900 flex-1 mr-1 min-h-[3em]">
+            <%= truncate(category.title, length: 30) %>
           </h3>
           <div class="flex-shrink-0 flex gap-4">
             <%= link_to edit_category_path(category), class: "" do %>
