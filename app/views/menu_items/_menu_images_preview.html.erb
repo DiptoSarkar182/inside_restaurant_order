@@ -6,9 +6,11 @@
                       data: { previews_target: "input", action: "change->previews#preview" }, class: "w-full p-2 border border-gray-300 rounded-md shadow-sm" %>
 
   <div data-previews-target="preview" class="flex flex-wrap justify-center mt-4 border border-dashed border-gray-300 rounded-md p-4">
-    <% if menu_item.menu_images.attached? %>
+    <% if menu_item.persisted? && menu_item.menu_images.attached? %>
       <div class="flex flex-row flex-wrap justify-center">
-        <%= image_tag menu_item.menu_images, data: { previews_target: "preview" }, class: "image w-32 h-auto object-contain rounded mx-2 mb-2" %>
+        <% menu_item.menu_images.each do |image| %>
+          <%= image_tag image, data: { previews_target: "preview" }, class: "image w-32 h-auto object-contain rounded mx-2 mb-2" %>
+        <% end %>
       </div>
     <% else %>
       <p class="text-gray-500">No images attached</p>

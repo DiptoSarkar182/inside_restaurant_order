@@ -24,10 +24,19 @@ class User < ApplicationRecord
   has_many :orders, dependent: :destroy
   has_many :menu_item_ratings, dependent: :destroy
 
+  validate :avatar_image_size_under_limit
+
   private
   def sanitize_contact_number
     if contact_number.present?
       self.contact_number = contact_number.gsub(/[\s-]+/, '')
+    end
+  end
+
+  def avatar_image_size_under_limit
+    if avatar.attached? && avatar.blob.byte_size > 5.megabytes
+      avatar.purge
+      errors.add(:avatar, 'is too large (max is 5MB)')
     end
   end
 end

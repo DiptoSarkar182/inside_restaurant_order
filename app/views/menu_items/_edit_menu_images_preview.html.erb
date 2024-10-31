@@ -3,7 +3,9 @@
 
   <!-- Hidden fields for existing images -->
   <% @menu_item.menu_images.each do |image| %>
-    <%= form.hidden_field :menu_images, multiple: true, value: image.signed_id %>
+    <% if image.persisted? %> <!-- Only add signed_id for persisted images -->
+      <%= form.hidden_field :menu_images, multiple: true, value: image.signed_id %>
+    <% end %>
   <% end %>
 
   <!-- File input for new images -->

@@ -8,13 +8,15 @@
         <% if @menu_item.menu_images.attached? %>
           <div class="flex flex-wrap justify-center space-x-2">
             <% @menu_item.menu_images.each do |image| %>
-              <div class="relative w-32 h-32 border border-gray-200 rounded m-2">
-                <%= image_tag image, class: "object-cover w-full h-full" %>
+              <% if image.persisted? %> <!-- Check if the image is fully persisted -->
+                <div class="relative w-32 h-32 border border-gray-200 rounded m-2">
+                  <%= image_tag image, class: "object-cover w-full h-full" %>
 
-                <%= button_to 'Delete', delete_menu_item_image_menu_item_path(@menu_item, image_id: image.id),
-                              method: :delete,
-                              class: "absolute top-0 right-0 bg-red-500 text-white px-2 py-1 rounded" %>
-              </div>
+                  <%= button_to 'Delete', delete_menu_item_image_menu_item_path(@menu_item, image_id: image.id),
+                                method: :delete,
+                                class: "absolute top-0 right-0 bg-red-500 text-white px-2 py-1 rounded" %>
+                </div>
+              <% end %>
             <% end %>
           </div>
         <% else %>

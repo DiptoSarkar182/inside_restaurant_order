@@ -18,5 +18,17 @@ class MenuItem < ApplicationRecord
   validates :title, presence: true
   validates :price, presence: true
   validates :description, presence: true
+  validate :menu_images_size_under_limit
+
+  private
+
+  def menu_images_size_under_limit
+    menu_images.each do |image|
+      if image.byte_size > 5.megabytes
+        errors.add(:menu_images, "one or more images are too large (max size is 5MB each)")
+      end
+    end
+  end
+
 
 end
